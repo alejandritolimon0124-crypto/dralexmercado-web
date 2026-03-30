@@ -3,10 +3,10 @@ function App() {
     {
       title: "Embarazo y maternidad",
       items: [
-        "Control prenatal con seguimiento cercano",
+        "Control prenatal con seguimiento cercano y explicación clara",
         "Ultrasonido obstétrico y valoración del bienestar fetal",
         "Ultrasonido 5D para una experiencia más cercana y memorable",
-        "Resolución clara de dudas en cada etapa del embarazo",
+        "Resolución de dudas en cada etapa del embarazo",
       ],
     },
     {
@@ -22,35 +22,35 @@ function App() {
       title: "Cirugía laparoscópica avanzada",
       items: [
         "Manejo quirúrgico de miomas y patología ginecológica seleccionada",
-        "Abordaje moderno con visión mínimamente invasiva",
-        "Evaluación quirúrgica con explicación clara del plan de tratamiento",
+        "Abordaje moderno con visión mínamente invasiva",
+        "Evaluación quirúrgica con explicación clara del tratamiento",
         "Seguimiento antes y después del procedimiento",
       ],
     },
   ];
 
   const differentiators = [
-    "Atención especializada para cada etapa de la mujer",
-    "Ultrasonido 5D y seguimiento cercano del embarazo",
-    "Experiencia quirúrgica en laparoscopía avanzada",
-    "Consulta clara, humana y ordenada desde el primer contacto",
+    "Más de 14 años de experiencia acompañando a mujeres en etapas clave de su salud",
+    "Seguimiento cercano, humano y profesional desde el primer contacto",
+    "Ultrasonido obstétrico y experiencia 5D para vivir el embarazo con mayor claridad",
+    "Visión integral: consulta, seguimiento, app, diplomado y atención especializada",
   ];
 
-  const steps = [
+  const routeSteps = [
     {
       n: "01",
-      title: "Agenda fácil",
-      text: "Escríbeme por WhatsApp o agenda en línea de forma rápida, clara y profesional.",
+      title: "Valora tu embarazo",
+      text: "Agenda tu consulta o utiliza la calculadora gestacional para dar el primer paso con claridad.",
     },
     {
       n: "02",
-      title: "Valoración completa",
-      text: "Se identifica el motivo de consulta, se explica el problema y se plantea una ruta clara.",
+      title: "Aclara tus dudas",
+      text: "Recibe explicación profesional y seguimiento real durante cada etapa del embarazo.",
     },
     {
       n: "03",
-      title: "Seguimiento real",
-      text: "La experiencia continúa con orden, cercanía y acompañamiento.",
+      title: "Vive tu maternidad con seguridad",
+      text: "Complementa tu proceso con Maternidad 360 para sentirte más preparada, tranquila y acompañada.",
     },
   ];
 
@@ -71,14 +71,29 @@ function App() {
 
   const gallery5D = ["/ultrasonido-5d-1.jpeg", "/ultrasonido-5d-2.jpeg"];
   const officeGallery = ["/consultorio-1.jpeg", "/consultorio-2.jpeg"];
+
   const whatsappUrl =
     "https://api.whatsapp.com/send?phone=528443934366&text=Hola%20Dr.%20Alex%20Mercado,%20me%20gustar%C3%ADa%20agendar%20una%20consulta";
+  const agendaUrl = "https://agenda.dralexmercado.com.mx";
+  const calculadoraUrl = "#";
+  const maternidadUrl = "#";
 
   return (
     <div className="min-h-screen bg-[#faf7f2] text-slate-900">
+      <a
+        href={whatsappUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="fixed bottom-5 right-5 z-[60] inline-flex items-center rounded-full bg-[#25D366] px-5 py-3 text-sm font-semibold text-white shadow-2xl shadow-green-500/30 transition hover:-translate-y-0.5 hover:bg-[#1fb85a]"
+      >
+        WhatsApp
+      </a>
+
       <header className="sticky top-0 z-50 border-b border-black/5 bg-[#faf7f2]/90 backdrop-blur">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 lg:px-10">
           <nav className="hidden items-center gap-8 text-sm text-slate-600 md:flex">
+            <a href="#inicio" className="transition hover:text-slate-900">Inicio</a>
+            <a href="#ruta-maternidad" className="transition hover:text-slate-900">Maternidad</a>
             <a href="#servicios" className="transition hover:text-slate-900">Servicios</a>
             <a href="#sobre-mi" className="transition hover:text-slate-900">Sobre mí</a>
             <a href="#galeria" className="transition hover:text-slate-900">Galería</a>
@@ -97,32 +112,48 @@ function App() {
       </header>
 
       <main>
-        <section className="relative overflow-hidden">
+        <section id="inicio" className="relative overflow-hidden">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(196,167,117,0.18),transparent_28%),radial-gradient(circle_at_left,rgba(20,184,166,0.08),transparent_24%)]" />
+
           <div className="relative mx-auto max-w-7xl px-5 py-10 lg:px-10 lg:py-14">
-            <div className="flex items-start justify-between gap-6 rounded-[1.75rem] border border-white/70 bg-white/65 px-5 py-4 shadow-[0_12px_40px_rgba(15,23,42,0.06)] backdrop-blur-md">
+            <div className="flex items-start justify-between gap-6 rounded-[1.75rem] border border-white/70 bg-white/70 px-5 py-4 shadow-[0_12px_40px_rgba(15,23,42,0.06)] backdrop-blur-md">
               <div className="flex flex-col items-start">
-                <img src="/doctor-logo.jpeg" alt="Dr Alex Mercado" className="h-32 md:h-40 object-contain drop-shadow-[0_6px_12px_rgba(15,23,42,0.10)]" />
-                <div className="mt-2 text-[11px] font-semibold uppercase tracking-[0.28em] text-slate-600">Atención integral para la mujer</div>
+                <img
+                  src="/doctor-logo.jpeg"
+                  alt="Dr Alex Mercado"
+                  className="h-32 object-contain drop-shadow-[0_6px_12px_rgba(15,23,42,0.10)] md:h-40"
+                />
+                <div className="mt-2 text-[11px] font-semibold uppercase tracking-[0.28em] text-slate-600">
+                  Ginecología, obstetricia y cirugía avanzada
+                </div>
               </div>
-              <div className="flex flex-col items-start md:items-end">
-                <img src="/lookadoc-clean.png" alt="Look a Doc" className="h-28 md:h-36 object-contain drop-shadow-[0_6px_12px_rgba(15,23,42,0.10)]" />
-                <div className="mt-2 text-[11px] font-semibold uppercase tracking-[0.28em] text-slate-600">Agenda médica inteligente</div>
+
+              <div className="hidden flex-col items-end md:flex">
+                <img
+                  src="/lookadoc-clean.png"
+                  alt="Look a Doc"
+                  className="h-28 object-contain drop-shadow-[0_6px_12px_rgba(15,23,42,0.10)] md:h-36"
+                />
+                <div className="mt-2 text-[11px] font-semibold uppercase tracking-[0.28em] text-slate-600">
+                  Agenda médica inteligente
+                </div>
               </div>
             </div>
 
             <div className="mt-10 grid gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
               <div>
-                <h1 className="max-w-3xl text-4xl font-semibold leading-tight tracking-tight text-slate-950 md:text-6xl">
-                  Lleva tu <span className="text-[#ff7a70]">Embarazo</span> con tranquilidad.
+                <div className="inline-flex rounded-full border border-[#e8d8bc] bg-white px-4 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-[#9d7a43] shadow-sm">
+                  Atención premium para embarazo y salud femenina
+                </div>
+
+                <h1 className="mt-6 max-w-3xl text-4xl font-semibold leading-tight tracking-tight text-slate-950 md:text-6xl">
+                  Tu <span className="text-[#ff7a70]">embarazo</span> guiado con seguridad, cercanía y seguimiento real.
                   <br />
-                  Salud <span className="text-[#ff7a70]">Ginecológica Integral</span>
-                  <br />
-                  Cirugía <span className="text-[#ff7a70]">Laparoscópica</span> avanzada.
+                  Salud <span className="text-[#ff7a70]">ginecológica integral</span> y cirugía <span className="text-[#ff7a70]">laparoscópica</span> avanzada.
                 </h1>
 
                 <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600 md:text-xl">
-                  Desde el control prenatal y ultrasonido 5D hasta el manejo de problemas hormonales, sangrados, miomas, infecciones y cirugía laparoscópica avanzada, aquí encuentras atención especializada, explicación clara y seguimiento real.
+                  Desde tu primera consulta hasta el seguimiento de etapas clave, aquí encuentras una atención clara, humana y profesional para vivir tu embarazo con más tranquilidad y resolver tu salud ginecológica con seriedad.
                 </p>
 
                 <div className="mt-8 flex flex-col gap-4 sm:flex-row">
@@ -134,12 +165,28 @@ function App() {
                   >
                     Agendar consulta por WhatsApp
                   </a>
+
                   <a
-                    href="https://agenda.dralexmercado.com.mx"
+                    href={agendaUrl}
                     className="rounded-full border border-slate-300 bg-white px-7 py-4 text-center text-sm font-medium text-slate-700 transition hover:border-slate-400 hover:bg-slate-50"
                   >
                     Agenda en línea
                   </a>
+                </div>
+
+                <div className="mt-8 grid gap-4 sm:grid-cols-3">
+                  <div className="rounded-[1.4rem] border border-black/5 bg-white/80 p-4 shadow-sm">
+                    <div className="text-2xl font-semibold text-slate-950">+14 años</div>
+                    <div className="mt-1 text-sm leading-6 text-slate-600">de experiencia acompañando a mujeres</div>
+                  </div>
+                  <div className="rounded-[1.4rem] border border-black/5 bg-white/80 p-4 shadow-sm">
+                    <div className="text-2xl font-semibold text-slate-950">Ultrasonido 5D</div>
+                    <div className="mt-1 text-sm leading-6 text-slate-600">para una experiencia más cercana en el embarazo</div>
+                  </div>
+                  <div className="rounded-[1.4rem] border border-black/5 bg-white/80 p-4 shadow-sm">
+                    <div className="text-2xl font-semibold text-slate-950">MEDICS + Muguerza</div>
+                    <div className="mt-1 text-sm leading-6 text-slate-600">atención presencial en Saltillo, Coahuila</div>
+                  </div>
                 </div>
               </div>
 
@@ -155,6 +202,106 @@ function App() {
           </div>
         </section>
 
+        <section id="ruta-maternidad" className="mx-auto max-w-7xl px-5 py-20 lg:px-10">
+          <div className="overflow-hidden rounded-[2.5rem] border border-black/5 bg-white shadow-[0_20px_70px_rgba(15,23,42,0.07)]">
+            <div className="grid gap-0 lg:grid-cols-[1.05fr_0.95fr]">
+              <div className="bg-gradient-to-br from-[#fff9f1] via-white to-[#fff5f4] p-8 md:p-12">
+                <div className="text-sm uppercase tracking-[0.24em] text-amber-700">Ruta de maternidad</div>
+                <h2 className="mt-4 max-w-3xl text-3xl font-semibold tracking-tight text-slate-950 md:text-5xl">
+                  Empieza tu embarazo con más claridad, menos miedo y mejor acompañamiento.
+                </h2>
+                <p className="mt-5 max-w-2xl text-lg leading-8 text-slate-600">
+                  Aquí no solo agendas una consulta. Aquí puedes entrar a un ecosistema pensado para acompañarte desde el inicio: valoración médica, calculadora gestacional y el diplomado Maternidad 360.
+                </p>
+
+                <div className="mt-8 grid gap-5 md:grid-cols-3">
+                  {routeSteps.map((step) => (
+                    <div key={step.n} className="rounded-[1.75rem] border border-black/5 bg-white p-5 shadow-sm">
+                      <div className="text-sm font-semibold tracking-[0.22em] text-amber-700">{step.n}</div>
+                      <h3 className="mt-3 text-lg font-semibold text-slate-950">{step.title}</h3>
+                      <p className="mt-2 text-sm leading-7 text-slate-600">{step.text}</p>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+                  <a
+                    href={whatsappUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="rounded-full bg-[#25D366] px-7 py-4 text-center text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-[#1fb85a]"
+                  >
+                    Quiero iniciar mi valoración
+                  </a>
+
+                  <a
+                    href={agendaUrl}
+                    className="rounded-full border border-slate-300 bg-white px-7 py-4 text-center text-sm font-medium text-slate-700 transition hover:bg-slate-50"
+                  >
+                    Agendar en línea
+                  </a>
+                </div>
+              </div>
+
+              <div className="bg-slate-950 p-8 text-white md:p-12">
+                <div className="text-sm uppercase tracking-[0.24em] text-amber-300">Herramientas y acompañamiento</div>
+
+                <div className="mt-8 space-y-5">
+                  <div className="rounded-[2rem] bg-white/6 p-6 backdrop-blur-sm">
+                    <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center">
+                      <img
+                        src="/logo-calculadora.png"
+                        alt="Calculadora gestacional"
+                        className="h-16 object-contain"
+                      />
+                      <div>
+                        <h3 className="text-xl font-semibold">Calculadora gestacional</h3>
+                        <p className="mt-2 leading-7 text-slate-300">
+                          Una herramienta práctica para ubicarte mejor en tu embarazo y dar el primer paso con más claridad.
+                        </p>
+                      </div>
+                    </div>
+
+                    <a
+                      href={calculadoraUrl}
+                      className="mt-5 inline-flex rounded-full border border-white/15 px-5 py-3 text-sm font-medium text-white transition hover:bg-white/8"
+                    >
+                      Abrir calculadora
+                    </a>
+                  </div>
+
+                  <div className="rounded-[2rem] bg-white/6 p-6 backdrop-blur-sm">
+                    <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center">
+                      <img
+                        src="/logo-maternidad.png"
+                        alt="Maternidad 360"
+                        className="h-16 object-contain"
+                      />
+                      <div>
+                        <h3 className="text-xl font-semibold">Maternidad 360</h3>
+                        <p className="mt-2 leading-7 text-slate-300">
+                          Un diplomado creado para futuras mamás que quieren sentirse seguras, informadas y mejor preparadas para vivir su maternidad.
+                        </p>
+                      </div>
+                    </div>
+
+                    <a
+                      href={maternidadUrl}
+                      className="mt-5 inline-flex rounded-full bg-white px-5 py-3 text-sm font-semibold text-slate-900 transition hover:-translate-y-0.5"
+                    >
+                      Conocer Maternidad 360
+                    </a>
+                  </div>
+                </div>
+
+                <div className="mt-8 rounded-[1.75rem] border border-white/10 bg-white/5 p-5 text-sm leading-7 text-slate-300">
+                  Este bloque es tu verdadero diferenciador: consulta médica + herramienta digital + formación para la paciente. Eso ya no se ve como una consulta aislada. Se ve como una experiencia completa.
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <section id="sobre-mi" className="mx-auto max-w-7xl px-5 py-20 lg:px-10">
           <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr]">
             <div className="rounded-[2rem] bg-slate-900 p-8 text-white shadow-xl shadow-slate-900/10">
@@ -164,31 +311,23 @@ function App() {
                 className="mb-6 h-72 w-full rounded-xl object-cover object-top"
               />
               <div className="text-sm uppercase tracking-[0.24em] text-amber-300">Sobre mí</div>
-              <h2 className="mt-4 text-3xl font-semibold leading-tight">Atención médica con criterio, cercanía y claridad.</h2>
+              <h2 className="mt-4 text-3xl font-semibold leading-tight">
+                Atención médica con criterio, cercanía y claridad.
+              </h2>
               <p className="mt-5 text-base leading-8 text-slate-300">
-                Mi objetivo no es solo atenderte. Mi enfoque es entender lo que estás viviendo, explicártelo claramente y ayudarte a tomar decisiones con seguridad, ya sea durante tu embarazo, frente a un problema ginecológico o en una valoración quirúrgica.
+                Mi enfoque no es solo atenderte, sino ayudarte a entender lo que estás viviendo, explicarlo claramente y acompañarte en decisiones importantes, ya sea durante tu embarazo, frente a un problema ginecológico o en una valoración quirúrgica.
               </p>
             </div>
 
             <div className="grid gap-5 md:grid-cols-2">
-              <div className="rounded-[2rem] border border-black/5 bg-white p-7 shadow-sm">
-                <div className="text-sm uppercase tracking-[0.24em] text-slate-500">Experiencia</div>
-                <p className="mt-4 text-lg leading-8 text-slate-700">
-                  Más de 14 años acompañando a mujeres en etapas clave de su salud, con un enfoque profesional, humano y resolutivo.
-                </p>
-              </div>
-              <div className="rounded-[2rem] border border-black/5 bg-white p-7 shadow-sm">
-                <div className="text-sm uppercase tracking-[0.24em] text-slate-500">Tecnología y precisión</div>
-                <p className="mt-4 text-lg leading-8 text-slate-700">
-                  Consulta con explicación completa, ultrasonido obstétrico, ultrasonido 5D y experiencia en cirugía laparoscópica avanzada.
-                </p>
-              </div>
-              <div className="rounded-[2rem] border border-black/5 bg-white p-7 shadow-sm md:col-span-2">
-                <div className="text-sm uppercase tracking-[0.24em] text-slate-500">Posicionamiento</div>
-                <p className="mt-4 text-lg leading-8 text-slate-700">
-                  No importa si estás embarazada o no. Si algo en tu cuerpo no está bien, aquí se estudia con seriedad, se explica con claridad y se busca una solución real.
-                </p>
-              </div>
+              {differentiators.map((item) => (
+                <div key={item} className="rounded-[2rem] border border-black/5 bg-white p-7 shadow-sm">
+                  <div className="flex items-start gap-3">
+                    <div className="mt-2 h-2.5 w-2.5 rounded-full bg-slate-900" />
+                    <p className="text-lg leading-8 text-slate-700">{item}</p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </section>
@@ -196,19 +335,23 @@ function App() {
         <section id="servicios" className="bg-white py-20">
           <div className="mx-auto max-w-7xl px-5 lg:px-10">
             <div className="max-w-3xl">
-              <div className="text-sm uppercase tracking-[0.24em] text-amber-700">¿En qué puedo ayudarte?</div>
+              <div className="text-sm uppercase tracking-[0.24em] text-amber-700">Servicios</div>
               <h2 className="mt-4 text-3xl font-semibold tracking-tight text-slate-950 md:text-5xl">
                 Atención especializada para cada etapa de la mujer.
               </h2>
               <p className="mt-5 text-lg leading-8 text-slate-600">
-                Este sitio está diseñado para acompañar tanto a pacientes embarazadas como a mujeres que buscan resolver problemas ginecológicos o valorar una alternativa quirúrgica con atención experta y clara.
+                Embarazo, salud ginecológica y valoración quirúrgica en un mismo sitio, con una experiencia profesional, moderna y enfocada en resolver con claridad.
               </p>
             </div>
 
             <div className="mt-12 grid gap-8 lg:grid-cols-3">
               {services.map((service) => (
-                <div key={service.title} className="rounded-[2rem] border border-black/5 bg-[#fcfaf7] p-8 shadow-sm">
+                <div
+                  key={service.title}
+                  className="rounded-[2rem] border border-black/5 bg-[#fcfaf7] p-8 shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
+                >
                   <h3 className="text-2xl font-semibold text-slate-950">{service.title}</h3>
+
                   <div className="mt-6 space-y-4">
                     {service.items.map((item) => (
                       <div key={item} className="flex items-start gap-3 text-slate-700">
@@ -217,13 +360,14 @@ function App() {
                       </div>
                     ))}
                   </div>
+
                   <a
                     href={whatsappUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="mt-8 inline-flex rounded-full bg-[#25D366] px-6 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-[#1fb85a]"
                   >
-                    Agendar valoración por WhatsApp
+                    Agendar valoración
                   </a>
                 </div>
               ))}
@@ -243,8 +387,9 @@ function App() {
             <div>
               <h3 className="text-2xl font-semibold text-slate-950">Ultrasonido 5D</h3>
               <p className="mt-3 text-lg leading-8 text-slate-600">
-                Vive una experiencia más cercana durante el embarazo con imágenes que permiten apreciar mejor a tu bebé y fortalecer el vínculo desde antes de nacer.
+                Vive una experiencia más cercana durante el embarazo con imágenes que permiten apreciar mejor a tu bebé y fortalecer el vínculo antes de nacer.
               </p>
+
               <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
                 {gallery5D.map((src, index) => (
                   <img
@@ -262,13 +407,14 @@ function App() {
               <p className="mt-3 text-lg leading-8 text-slate-600">
                 Atención en un espacio moderno, cómodo y profesional para que cada consulta se viva con confianza, privacidad y orden.
               </p>
+
               <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
                 {officeGallery.map((src, index) => (
                   <img
                     key={src}
                     src={src}
                     alt={`Consultorio ${index + 1}`}
-                    className={`w-full rounded-[1.5rem] object-cover shadow-sm ${index === 2 ? 'sm:col-span-2 h-80' : 'h-72'}`}
+                    className={`w-full rounded-[1.5rem] object-cover shadow-sm ${index === 2 ? "sm:col-span-2 h-80" : "h-72"}`}
                   />
                 ))}
               </div>
@@ -289,8 +435,24 @@ function App() {
                 </p>
               </div>
 
-              <div id="agenda" className="mt-10 grid gap-5 md:grid-cols-3">
-                {steps.map((step) => (
+              <div className="mt-10 grid gap-5 md:grid-cols-3">
+                {[
+                  {
+                    n: "01",
+                    title: "Valoración precisa",
+                    text: "Se estudia tu caso con seriedad y se define si eres candidata a un manejo quirúrgico.",
+                  },
+                  {
+                    n: "02",
+                    title: "Plan claro",
+                    text: "Entiendes el procedimiento, las expectativas y el seguimiento antes de tomar decisiones.",
+                  },
+                  {
+                    n: "03",
+                    title: "Seguimiento cercano",
+                    text: "La experiencia no termina en cirugía: continúa con control y vigilancia real.",
+                  },
+                ].map((step) => (
                   <div key={step.n} className="rounded-[2rem] bg-white/8 p-6 backdrop-blur-sm">
                     <div className="text-sm font-medium tracking-[0.22em] text-amber-300">{step.n}</div>
                     <h3 className="mt-4 text-xl font-semibold">{step.title}</h3>
@@ -309,7 +471,7 @@ function App() {
                   Escribirme por WhatsApp
                 </a>
                 <a
-                  href="https://agenda.dralexmercado.com.mx"
+                  href={agendaUrl}
                   className="rounded-full border border-white/20 px-7 py-4 text-center text-sm font-medium text-white transition hover:bg-white/5"
                 >
                   Agenda en línea
@@ -334,7 +496,7 @@ function App() {
               </h2>
             </div>
 
-            <div className="mt-12 grid gap-2 lg:grid-cols-3">
+            <div className="mt-12 grid gap-6 lg:grid-cols-3">
               {testimonials.map((t) => (
                 <div key={t.name} className="rounded-[2rem] border border-black/5 bg-[#fcfaf7] p-8 shadow-sm">
                   <p className="text-lg leading-8 text-slate-700">“{t.text}”</p>
@@ -349,28 +511,36 @@ function App() {
           <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
             <div className="rounded-[2rem] border border-black/5 bg-white p-8 shadow-sm">
               <div className="text-sm uppercase tracking-[0.24em] text-slate-500">Ubicación</div>
-              <h2 className="mt-4 text-3xl font-semibold tracking-tight text-slate-950">Atención en un espacio diseñado para tu comodidad y confianza.</h2>
+              <h2 className="mt-4 text-3xl font-semibold tracking-tight text-slate-950">
+                Atención en un espacio diseñado para tu comodidad y confianza.
+              </h2>
               <p className="mt-5 text-lg leading-8 text-slate-600">
                 Consulta presencial en MEDICS y atención en Hospital Muguerza, en Saltillo, Coahuila, en un entorno profesional, cómodo y enfocado en la experiencia de la paciente.
               </p>
+
               <div className="mt-8 space-y-4">
                 <div className="rounded-[1.5rem] bg-slate-50 p-6 text-slate-700">
                   <div className="font-medium">MEDICS | Salud & Belleza</div>
                   <div className="mt-2 leading-7">Saltillo, Coahuila</div>
                 </div>
+
                 <div className="rounded-[1.5rem] bg-slate-50 p-6 text-slate-700">
                   <div className="font-medium">Hospital Muguerza</div>
                   <div className="mt-2 leading-7">Atención hospitalaria en Saltillo, Coahuila</div>
                 </div>
               </div>
+
               <div className="mt-6 flex flex-wrap items-center gap-5">
                 <img src="/medics-logo.png" alt="MEDICS" className="h-20 object-contain" />
+                <img src="/muguerza-logo.png" alt="Hospital Muguerza" className="h-24 object-contain" />
               </div>
             </div>
 
             <div id="contacto" className="rounded-[2rem] bg-[#f7efe3] p-8 shadow-sm">
               <div className="text-sm uppercase tracking-[0.24em] text-amber-800">Contacto</div>
-              <h2 className="mt-4 text-3xl font-semibold tracking-tight text-slate-950">Tu tranquilidad no debería esperar.</h2>
+              <h2 className="mt-4 text-3xl font-semibold tracking-tight text-slate-950">
+                Tu tranquilidad no debería esperar.
+              </h2>
               <p className="mt-5 text-lg leading-8 text-slate-700">
                 Agenda tu consulta, resuelve tus dudas y recibe atención con claridad, seguimiento y confianza.
               </p>
@@ -384,17 +554,20 @@ function App() {
                 >
                   Escríbeme por WhatsApp
                 </a>
+
                 <a
-                  href="https://agenda.dralexmercado.com.mx"
+                  href={agendaUrl}
                   className="block rounded-full border border-slate-300 bg-white px-7 py-4 text-center text-sm font-medium text-slate-700 transition hover:bg-slate-50"
                 >
                   Agenda en línea
                 </a>
               </div>
 
-              <div className="mt-8 text-sm leading-7 text-slate-600">
-                Especialista en Ginecología y Obstetricia<br />
-                Céd. Prof. 7840295<br />
+              <div className="mt-8 rounded-[1.5rem] bg-white/70 p-5 text-sm leading-7 text-slate-700">
+                Especialista en Ginecología y Obstetricia
+                <br />
+                Céd. Prof. 7840295
+                <br />
                 Permiso de publicidad COFEPRIS: 2605082002A00005
               </div>
             </div>
