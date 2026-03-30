@@ -110,6 +110,28 @@ function App() {
                 Atención integral para la mujer
               </div>
 
+              <div className="mb-7 rounded-[1.6rem] border border-black/5 bg-white/85 px-5 py-4 shadow-sm backdrop-blur">
+                <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                  <div className="flex items-center gap-4">
+                    <img
+                      src="/lookadoc-clean.png"
+                      alt="Look a Doc"
+                      className="h-16 md:h-20 object-contain"
+                    />
+                    <div>
+                      <div className="text-[10px] uppercase tracking-[0.32em] text-slate-500">Agenda médica inteligente</div>
+                      <div className="mt-1 text-sm text-slate-600">Experiencia digital moderna para una atención más ágil, clara y ordenada.</div>
+                    </div>
+                  </div>
+                  <a
+                    href="https://agenda.dralexmercado.com.mx"
+                    className="inline-flex rounded-full border border-slate-200 bg-slate-50 px-5 py-3 text-sm font-medium text-slate-700 transition hover:bg-white"
+                  >
+                    Conocer agenda en línea
+                  </a>
+                </div>
+              </div>
+
               <h1 className="max-w-3xl text-4xl font-semibold leading-tight tracking-tight text-slate-950 md:text-6xl">
                 Embarazo con tranquilidad. Salud ginecológica y cirugía avanzada con confianza.
               </h1>
