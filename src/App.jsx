@@ -135,13 +135,13 @@ function App() {
                 </a>
               </div>
 
-              <div className="mt-8 flex flex-wrap items-center gap-5 rounded-[1.5rem] border border-black/5 bg-white/80 px-5 py-4 shadow-sm">
-                <div className="text-xs uppercase tracking-[0.24em] text-slate-500">Agenda digital</div>
-                <img src="/lookadoc-clean.png" alt="Look a Doc" className="h-14 object-contain" />
+              <div className="mt-8 flex flex-wrap items-center gap-4 rounded-[1.5rem] border border-black/5 bg-white/80 px-5 py-4 shadow-sm">
+                <div className="text-[10px] uppercase tracking-[0.24em] text-slate-500">Agenda digital</div>
+                <img src="/lookadoc-clean.png" alt="Look a Doc" className="h-12 object-contain" />
                 <div className="h-6 w-px bg-slate-200" />
-                <div className="text-xs uppercase tracking-[0.24em] text-slate-500">Atención en</div>
-                <img src="/medics-logo.png" alt="MEDICS" className="h-12 object-contain" />
-                <span className="rounded-full bg-slate-100 px-4 py-2 text-xs font-medium uppercase tracking-[0.22em] text-slate-600">Hospital Muguerza</span>
+                <div className="text-[10px] uppercase tracking-[0.24em] text-slate-500">Atención en</div>
+                <img src="/medics-logo.png" alt="MEDICS" className="h-10 object-contain" />
+                <img src="/muguerza-logo.png" alt="Hospital Muguerza" className="h-12 object-contain" />
               </div>
 
               <div className="mt-10 grid gap-4 sm:grid-cols-3">
@@ -419,27 +419,27 @@ function App() {
       </main>
 
       <footer className="border-t border-black/5 bg-white">
-        <div className="mx-auto max-w-7xl px-5 py-12 lg:px-10">
-          <div className="mb-8 text-sm text-slate-500">
+        <div className="mx-auto max-w-7xl px-5 py-10 lg:px-10">
+          <div className="mb-6 text-sm text-slate-500">
             © {new Date().getFullYear()} Dr. Alex Mercado. Todos los derechos reservados.
           </div>
 
-          <div className="rounded-[2rem] border border-black/5 bg-[#f8fafc] px-6 py-8 shadow-sm">
-            <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
-              <div className="flex flex-col items-center gap-3 sm:flex-row">
-                <span className="text-sm font-semibold uppercase tracking-[0.24em] text-slate-500">Atención en</span>
-                <img src="/medics-logo.png" alt="MEDICS" className="h-14 object-contain" />
-                <span className="rounded-full bg-white px-5 py-3 text-sm font-semibold uppercase tracking-[0.16em] text-slate-700 shadow-sm">Hospital Muguerza</span>
+          <div className="rounded-[2rem] border border-black/5 bg-[#f8fafc] px-6 py-6 shadow-sm">
+            <div className="flex flex-wrap items-center justify-center gap-5 lg:justify-between">
+              <div className="flex items-center gap-3">
+                <span className="text-[10px] uppercase tracking-[0.22em] text-slate-500">Atención en</span>
+                <img src="/medics-logo.png" alt="MEDICS" className="h-12 object-contain" />
+                <img src="/muguerza-logo.png" alt="Hospital Muguerza" className="h-14 object-contain" />
               </div>
 
-              <div className="flex flex-col items-center gap-3 sm:flex-row">
-                <span className="text-sm font-semibold uppercase tracking-[0.24em] text-slate-500">Agenda digital</span>
-                <img src="/lookadoc-clean.png" alt="Look a Doc" className="h-16 object-contain" />
+              <div className="flex items-center gap-3">
+                <span className="text-[10px] uppercase tracking-[0.22em] text-slate-500">Agenda digital</span>
+                <img src="/lookadoc-clean.png" alt="Look a Doc" className="h-14 object-contain" />
               </div>
 
-              <div className="flex flex-col items-center gap-3 sm:flex-row">
-                <span className="text-sm font-semibold uppercase tracking-[0.24em] text-slate-500">Powered by</span>
-                <img src="/axm-logo.png" alt="AXM Technologies" className="h-14 object-contain opacity-95" />
+              <div className="flex items-center gap-3">
+                <span className="text-[10px] uppercase tracking-[0.22em] text-slate-500">Powered by</span>
+                <img src="/axm-logo.png" alt="AXM Technologies" className="h-12 object-contain opacity-95" />
               </div>
             </div>
           </div>
