@@ -136,11 +136,12 @@ function App() {
               </div>
 
               <div className="mt-8 flex flex-wrap items-center gap-5 rounded-[1.5rem] border border-black/5 bg-white/80 px-5 py-4 shadow-sm">
-                <div className="text-xs uppercase tracking-[0.24em] text-slate-500">Atención en</div>
-                <img src="/medics-logo.png" alt="MEDICS" className="h-9 object-contain" />
-                <div className="h-6 w-px bg-slate-200" />
                 <div className="text-xs uppercase tracking-[0.24em] text-slate-500">Agenda digital</div>
-                <img src="/lookadoc-clean.png" alt="Look a Doc" className="h-10 object-contain" />
+                <img src="/lookadoc-clean.png" alt="Look a Doc" className="h-14 object-contain" />
+                <div className="h-6 w-px bg-slate-200" />
+                <div className="text-xs uppercase tracking-[0.24em] text-slate-500">Atención en</div>
+                <img src="/medics-logo.png" alt="MEDICS" className="h-12 object-contain" />
+                <span className="rounded-full bg-slate-100 px-4 py-2 text-xs font-medium uppercase tracking-[0.22em] text-slate-600">Hospital Muguerza</span>
               </div>
 
               <div className="mt-10 grid gap-4 sm:grid-cols-3">
@@ -366,13 +367,19 @@ function App() {
               <div className="text-sm uppercase tracking-[0.24em] text-slate-500">Ubicación</div>
               <h2 className="mt-4 text-3xl font-semibold tracking-tight text-slate-950">Atención en un espacio diseñado para tu comodidad y confianza.</h2>
               <p className="mt-5 text-lg leading-8 text-slate-600">
-                Consulta presencial en MEDICS, en Saltillo, Coahuila, en un entorno profesional, cómodo y enfocado en la experiencia de la paciente.
+                Consulta presencial en MEDICS y atención en Hospital Muguerza, en Saltillo, Coahuila, en un entorno profesional, cómodo y enfocado en la experiencia de la paciente.
               </p>
-              <div className="mt-8 rounded-[1.5rem] bg-slate-50 p-6 text-slate-700">
-                <div className="font-medium">MEDICS | Salud & Belleza</div>
-                <div className="mt-2 leading-7">Saltillo, Coahuila</div>
+              <div className="mt-8 space-y-4">
+                <div className="rounded-[1.5rem] bg-slate-50 p-6 text-slate-700">
+                  <div className="font-medium">MEDICS | Salud & Belleza</div>
+                  <div className="mt-2 leading-7">Saltillo, Coahuila</div>
+                </div>
+                <div className="rounded-[1.5rem] bg-slate-50 p-6 text-slate-700">
+                  <div className="font-medium">Hospital Muguerza</div>
+                  <div className="mt-2 leading-7">Atención hospitalaria en Saltillo, Coahuila</div>
+                </div>
               </div>
-              <div className="mt-6">
+              <div className="mt-6 flex flex-wrap items-center gap-5">
                 <img src="/medics-logo.png" alt="MEDICS" className="h-14 object-contain" />
               </div>
             </div>
@@ -412,21 +419,27 @@ function App() {
       </main>
 
       <footer className="border-t border-black/5 bg-white">
-        <div className="mx-auto max-w-7xl px-5 py-10 lg:px-10">
-          <div className="flex flex-col gap-8 md:flex-row md:items-center md:justify-between">
-            <div className="text-sm text-slate-500">© {new Date().getFullYear()} Dr. Alex Mercado. Todos los derechos reservados.</div>
-            <div className="flex flex-wrap items-center gap-6">
-              <div className="flex items-center gap-3">
-                <span className="text-[11px] uppercase tracking-[0.24em] text-slate-400">Atención en</span>
-                <img src="/medics-logo.png" alt="MEDICS" className="h-10 object-contain" />
+        <div className="mx-auto max-w-7xl px-5 py-12 lg:px-10">
+          <div className="mb-8 text-sm text-slate-500">
+            © {new Date().getFullYear()} Dr. Alex Mercado. Todos los derechos reservados.
+          </div>
+
+          <div className="rounded-[2rem] border border-black/5 bg-[#f8fafc] px-6 py-8 shadow-sm">
+            <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
+              <div className="flex flex-col items-center gap-3 sm:flex-row">
+                <span className="text-sm font-semibold uppercase tracking-[0.24em] text-slate-500">Atención en</span>
+                <img src="/medics-logo.png" alt="MEDICS" className="h-14 object-contain" />
+                <span className="rounded-full bg-white px-5 py-3 text-sm font-semibold uppercase tracking-[0.16em] text-slate-700 shadow-sm">Hospital Muguerza</span>
               </div>
-              <div className="flex items-center gap-3">
-                <span className="text-[11px] uppercase tracking-[0.24em] text-slate-400">Agenda digital</span>
-                <img src="/lookadoc-clean.png" alt="Look a Doc" className="h-10 object-contain" />
+
+              <div className="flex flex-col items-center gap-3 sm:flex-row">
+                <span className="text-sm font-semibold uppercase tracking-[0.24em] text-slate-500">Agenda digital</span>
+                <img src="/lookadoc-clean.png" alt="Look a Doc" className="h-16 object-contain" />
               </div>
-              <div className="flex items-center gap-3">
-                <span className="text-[11px] uppercase tracking-[0.24em] text-slate-400">Powered by</span>
-                <img src="/axm-logo.png" alt="AXM Technologies" className="h-9 object-contain opacity-90" />
+
+              <div className="flex flex-col items-center gap-3 sm:flex-row">
+                <span className="text-sm font-semibold uppercase tracking-[0.24em] text-slate-500">Powered by</span>
+                <img src="/axm-logo.png" alt="AXM Technologies" className="h-14 object-contain opacity-95" />
               </div>
             </div>
           </div>
