@@ -107,9 +107,17 @@ function App() {
         WhatsApp
       </a>
 
-      <header className="sticky top-0 z-50 border-b border-black/5 bg-[#faf7f2]/90 backdrop-blur">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 lg:px-10">
-          <nav className="hidden items-center gap-8 text-sm text-slate-600 md:flex">
+      <header className="sticky top-0 z-50 border-b border-black/5 bg-[#faf7f2]/95 backdrop-blur">
+        <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-3 lg:px-8 lg:py-4">
+          <div className="flex items-center shrink-0">
+            <img
+              src="/doctor-logo.png"
+              alt="Dr Alex Mercado"
+              className="h-20 w-auto object-contain md:h-24"
+            />
+          </div>
+
+          <nav className="hidden items-center gap-6 text-sm text-slate-700 lg:flex xl:gap-8">
             <a href="#inicio" className="transition hover:text-slate-900">
               Inicio
             </a>
@@ -134,7 +142,7 @@ function App() {
             href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-full bg-[#25D366] px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-green-500/20 transition hover:-translate-y-0.5 hover:bg-[#1fb85a]"
+            className="shrink-0 rounded-full bg-[#25D366] px-7 py-4 text-base font-semibold text-white shadow-lg shadow-green-500/20 transition hover:-translate-y-0.5 hover:bg-[#1fb85a] md:px-8"
           >
             Agendar consulta
           </a>
@@ -145,22 +153,14 @@ function App() {
         <section id="inicio" className="relative overflow-hidden">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(196,167,117,0.18),transparent_28%),radial-gradient(circle_at_left,rgba(20,184,166,0.08),transparent_24%)]" />
 
-          <div className="relative mx-auto max-w-7xl px-5 py-10 lg:px-10 lg:py-14">
-            <div className="flex justify-center items-center rounded-[1.75rem] border border-white/70 bg-white/70 px-5 py-6 shadow-[0_12px_40px_rgba(15,23,42,0.06)] backdrop-blur-md">
-              <img
-                src="/doctor-logo.png"
-                alt="Dr Alex Mercado"
-                className="h-40 md:h-48 w-auto object-contain drop-shadow-[0_8px_20px_rgba(15,23,42,0.12)]"
-              />
-            </div>
-
-            <div className="mt-10 grid gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
+          <div className="relative mx-auto max-w-7xl px-5 py-4 lg:px-10 lg:py-6">
+            <div className="mt-2 grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
               <div>
                 <div className="inline-flex rounded-full border border-[#e8d8bc] bg-white px-4 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-[#9d7a43] shadow-sm">
                   Atención premium para embarazo y salud femenina
                 </div>
 
-                <h1 className="mt-6 max-w-3xl text-3xl font-semibold leading-tight tracking-tight text-slate-950 md:text-4xl">
+                <h1 className="mt-5 max-w-3xl text-[2.35rem] font-semibold leading-[1.08] tracking-tight text-slate-950 md:text-[3.05rem]">
                   Tu <span className="text-[#ff7a70]">embarazo</span> guiado con seguridad,
                   cercanía y seguimiento real.
                   <br />
@@ -168,7 +168,7 @@ function App() {
                   <span className="text-[#ff7a70]">laparoscópica</span> avanzada.
                 </h1>
 
-                <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600 md:text-xl">
+                <p className="mt-5 max-w-2xl text-base leading-8 text-slate-600 md:text-lg">
                   Desde tu primera consulta hasta el seguimiento de etapas clave, aquí encuentras
                   una atención clara, humana y profesional para vivir tu embarazo con más
                   tranquilidad y resolver tu salud ginecológica con seriedad.
@@ -214,12 +214,12 @@ function App() {
                 </div>
               </div>
 
-              <div className="relative flex items-center justify-center">
+              <div className="relative flex items-start justify-center">
                 <div className="absolute -inset-6 rounded-[2.5rem] bg-gradient-to-br from-amber-100/70 via-white to-teal-100/50 blur-2xl" />
                 <img
                   src="/dr-alex-hero.jpeg"
                   alt="Dr Alex Mercado"
-                  className="relative h-[590px] w-full rounded-[2.2rem] object-cover object-top shadow-2xl shadow-slate-900/15"
+                  className="relative h-[540px] w-full rounded-[2.2rem] object-cover object-top shadow-2xl shadow-slate-900/15 lg:h-[560px]"
                 />
               </div>
             </div>
