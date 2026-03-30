@@ -112,7 +112,7 @@ function App() {
           <img
             src="/doctor-logo.png"
             alt="Dr Alex Mercado"
-            className="block h-[115px] w-auto object-contain md:h-[104px] shrink-0"
+            className="block h-[150px] w-auto object-contain md:h-[104px] shrink-0"
           />
 
           <nav className="hidden items-center gap-6 text-sm text-slate-700 lg:flex xl:gap-8">
@@ -140,7 +140,7 @@ function App() {
             href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="shrink-0 rounded-full bg-[#25D366] px-6 py-4 text-base font-semibold text-white shadow-lg shadow-green-500/20 transition hover:-translate-y-0.5 hover:bg-[#1fb85a] md:px-8"
+            className="shrink-0 rounded-full bg-[#25D366] px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-green-500/20 transition hover:-translate-y-0.5 hover:bg-[#1fb85a] md:px-7"
           >
             Agendar consulta
           </a>
