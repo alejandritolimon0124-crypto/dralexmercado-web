@@ -299,10 +299,10 @@ function App() {
                     </div>
 
                     <a
-                      href={calculadoraUrl}
+                      href="https://calculadora-gestacional.vercel.app/"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="mt-5 inline-flex rounded-full border border-white/15 px-5 py-3 text-sm font-medium text-white transition hover:bg-white/8"
+                      className="mt-5 inline-flex rounded-full bg-white px-5 py-3 text-sm font-semibold text-slate-900 transition hover:-translate-y-0.5"
                     >
                       Abrir calculadora
                     </a>
@@ -331,12 +331,6 @@ function App() {
                       Conocer Maternidad 360
                     </a>
                   </div>
-                </div>
-
-                <div className="mt-8 rounded-[1.75rem] border border-white/10 bg-white/5 p-5 text-sm leading-7 text-slate-300">
-                  Este bloque es tu verdadero diferenciador: consulta médica + herramienta digital
-                  + formación para la paciente. Eso ya no se ve como una consulta aislada. Se ve
-                  como una experiencia completa.
                 </div>
               </div>
             </div>
