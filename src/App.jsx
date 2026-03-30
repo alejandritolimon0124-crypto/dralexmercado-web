@@ -70,7 +70,7 @@ function App() {
   ];
 
   const gallery5D = ["/ultrasonido-5d-1.jpeg", "/ultrasonido-5d-2.jpeg"];
-  const officeGallery = ["/consultorio-1.jpeg", "/consultorio-2.jpeg", "/consultorio-3.jpeg"];
+  const officeGallery = ["/consultorio-1.jpeg", "/consultorio-2.jpeg"];
   const whatsappUrl =
     "https://api.whatsapp.com/send?phone=528443934366&text=Hola%20Dr.%20Alex%20Mercado,%20me%20gustar%C3%ADa%20agendar%20una%20consulta";
 
@@ -100,20 +100,22 @@ function App() {
         <section className="relative overflow-hidden">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(196,167,117,0.18),transparent_28%),radial-gradient(circle_at_left,rgba(20,184,166,0.08),transparent_24%)]" />
           <div className="relative mx-auto max-w-7xl px-5 py-10 lg:px-10 lg:py-14">
-            <div className="flex items-start justify-between gap-6 border-b border-black/5 pb-6">
+            <div className="flex items-start justify-between gap-6 rounded-[1.75rem] border border-white/70 bg-white/65 px-5 py-4 shadow-[0_12px_40px_rgba(15,23,42,0.06)] backdrop-blur-md">
               <div className="flex flex-col items-start">
-                <img src="/doctor-logo.jpeg" alt="Dr Alex Mercado" className="h-28 md:h-36 object-contain" />
-                <div className="mt-2 text-[11px] uppercase tracking-[0.28em] text-slate-500">Atención integral para la mujer</div>
+                <img src="/doctor-logo.jpeg" alt="Dr Alex Mercado" className="h-32 md:h-40 object-contain drop-shadow-[0_6px_12px_rgba(15,23,42,0.10)]" />
+                <div className="mt-2 text-[11px] font-semibold uppercase tracking-[0.28em] text-slate-600">Atención integral para la mujer</div>
               </div>
               <div className="flex flex-col items-start md:items-end">
-                <img src="/lookadoc-clean.png" alt="Look a Doc" className="h-24 md:h-32 object-contain" />
-                <div className="mt-2 text-[11px] uppercase tracking-[0.28em] text-slate-500">Agenda médica inteligente</div>
+                <img src="/lookadoc-clean.png" alt="Look a Doc" className="h-28 md:h-36 object-contain drop-shadow-[0_6px_12px_rgba(15,23,42,0.10)]" />
+                <div className="mt-2 text-[11px] font-semibold uppercase tracking-[0.28em] text-slate-600">Agenda médica inteligente</div>
               </div>
             </div>
 
-            <div className="mt-10">
+            <div className="mt-10 grid gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
               <div>
                 <h1 className="max-w-3xl text-4xl font-semibold leading-tight tracking-tight text-slate-950 md:text-6xl">
+                  Lleva tu <span className="text-[#ff7a70]">Embarazo</span> con tranquilidad.
+                  <br />
                   Salud <span className="text-[#ff7a70]">Ginecológica Integral</span>
                   <br />
                   Cirugía <span className="text-[#ff7a70]">Laparoscópica</span> avanzada.
@@ -141,7 +143,15 @@ function App() {
                 </div>
               </div>
 
+              <div className="relative flex items-center justify-center">
+                <div className="absolute -inset-6 rounded-[2.5rem] bg-gradient-to-br from-amber-100/70 via-white to-teal-100/50 blur-2xl" />
+                <img
+                  src="/dr-alex-hero.jpeg"
+                  alt="Dr Alex Mercado"
+                  className="relative h-[590px] w-full rounded-[2.2rem] object-cover object-top shadow-2xl shadow-slate-900/15"
+                />
               </div>
+            </div>
           </div>
         </section>
 
@@ -398,21 +408,21 @@ function App() {
             © {new Date().getFullYear()} Dr. Alex Mercado. Todos los derechos reservados.
           </div>
 
-          <div className="flex flex-wrap items-center justify-between gap-4 border-t border-black/5 pt-6">
+          <div className="flex flex-wrap items-center justify-between gap-4 rounded-[1.75rem] border border-slate-200/80 bg-gradient-to-r from-white via-slate-50 to-white px-5 py-5 shadow-[0_12px_40px_rgba(15,23,42,0.05)]">
             <div className="flex items-center gap-3">
               <span className="text-[10px] uppercase tracking-[0.22em] text-slate-500">Atención en</span>
-              <img src="/medics-logo.png" alt="MEDICS" className="h-16 object-contain" />
-              <img src="/muguerza-logo.png" alt="Hospital Muguerza" className="h-24 object-contain" />
+              <img src="/medics-logo.png" alt="MEDICS" className="h-20 object-contain" />
+              <img src="/muguerza-logo.png" alt="Hospital Muguerza" className="h-28 object-contain" />
             </div>
 
             <div className="flex items-center gap-3">
               <span className="text-[10px] uppercase tracking-[0.22em] text-slate-500">Agenda digital</span>
-              <img src="/lookadoc-clean.png" alt="Look a Doc" className="h-20 object-contain" />
+              <img src="/lookadoc-clean.png" alt="Look a Doc" className="h-24 object-contain" />
             </div>
 
             <div className="flex items-center gap-3">
               <span className="text-[10px] uppercase tracking-[0.22em] text-slate-500">Powered by</span>
-              <img src="/axm-logo.png" alt="AXM Technologies" className="h-16 object-contain opacity-95" />
+              <img src="/axm-logo.png" alt="AXM Technologies" className="h-20 object-contain opacity-95" />
             </div>
           </div>
         </div>
