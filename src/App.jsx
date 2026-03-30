@@ -108,14 +108,12 @@ function App() {
       </a>
 
       <header className="sticky top-0 z-50 border-b border-black/5 bg-[#faf7f2]/95 backdrop-blur">
-        <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-2 lg:px-8 lg:py-3">
-          <div className="flex items-center shrink-0 pr-2">
-            <img
-              src="/doctor-logo.png"
-              alt="Dr Alex Mercado"
-              className="block h-[64px] w-auto object-contain md:h-[78px]"
-            />
-          </div>
+        <div className="mx-auto flex max-w-6xl items-center justify-between gap-2 px-3 py-1 lg:px-6 lg:py-2">
+          <img
+            src="/doctor-logo.png"
+            alt="Dr Alex Mercado"
+            className="block h-[86px] w-auto object-contain md:h-[104px] shrink-0"
+          />
 
           <nav className="hidden items-center gap-6 text-sm text-slate-700 lg:flex xl:gap-8">
             <a href="#inicio" className="transition hover:text-slate-900">
@@ -625,44 +623,32 @@ function App() {
       </main>
 
       <footer className="border-t border-black/5 bg-white">
-        <div className="mx-auto max-w-7xl px-5 py-10 lg:px-10">
-          <div className="mb-6 text-sm text-slate-500">
+        <div className="mx-auto max-w-7xl px-4 py-6 lg:px-8">
+          <div className="mb-3 text-sm text-slate-500">
             © {new Date().getFullYear()} Dr. Alex Mercado. Todos los derechos reservados.
           </div>
 
-          <div className="flex flex-wrap items-center justify-between gap-4 rounded-[1.75rem] border border-slate-200/80 bg-gradient-to-r from-white via-slate-50 to-white px-5 py-5 shadow-[0_12px_40px_rgba(15,23,42,0.05)]">
-            <div className="flex items-center gap-3">
-              <span className="text-[10px] uppercase tracking-[0.22em] text-slate-500">
+          <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-2">
+            <div className="flex items-center gap-2 leading-none">
+              <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-500">
                 Atención en
               </span>
-              <img src="/medics-logo.png" alt="MEDICS" className="h-20 object-contain" />
-              <img
-                src="/muguerza-logo.png"
-                alt="Hospital Muguerza"
-                className="h-28 object-contain"
-              />
+              <img src="/medics-logo.png" alt="MEDICS" className="h-12 w-auto object-contain" />
+              <img src="/muguerza-logo.png" alt="Hospital Muguerza" className="h-16 w-auto object-contain" />
             </div>
 
-            <div className="flex items-center gap-3">
-              <span className="text-[10px] uppercase tracking-[0.22em] text-slate-500">
+            <div className="flex items-center gap-2 leading-none">
+              <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-500">
                 Agenda digital
               </span>
-              <img
-                src="/lookadoc-clean.png"
-                alt="Look a Doc"
-                className="h-24 object-contain"
-              />
+              <img src="/lookadoc-clean.png" alt="Look a Doc" className="h-14 w-auto object-contain" />
             </div>
 
-            <div className="flex items-center gap-3">
-              <span className="text-[10px] uppercase tracking-[0.22em] text-slate-500">
+            <div className="flex items-center gap-2 leading-none">
+              <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-500">
                 Powered by
               </span>
-              <img
-                src="/axm-logo.png"
-                alt="AXM Technologies"
-                className="h-20 object-contain opacity-95"
-              />
+              <img src="/axm-logo.png" alt="AXM Technologies" className="h-12 w-auto object-contain opacity-95" />
             </div>
           </div>
         </div>
