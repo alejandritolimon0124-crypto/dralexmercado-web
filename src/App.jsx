@@ -107,12 +107,12 @@ function App() {
         WhatsApp
       </a>
 
-      <header className="sticky top-0 z-50 border-b border-black/5 bg-[#faf7f2]/95 backdrop-blur">
-        <div className="mx-auto flex max-w-6xl items-center justify-between gap-2 px-3 py-1 lg:px-6 lg:py-2">
+      <header className="sticky top-0 z-40 bg-white/90 backdrop-blur border-b border-black/5">
+        <div className="mx-auto flex max-w-6xl items-center justify-between gap-1 px-2 py-0 lg:px-6 lg:py-1">
           <img
             src="/doctor-logo.png"
             alt="Dr Alex Mercado"
-            className="block h-[150px] w-auto object-contain md:h-[104px] shrink-0"
+            className="block h-[150px] w-auto object-contain md:h-[104px] shrink-0 -my-6"
           />
 
           <nav className="hidden items-center gap-6 text-sm text-slate-700 lg:flex xl:gap-8">
@@ -140,7 +140,7 @@ function App() {
             href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="shrink-0 rounded-full bg-[#25D366] px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-green-500/20 transition hover:-translate-y-0.5 hover:bg-[#1fb85a] md:px-7"
+            className="shrink-0 rounded-full bg-[#25D366] px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-green-500/20 transition hover:-translate-y-0.5 hover:bg-[#1fb85a] md:px-6"
           >
             Agendar consulta
           </a>
