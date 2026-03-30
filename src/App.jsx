@@ -78,11 +78,6 @@ function App() {
     <div className="min-h-screen bg-[#faf7f2] text-slate-900">
       <header className="sticky top-0 z-50 border-b border-black/5 bg-[#faf7f2]/90 backdrop-blur">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 lg:px-10">
-          <div>
-            <div className="text-xl font-semibold tracking-tight">Dr. Alex Mercado</div>
-            <div className="text-[11px] uppercase tracking-[0.28em] text-slate-500">Ginecología y Obstetricia</div>
-          </div>
-
           <nav className="hidden items-center gap-8 text-sm text-slate-600 md:flex">
             <a href="#servicios" className="transition hover:text-slate-900">Servicios</a>
             <a href="#sobre-mi" className="transition hover:text-slate-900">Sobre mí</a>
@@ -105,6 +100,20 @@ function App() {
         <section className="relative overflow-hidden">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(196,167,117,0.18),transparent_28%),radial-gradient(circle_at_left,rgba(20,184,166,0.08),transparent_24%)]" />
           <div className="relative mx-auto grid max-w-7xl gap-14 px-5 py-16 lg:grid-cols-[1.05fr_0.95fr] lg:px-10 lg:py-24">
+            <div className="mb-6 flex items-center justify-between gap-6">
+              <div className="flex flex-col">
+                <img src="/doctor.jpeg" alt="Dr Alex Mercado" className="h-20 md:h-24 object-contain" />
+                <div className="mt-2 text-xs uppercase tracking-[0.3em] text-slate-500">
+                  Atención integral para la mujer
+                </div>
+              </div>
+              <div className="flex flex-col items-end">
+                <img src="/lookadoc-clean.png" alt="Look a Doc" className="h-20 md:h-24 object-contain" />
+                <div className="mt-2 text-xs uppercase tracking-[0.3em] text-slate-500">
+                  Agenda médica inteligente
+                </div>
+              </div>
+            </div>
             <div className="flex flex-col justify-center">
               <div className="mb-5 inline-flex w-fit rounded-full border border-amber-200 bg-white/80 px-4 py-2 text-xs font-medium uppercase tracking-[0.26em] text-amber-800 shadow-sm">
                 Atención integral para la mujer
@@ -124,11 +133,11 @@ function App() {
               </div>
 
               <h1 className="max-w-3xl text-4xl font-semibold leading-tight tracking-tight text-slate-950 md:text-6xl">
-                Lleva tu embarazo con tranquilidad.
+                Lleva tu <span className="text-[#ff7a70]">Embarazo</span> con tranquilidad.
                 <br />
-                Salud Ginecológica integral
+                Salud <span className="text-[#ff7a70]">Ginecológica Integral</span>
                 <br />
-                Cirugía Laparoscópica avanzada.
+                Cirugía <span className="text-[#ff7a70]">Laparoscópica</span> avanzada.
               </h1>
 
               <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600 md:text-xl">
