@@ -1,4 +1,4 @@
-export default function DrAlexMercadoWebsite() {
+function App() {
   const services = [
     {
       title: "Embarazo y maternidad",
@@ -6,8 +6,8 @@ export default function DrAlexMercadoWebsite() {
         "Control prenatal con seguimiento cercano",
         "Ultrasonido obstétrico y valoración del bienestar fetal",
         "Ultrasonido 5D para una experiencia más cercana y memorable",
-        "Resolución clara de dudas en cada etapa del embarazo"
-      ]
+        "Resolución clara de dudas en cada etapa del embarazo",
+      ],
     },
     {
       title: "Salud ginecológica",
@@ -15,8 +15,8 @@ export default function DrAlexMercadoWebsite() {
         "Problemas hormonales y ciclos irregulares",
         "Sangrados anormales, miomas y quistes",
         "Infecciones vaginales y molestias recurrentes",
-        "Dolor pélvico y evaluación integral"
-      ]
+        "Dolor pélvico y evaluación integral",
+      ],
     },
     {
       title: "Cirugía laparoscópica avanzada",
@@ -24,69 +24,63 @@ export default function DrAlexMercadoWebsite() {
         "Manejo quirúrgico de miomas y patología ginecológica seleccionada",
         "Abordaje moderno con visión mínimamente invasiva",
         "Evaluación quirúrgica con explicación clara del plan de tratamiento",
-        "Seguimiento antes y después del procedimiento"
-      ]
-    }
+        "Seguimiento antes y después del procedimiento",
+      ],
+    },
   ];
 
   const differentiators = [
     "Atención especializada para cada etapa de la mujer",
     "Ultrasonido 5D y seguimiento cercano del embarazo",
     "Experiencia quirúrgica en laparoscopía avanzada",
-    "Consulta clara, humana y ordenada desde el primer contacto"
+    "Consulta clara, humana y ordenada desde el primer contacto",
   ];
 
   const steps = [
     {
       n: "01",
       title: "Agenda fácil",
-      text: "La paciente agenda su consulta en línea de forma rápida, clara y profesional."
+      text: "Escríbeme por WhatsApp o agenda en línea de forma rápida, clara y profesional.",
     },
     {
       n: "02",
       title: "Valoración completa",
-      text: "Se identifica el motivo de consulta, se explica el problema y se plantea una ruta clara."
+      text: "Se identifica el motivo de consulta, se explica el problema y se plantea una ruta clara.",
     },
     {
       n: "03",
       title: "Seguimiento real",
-      text: "La experiencia continúa con orden, cercanía y acompañamiento."
-    }
+      text: "La experiencia continúa con orden, cercanía y acompañamiento.",
+    },
   ];
 
   const testimonials = [
     {
       name: "Paciente embarazada",
-      text: "Me dio muchísima tranquilidad sentir que entendía cada paso de mi embarazo y que mis dudas sí importaban."
+      text: "Me dio muchísima tranquilidad sentir que entendía cada paso de mi embarazo y que mis dudas sí importaban.",
     },
     {
       name: "Paciente ginecológica",
-      text: "Fui por un problema de sangrado que ya había consultado antes y por fin sentí una explicación clara y una solución real."
+      text: "Fui por un problema de sangrado que ya había consultado antes y por fin sentí una explicación clara y una solución real.",
     },
     {
       name: "Experiencia integral",
-      text: "La atención se siente moderna, ordenada y muy profesional desde que agendas hasta el seguimiento."
-    }
+      text: "La atención se siente moderna, ordenada y muy profesional desde que agendas hasta el seguimiento.",
+    },
   ];
 
-  const gallery5D = [
-    "/ultrasonido-5d-1.jpeg",
-    "/ultrasonido-5d-2.jpeg"
-  ];
-
-  const officeGallery = [
-    "/consultorio-1.jpeg",
-    "/consultorio-2.jpeg",
-    "/consultorio-3.jpeg"
-  ];
+  const gallery5D = ["/ultrasonido-5d-1.jpeg", "/ultrasonido-5d-2.jpeg"];
+  const officeGallery = ["/consultorio-1.jpeg", "/consultorio-2.jpeg", "/consultorio-3.jpeg"];
+  const whatsappUrl =
+    "https://api.whatsapp.com/send?phone=528443934366&text=Hola%20Dr.%20Alex%20Mercado,%20me%20gustar%C3%ADa%20agendar%20una%20consulta";
 
   return (
-    <div className="min-h-screen bg-[#fcfaf7] text-slate-900">
-      <header className="sticky top-0 z-50 border-b border-black/5 bg-[#fcfaf7]/90 backdrop-blur">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-10">
+    <div className="min-h-screen bg-[#faf7f2] text-slate-900">
+      <header className="sticky top-0 z-50 border-b border-black/5 bg-[#faf7f2]/90 backdrop-blur">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 lg:px-10">
           <div>
             <div className="text-xl font-semibold tracking-tight">Dr. Alex Mercado</div>
-            <div className="text-xs uppercase tracking-[0.28em] text-slate-500">Ginecología y Obstetricia</div>
+            <div className="text-[11px] uppercase tracking-[0.28em] text-slate-500">Ginecología y Obstetricia</div>
           </div>
 
           <nav className="hidden items-center gap-8 text-sm text-slate-600 md:flex">
@@ -97,8 +91,10 @@ export default function DrAlexMercadoWebsite() {
           </nav>
 
           <a
-            href="https://agenda.dralexmercado.com.mx"
-            className="rounded-full bg-slate-900 px-5 py-3 text-sm font-medium text-white shadow-sm transition hover:-translate-y-0.5"
+            href={whatsappUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rounded-full bg-[#25D366] px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-green-500/20 transition hover:-translate-y-0.5 hover:bg-[#1fb85a]"
           >
             Agendar consulta
           </a>
@@ -107,8 +103,8 @@ export default function DrAlexMercadoWebsite() {
 
       <main>
         <section className="relative overflow-hidden">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(196,167,117,0.16),transparent_30%),radial-gradient(circle_at_left,rgba(217,119,6,0.10),transparent_25%)]" />
-          <div className="relative mx-auto grid max-w-7xl gap-14 px-6 py-20 lg:grid-cols-[1.05fr_0.95fr] lg:px-10 lg:py-28">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(196,167,117,0.18),transparent_28%),radial-gradient(circle_at_left,rgba(20,184,166,0.08),transparent_24%)]" />
+          <div className="relative mx-auto grid max-w-7xl gap-14 px-5 py-16 lg:grid-cols-[1.05fr_0.95fr] lg:px-10 lg:py-24">
             <div className="flex flex-col justify-center">
               <div className="mb-5 inline-flex w-fit rounded-full border border-amber-200 bg-white/80 px-4 py-2 text-xs font-medium uppercase tracking-[0.26em] text-amber-800 shadow-sm">
                 Atención integral para la mujer
@@ -124,19 +120,27 @@ export default function DrAlexMercadoWebsite() {
 
               <div className="mt-8 flex flex-col gap-4 sm:flex-row">
                 <a
-                  href="https://agenda.dralexmercado.com.mx"
-                  className="rounded-full bg-slate-900 px-7 py-4 text-center text-sm font-medium text-white shadow-lg shadow-slate-900/10 transition hover:-translate-y-0.5"
-                >
-                  Agenda tu consulta
-                </a>
-                <a
-                  href="https://api.whatsapp.com/send?phone=528443934366&text=Hola%20Dr.%20Alex%20Mercado,%20me%20gustar%C3%ADa%20agendar%20una%20consulta"
+                  href={whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
+                  className="rounded-full bg-[#25D366] px-7 py-4 text-center text-sm font-semibold text-white shadow-lg shadow-green-500/20 transition hover:-translate-y-0.5 hover:bg-[#1fb85a]"
+                >
+                  Agendar consulta por WhatsApp
+                </a>
+                <a
+                  href="https://agenda.dralexmercado.com.mx"
                   className="rounded-full border border-slate-300 bg-white px-7 py-4 text-center text-sm font-medium text-slate-700 transition hover:border-slate-400 hover:bg-slate-50"
                 >
-                  Enviar WhatsApp
+                  Agenda en línea
                 </a>
+              </div>
+
+              <div className="mt-8 flex flex-wrap items-center gap-5 rounded-[1.5rem] border border-black/5 bg-white/80 px-5 py-4 shadow-sm">
+                <div className="text-xs uppercase tracking-[0.24em] text-slate-500">Atención en</div>
+                <img src="/medics-logo.png" alt="MEDICS" className="h-9 object-contain" />
+                <div className="h-6 w-px bg-slate-200" />
+                <div className="text-xs uppercase tracking-[0.24em] text-slate-500">Agenda digital</div>
+                <img src="/lookadoc-clean.png" alt="Look a Doc" className="h-10 object-contain" />
               </div>
 
               <div className="mt-10 grid gap-4 sm:grid-cols-3">
@@ -156,22 +160,23 @@ export default function DrAlexMercadoWebsite() {
             </div>
 
             <div className="relative flex items-center justify-center">
+              <div className="absolute -inset-6 rounded-[2.5rem] bg-gradient-to-br from-amber-100/70 via-white to-teal-100/50 blur-2xl" />
               <img
                 src="/dr-alex-hero.jpeg"
                 alt="Dr Alex Mercado"
-                className="rounded-[2rem] shadow-2xl object-cover w-full h-[560px] object-top"
+                className="relative h-[590px] w-full rounded-[2.2rem] object-cover object-top shadow-2xl shadow-slate-900/15"
               />
             </div>
           </div>
         </section>
 
-        <section id="sobre-mi" className="mx-auto max-w-7xl px-6 py-20 lg:px-10">
-          <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
+        <section id="sobre-mi" className="mx-auto max-w-7xl px-5 py-20 lg:px-10">
+          <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr]">
             <div className="rounded-[2rem] bg-slate-900 p-8 text-white shadow-xl shadow-slate-900/10">
               <img
                 src="/dr-alex-bebe.jpeg"
                 alt="Dr Alex Mercado con recién nacido"
-                className="mb-6 h-64 w-full rounded-xl object-cover object-top"
+                className="mb-6 h-72 w-full rounded-xl object-cover object-top"
               />
               <div className="text-sm uppercase tracking-[0.24em] text-amber-300">Sobre mí</div>
               <h2 className="mt-4 text-3xl font-semibold leading-tight">Atención médica con criterio, cercanía y claridad.</h2>
@@ -190,7 +195,7 @@ export default function DrAlexMercadoWebsite() {
               <div className="rounded-[2rem] border border-black/5 bg-white p-7 shadow-sm">
                 <div className="text-sm uppercase tracking-[0.24em] text-slate-500">Tecnología y precisión</div>
                 <p className="mt-4 text-lg leading-8 text-slate-700">
-                  Consulta con explicación completa, ultrasonido obstétrico y experiencia en cirugía laparoscópica avanzada.
+                  Consulta con explicación completa, ultrasonido obstétrico, ultrasonido 5D y experiencia en cirugía laparoscópica avanzada.
                 </p>
               </div>
               <div className="rounded-[2rem] border border-black/5 bg-white p-7 shadow-sm md:col-span-2">
@@ -204,7 +209,7 @@ export default function DrAlexMercadoWebsite() {
         </section>
 
         <section id="servicios" className="bg-white py-20">
-          <div className="mx-auto max-w-7xl px-6 lg:px-10">
+          <div className="mx-auto max-w-7xl px-5 lg:px-10">
             <div className="max-w-3xl">
               <div className="text-sm uppercase tracking-[0.24em] text-amber-700">¿En qué puedo ayudarte?</div>
               <h2 className="mt-4 text-3xl font-semibold tracking-tight text-slate-950 md:text-5xl">
@@ -228,10 +233,12 @@ export default function DrAlexMercadoWebsite() {
                     ))}
                   </div>
                   <a
-                    href="https://agenda.dralexmercado.com.mx"
-                    className="mt-8 inline-flex rounded-full bg-slate-900 px-6 py-3 text-sm font-medium text-white transition hover:-translate-y-0.5"
+                    href={whatsappUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-8 inline-flex rounded-full bg-[#25D366] px-6 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-[#1fb85a]"
                   >
-                    Agendar valoración
+                    Agendar valoración por WhatsApp
                   </a>
                 </div>
               ))}
@@ -239,7 +246,7 @@ export default function DrAlexMercadoWebsite() {
           </div>
         </section>
 
-        <section id="galeria" className="mx-auto max-w-7xl px-6 py-20 lg:px-10">
+        <section id="galeria" className="mx-auto max-w-7xl px-5 py-20 lg:px-10">
           <div className="max-w-3xl">
             <div className="text-sm uppercase tracking-[0.24em] text-amber-700">Galería</div>
             <h2 className="mt-4 text-3xl font-semibold tracking-tight text-slate-950 md:text-5xl">
@@ -284,7 +291,7 @@ export default function DrAlexMercadoWebsite() {
           </div>
         </section>
 
-        <section className="mx-auto max-w-7xl px-6 py-20 lg:px-10">
+        <section className="mx-auto max-w-7xl px-5 py-20 lg:px-10">
           <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
             <div className="rounded-[2.5rem] border border-black/5 bg-gradient-to-br from-slate-900 to-slate-800 p-10 text-white shadow-2xl shadow-slate-900/10 md:p-14">
               <div className="max-w-4xl">
@@ -309,18 +316,18 @@ export default function DrAlexMercadoWebsite() {
 
               <div className="mt-10 flex flex-col gap-4 sm:flex-row">
                 <a
-                  href="https://agenda.dralexmercado.com.mx"
-                  className="rounded-full bg-white px-7 py-4 text-center text-sm font-medium text-slate-900 transition hover:-translate-y-0.5"
-                >
-                  Agendar en línea
-                </a>
-                <a
-                  href="https://api.whatsapp.com/send?phone=528443934366&text=Hola%20Dr.%20Alex%20Mercado,%20me%20gustar%C3%ADa%20agendar%20una%20consulta"
+                  href={whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
+                  className="rounded-full bg-[#25D366] px-7 py-4 text-center text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-[#1fb85a]"
+                >
+                  Escribirme por WhatsApp
+                </a>
+                <a
+                  href="https://agenda.dralexmercado.com.mx"
                   className="rounded-full border border-white/20 px-7 py-4 text-center text-sm font-medium text-white transition hover:bg-white/5"
                 >
-                  Resolver dudas por WhatsApp
+                  Agenda en línea
                 </a>
               </div>
             </div>
@@ -334,7 +341,7 @@ export default function DrAlexMercadoWebsite() {
         </section>
 
         <section className="bg-white py-20">
-          <div className="mx-auto max-w-7xl px-6 lg:px-10">
+          <div className="mx-auto max-w-7xl px-5 lg:px-10">
             <div className="max-w-3xl">
               <div className="text-sm uppercase tracking-[0.24em] text-amber-700">Testimonios</div>
               <h2 className="mt-4 text-3xl font-semibold tracking-tight text-slate-950 md:text-5xl">
@@ -353,7 +360,7 @@ export default function DrAlexMercadoWebsite() {
           </div>
         </section>
 
-        <section className="mx-auto max-w-7xl px-6 py-20 lg:px-10">
+        <section className="mx-auto max-w-7xl px-5 py-20 lg:px-10">
           <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
             <div className="rounded-[2rem] border border-black/5 bg-white p-8 shadow-sm">
               <div className="text-sm uppercase tracking-[0.24em] text-slate-500">Ubicación</div>
@@ -364,6 +371,9 @@ export default function DrAlexMercadoWebsite() {
               <div className="mt-8 rounded-[1.5rem] bg-slate-50 p-6 text-slate-700">
                 <div className="font-medium">MEDICS | Salud & Belleza</div>
                 <div className="mt-2 leading-7">Saltillo, Coahuila</div>
+              </div>
+              <div className="mt-6">
+                <img src="/medics-logo.png" alt="MEDICS" className="h-14 object-contain" />
               </div>
             </div>
 
@@ -376,18 +386,18 @@ export default function DrAlexMercadoWebsite() {
 
               <div className="mt-8 space-y-4">
                 <a
-                  href="https://agenda.dralexmercado.com.mx"
-                  className="block rounded-full bg-slate-900 px-7 py-4 text-center text-sm font-medium text-white transition hover:-translate-y-0.5"
-                >
-                  Agenda tu consulta hoy
-                </a>
-                <a
-                  href="https://api.whatsapp.com/send?phone=528443934366&text=Hola%20Dr.%20Alex%20Mercado,%20me%20gustar%C3%ADa%20agendar%20una%20consulta"
+                  href={whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block rounded-full border border-slate-300 bg-white px-7 py-4 text-center text-sm font-medium text-slate-700 transition hover:bg-slate-50"
+                  className="block rounded-full bg-[#25D366] px-7 py-4 text-center text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-[#1fb85a]"
                 >
                   Escríbeme por WhatsApp
+                </a>
+                <a
+                  href="https://agenda.dralexmercado.com.mx"
+                  className="block rounded-full border border-slate-300 bg-white px-7 py-4 text-center text-sm font-medium text-slate-700 transition hover:bg-slate-50"
+                >
+                  Agenda en línea
                 </a>
               </div>
 
@@ -402,11 +412,28 @@ export default function DrAlexMercadoWebsite() {
       </main>
 
       <footer className="border-t border-black/5 bg-white">
-        <div className="mx-auto flex max-w-7xl flex-col gap-3 px-6 py-8 text-sm text-slate-500 lg:px-10 md:flex-row md:items-center md:justify-between">
-          <div>© {new Date().getFullYear()} Dr. Alex Mercado. Todos los derechos reservados.</div>
-          <div>Sistema de agenda digital gestionado mediante plataforma médica especializada.</div>
+        <div className="mx-auto max-w-7xl px-5 py-10 lg:px-10">
+          <div className="flex flex-col gap-8 md:flex-row md:items-center md:justify-between">
+            <div className="text-sm text-slate-500">© {new Date().getFullYear()} Dr. Alex Mercado. Todos los derechos reservados.</div>
+            <div className="flex flex-wrap items-center gap-6">
+              <div className="flex items-center gap-3">
+                <span className="text-[11px] uppercase tracking-[0.24em] text-slate-400">Atención en</span>
+                <img src="/medics-logo.png" alt="MEDICS" className="h-10 object-contain" />
+              </div>
+              <div className="flex items-center gap-3">
+                <span className="text-[11px] uppercase tracking-[0.24em] text-slate-400">Agenda digital</span>
+                <img src="/lookadoc-clean.png" alt="Look a Doc" className="h-10 object-contain" />
+              </div>
+              <div className="flex items-center gap-3">
+                <span className="text-[11px] uppercase tracking-[0.24em] text-slate-400">Powered by</span>
+                <img src="/axm-logo.png" alt="AXM Technologies" className="h-9 object-contain opacity-90" />
+              </div>
+            </div>
+          </div>
         </div>
       </footer>
     </div>
   );
 }
+
+export default App;
