@@ -112,7 +112,7 @@ function App() {
           <img
             src="/doctor-logo.png"
             alt="Dr Alex Mercado"
-            className="block h-[86px] w-auto object-contain md:h-[104px] shrink-0"
+            className="block h-[115px] w-auto object-contain md:h-[104px] shrink-0"
           />
 
           <nav className="hidden items-center gap-6 text-sm text-slate-700 lg:flex xl:gap-8">
