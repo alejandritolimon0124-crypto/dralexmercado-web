@@ -109,40 +109,28 @@ function App() {
 
       <header className="sticky top-0 z-50 border-b border-black/5 bg-[#faf7f2]/95 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-2 lg:px-8 lg:py-3">
-          <div className="flex h-14 items-center shrink-0 md:h-16">
+          <div className="flex items-center shrink-0">
             <img
               src="/doctor-logo.png"
               alt="Dr Alex Mercado"
-              className="h-14 w-auto object-contain -translate-y-1 md:h-16 md:-translate-y-1"
+              className="h-16 w-auto object-contain md:h-16"
             />
           </div>
 
           <nav className="hidden items-center gap-6 text-sm text-slate-700 lg:flex xl:gap-8">
-            <a href="#inicio" className="transition hover:text-slate-900">
-              Inicio
-            </a>
-            <a href="#ruta-maternidad" className="transition hover:text-slate-900">
-              Maternidad
-            </a>
-            <a href="#servicios" className="transition hover:text-slate-900">
-              Servicios
-            </a>
-            <a href="#sobre-mi" className="transition hover:text-slate-900">
-              Sobre mí
-            </a>
-            <a href="#galeria" className="transition hover:text-slate-900">
-              Galería
-            </a>
-            <a href="#contacto" className="transition hover:text-slate-900">
-              Contacto
-            </a>
+            <a href="#inicio" className="transition hover:text-slate-900">Inicio</a>
+            <a href="#ruta-maternidad" className="transition hover:text-slate-900">Maternidad</a>
+            <a href="#servicios" className="transition hover:text-slate-900">Servicios</a>
+            <a href="#sobre-mi" className="transition hover:text-slate-900">Sobre mí</a>
+            <a href="#galeria" className="transition hover:text-slate-900">Galería</a>
+            <a href="#contacto" className="transition hover:text-slate-900">Contacto</a>
           </nav>
 
           <a
             href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="shrink-0 inline-flex h-14 items-center justify-center rounded-full bg-[#25D366] px-7 text-base font-semibold text-white shadow-lg shadow-green-500/20 transition hover:-translate-y-0.5 hover:bg-[#1fb85a] md:h-16 md:px-8"
+            className="shrink-0 rounded-full bg-[#25D366] px-7 py-3.5 text-base font-semibold text-white shadow-lg shadow-green-500/20 transition hover:-translate-y-0.5 hover:bg-[#1fb85a] md:px-8"
           >
             Agendar consulta
           </a>
