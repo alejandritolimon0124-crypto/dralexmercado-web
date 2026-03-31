@@ -264,42 +264,41 @@ export default function DiplomadoMaternidad360() {
     <>
       <style>{appleStyles}</style>
 
-      <main className="min-h-screen bg-[#faf7f2] text-slate-900">
+      <main className="min-h-screen bg-[#f7f3ee] text-slate-900">
         <a
           href={whatsappInfo}
           target="_blank"
           rel="noopener noreferrer"
-          className="fixed bottom-5 right-5 z-50 inline-flex items-center gap-3 rounded-full bg-[#25D366] px-5 py-3 text-sm font-semibold text-white shadow-2xl shadow-green-500/30 transition hover:-translate-y-0.5 hover:bg-[#1fb85a]"
+          className="fixed bottom-4 right-4 z-50 inline-flex items-center gap-3 rounded-full bg-[#25D366] px-5 py-3 text-sm font-semibold text-white shadow-2xl shadow-green-500/30 transition hover:-translate-y-0.5 hover:bg-[#1fb85a] md:bottom-5 md:right-5"
         >
           <span className="text-base">💬</span>
           WhatsApp
         </a>
 
         <section className="relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-b from-white via-white to-[#faf7f2]" />
-          <div className="absolute left-1/2 top-0 h-[520px] w-[520px] -translate-x-1/2 rounded-full bg-rose-100/50 blur-3xl" />
+          <div className="absolute inset-0 bg-gradient-to-b from-white via-[#fcfaf7] to-[#f7f3ee]" />
+          <div className="absolute left-1/2 top-0 h-[420px] w-[420px] -translate-x-1/2 rounded-full bg-rose-100/60 blur-3xl md:h-[520px] md:w-[520px]" />
 
-          <div className="relative mx-auto max-w-7xl px-6 py-16 md:px-10 lg:px-12 lg:py-24">
-            <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
-              <div>
-                <div className="apple-fade-up inline-flex rounded-full border border-rose-200 bg-white px-4 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-rose-700 shadow-sm">
+          <div className="relative mx-auto max-w-7xl px-5 py-12 md:px-8 md:py-16 lg:px-12 lg:py-24">
+            <div className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+              <div className="lg:pr-4">
+                <div className="apple-fade-up inline-flex rounded-full border border-rose-200 bg-white px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-rose-700 shadow-sm md:text-xs">
                   Diplomado presencial en Saltillo, Coahuila
                 </div>
 
-                <h1 className="apple-fade-up delay-1 mt-6 max-w-4xl text-4xl font-semibold leading-[1.05] tracking-tight text-slate-950 md:text-6xl">
-                  Diplomado{" "}
-                  <span className="text-rose-500">Maternidad 360</span>
+                <h1 className="apple-fade-up delay-1 mt-5 max-w-4xl text-4xl font-semibold leading-[1.02] tracking-tight text-slate-950 md:mt-6 md:text-6xl">
+                  Diplomado <span className="text-rose-500">Maternidad 360</span>
                 </h1>
 
-                <p className="apple-fade-up delay-2 mt-6 max-w-3xl text-lg leading-8 text-slate-600 md:text-xl">
+                <p className="apple-fade-up delay-2 mt-5 max-w-3xl text-lg leading-8 text-slate-600 md:mt-6 md:text-xl">
                   Un acompañamiento integral para vivir tu embarazo con mayor
-                  seguridad, conocimiento y tranquilidad, desde antes del
-                  embarazo hasta el nacimiento de tu bebé.
+                  seguridad, conocimiento y tranquilidad, desde antes del embarazo
+                  hasta el nacimiento de tu bebé.
                 </p>
 
-                <div className="apple-fade-up delay-3 mt-8 flex flex-wrap items-center gap-4">
+                <div className="apple-fade-up delay-3 mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center md:mt-8">
                   <div className="rounded-[1.75rem] border border-rose-200 bg-white px-6 py-4 shadow-sm">
-                    <p className="text-xs font-semibold uppercase tracking-[0.2em] text-rose-500">
+                    <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-rose-500 md:text-xs">
                       Próximo inicio
                     </p>
                     <p className="mt-1 text-2xl font-semibold text-slate-950">
@@ -308,7 +307,7 @@ export default function DiplomadoMaternidad360() {
                   </div>
 
                   <div className="rounded-[1.75rem] border border-amber-200 bg-[#fff9f1] px-6 py-4 shadow-sm">
-                    <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-700">
+                    <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-amber-700 md:text-xs">
                       Disponibilidad
                     </p>
                     <p className="mt-1 text-2xl font-semibold text-slate-950">
@@ -317,7 +316,7 @@ export default function DiplomadoMaternidad360() {
                   </div>
                 </div>
 
-                <div className="apple-fade-up delay-4 mt-8 flex flex-col gap-3 sm:flex-row">
+                <div className="apple-fade-up delay-4 mt-7 grid gap-3 sm:grid-cols-2 md:mt-8 md:flex md:flex-row">
                   <a
                     href={whatsappInscripcion}
                     target="_blank"
@@ -335,7 +334,7 @@ export default function DiplomadoMaternidad360() {
                   </a>
                 </div>
 
-                <div className="apple-fade-up delay-4 mt-10 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+                <div className="apple-fade-up delay-4 mt-8 grid gap-4 sm:grid-cols-2 xl:grid-cols-4 md:mt-10">
                   <div className="apple-card rounded-[1.5rem] border border-black/5 bg-white p-5 shadow-sm">
                     <p className="text-sm text-slate-500">Duración</p>
                     <p className="mt-1 text-lg font-semibold text-slate-950">
@@ -369,7 +368,7 @@ export default function DiplomadoMaternidad360() {
                   <img
                     src="/mama.png"
                     alt="Mamá embarazada señalando"
-                    className="h-[520px] w-full object-cover object-center lg:h-[620px]"
+                    className="h-[320px] w-full object-cover object-[72%_20%] sm:h-[420px] sm:object-[70%_20%] lg:h-[620px] lg:object-center"
                   />
                 </div>
               </div>
@@ -377,9 +376,9 @@ export default function DiplomadoMaternidad360() {
           </div>
         </section>
 
-        <section className="mx-auto max-w-7xl px-6 py-16 md:px-10 lg:px-12">
+        <section className="mx-auto max-w-7xl px-5 py-14 md:px-8 md:py-16 lg:px-12">
           <div className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
-            <div className="apple-fade-up rounded-[2rem] border border-black/5 bg-white p-8 shadow-sm md:p-10">
+            <div className="apple-fade-up rounded-[2rem] border border-black/5 bg-white p-7 shadow-sm md:p-10">
               <p className="text-sm font-semibold uppercase tracking-[0.2em] text-rose-500">
                 ¿Qué es Maternidad 360?
               </p>
@@ -399,7 +398,7 @@ export default function DiplomadoMaternidad360() {
               </p>
             </div>
 
-            <div className="apple-fade-up delay-1 rounded-[2rem] bg-slate-950 p-8 text-white shadow-xl md:p-10">
+            <div className="apple-fade-up delay-1 rounded-[2rem] bg-slate-950 p-7 text-white shadow-xl md:p-10">
               <h3 className="text-2xl font-semibold">¿Qué lograrás con este diplomado?</h3>
               <ul className="mt-6 space-y-4 text-slate-300">
                 <li>• Sentirte más segura en cada etapa del embarazo</li>
@@ -413,8 +412,8 @@ export default function DiplomadoMaternidad360() {
           </div>
         </section>
 
-        <section id="incluye" className="bg-white py-16">
-          <div className="mx-auto max-w-7xl px-6 md:px-10 lg:px-12">
+        <section id="incluye" className="bg-white py-14 md:py-16">
+          <div className="mx-auto max-w-7xl px-5 md:px-8 lg:px-12">
             <div className="mx-auto max-w-3xl text-center">
               <p className="text-sm font-semibold uppercase tracking-[0.2em] text-rose-500">
                 Valor incluido
@@ -446,9 +445,9 @@ export default function DiplomadoMaternidad360() {
           </div>
         </section>
 
-        <section className="mx-auto max-w-7xl px-6 py-16 md:px-10 lg:px-12">
+        <section className="mx-auto max-w-7xl px-5 py-14 md:px-8 md:py-16 lg:px-12">
           <div className="grid gap-8 lg:grid-cols-2">
-            <div className="apple-card rounded-[2rem] border border-black/5 bg-white p-8 shadow-sm">
+            <div className="apple-card rounded-[2rem] border border-black/5 bg-white p-7 shadow-sm md:p-8">
               <p className="text-sm font-semibold uppercase tracking-[0.2em] text-rose-500">
                 Este diplomado es para ti si
               </p>
@@ -467,7 +466,7 @@ export default function DiplomadoMaternidad360() {
               </div>
             </div>
 
-            <div className="apple-card rounded-[2rem] border border-black/5 bg-[#f8f8f8] p-8 shadow-sm">
+            <div className="apple-card rounded-[2rem] border border-black/5 bg-[#f8f8f8] p-7 shadow-sm md:p-8">
               <p className="text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">
                 Perfil esperado
               </p>
@@ -488,8 +487,8 @@ export default function DiplomadoMaternidad360() {
           </div>
         </section>
 
-        <section id="programa" className="bg-[#f7f4ef] py-16">
-          <div className="mx-auto max-w-7xl px-6 md:px-10 lg:px-12">
+        <section id="programa" className="bg-[#f4efe8] py-14 md:py-16">
+          <div className="mx-auto max-w-7xl px-5 md:px-8 lg:px-12">
             <div className="mx-auto max-w-3xl text-center">
               <p className="text-sm font-semibold uppercase tracking-[0.2em] text-rose-500">
                 Programa académico
@@ -507,7 +506,7 @@ export default function DiplomadoMaternidad360() {
               {modulos.map((modulo) => (
                 <article
                   key={modulo.numero}
-                  className="apple-card rounded-[2rem] border border-black/5 bg-white p-8 shadow-sm"
+                  className="apple-card rounded-[2rem] border border-black/5 bg-white p-7 shadow-sm md:p-8"
                 >
                   <div className="grid gap-8 lg:grid-cols-[120px_1fr]">
                     <div>
@@ -563,31 +562,94 @@ export default function DiplomadoMaternidad360() {
           </div>
         </section>
 
-        <section className="mx-auto max-w-5xl px-6 py-16 text-center md:px-10 lg:px-12">
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-rose-500">
-            Decisión inteligente
-          </p>
-          <h2 className="mt-4 text-3xl font-semibold tracking-tight text-slate-950 md:text-5xl">
-            Este no es un curso más
-          </h2>
-          <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-slate-600">
-            Es el acompañamiento que muchas mamás hubieran querido tener desde el
-            inicio de su embarazo. La próxima fecha es el <strong>18 de abril</strong> y
-            el <strong> cupo es limitado</strong>.
-          </p>
-          <div className="mt-8">
-            <a
-              href={whatsappApartar}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="apple-button inline-flex items-center justify-center rounded-full bg-[#25D366] px-10 py-4 text-base font-semibold text-white shadow-md hover:bg-[#1fb85a]"
-            >
-              Apartar mi lugar
-            </a>
+        <section className="bg-white py-14 md:py-16">
+          <div className="mx-auto max-w-5xl px-5 text-center md:px-8 lg:px-12">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-rose-500">
+              Inversión del diplomado
+            </p>
+
+            <h2 className="mt-4 text-3xl font-semibold tracking-tight text-slate-950 md:text-5xl">
+              Una inversión en tranquilidad, seguridad y conocimiento
+            </h2>
+
+            <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-slate-600">
+              Este diplomado está diseñado para acompañarte en una de las etapas más importantes de tu vida.
+              No solo es información, es guía, acompañamiento y herramientas reales para tomar decisiones con seguridad.
+            </p>
+
+            <div className="mt-12 grid gap-6 md:grid-cols-2">
+              <div className="apple-card rounded-[2rem] border border-slate-200 bg-[#fafafa] p-8 shadow-sm">
+                <p className="text-sm uppercase tracking-wide text-slate-500">
+                  Valor real del programa
+                </p>
+                <p className="mt-3 text-4xl font-semibold text-slate-400 line-through">
+                  $6,800 MXN
+                </p>
+                <p className="mt-4 leading-7 text-slate-500">
+                  Basado en la formación médica, experiencia clínica y acompañamiento integral incluido.
+                </p>
+              </div>
+
+              <div className="apple-card rounded-[2rem] border border-rose-200 bg-rose-50 p-8 shadow-md">
+                <p className="text-sm font-semibold uppercase tracking-wide text-rose-600">
+                  Precio especial de lanzamiento
+                </p>
+                <p className="mt-3 text-5xl font-semibold text-slate-950">
+                  $3,900 MXN
+                </p>
+                <p className="mt-4 font-medium text-slate-700">
+                  Cupo limitado para esta generación
+                </p>
+              </div>
+            </div>
+
+            <div className="mt-12 rounded-[2rem] bg-[#f7f3ee] p-8 text-left shadow-sm">
+              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-rose-500">
+                Tu inscripción incluye
+              </p>
+
+              <ul className="mt-6 grid gap-4 md:grid-cols-2 text-slate-700">
+                <li>✔️ 10 módulos completos del diplomado</li>
+                <li>✔️ 10 sesiones presenciales de 2 horas</li>
+                <li>✔️ Material digital práctico y descargable</li>
+                <li>✔️ Certificado de participación</li>
+                <li>✔️ Acceso a comunidad privada de mamás</li>
+                <li>✔️ Evento de fin de cursos</li>
+              </ul>
+            </div>
+
+            <div className="mt-10">
+              <p className="text-lg font-medium text-slate-800">
+                Esta generación inicia el <span className="font-semibold text-rose-500">18 de abril</span>
+              </p>
+              <p className="mt-2 text-slate-600">
+                El cupo es limitado para garantizar atención personalizada
+              </p>
+            </div>
+
+            <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+              <a
+                href={whatsappInscripcion}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="apple-button inline-flex items-center justify-center rounded-full bg-[#25D366] px-10 py-4 text-base font-semibold text-white shadow-md hover:bg-[#1fb85a]"
+              >
+                Inscribirme ahora
+              </a>
+
+              <a
+                href={whatsappApartar}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="apple-button inline-flex items-center justify-center rounded-full border border-slate-300 px-10 py-4 text-base font-semibold text-slate-700 hover:bg-slate-50"
+              >
+                Apartar mi lugar
+              </a>
+            </div>
           </div>
         </section>
 
-        <section className="mx-auto max-w-7xl px-6 py-16 md:px-10 lg:px-12">
+        <section className="mx-auto max-w-7xl px-5 py-14 md:px-8 md:py-16 lg:px-12">
           <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
             <div>
               <p className="text-sm font-semibold uppercase tracking-[0.2em] text-rose-500">
@@ -636,8 +698,8 @@ export default function DiplomadoMaternidad360() {
           </div>
         </section>
 
-        <section className="bg-white py-16">
-          <div className="mx-auto max-w-7xl px-6 md:px-10 lg:px-12">
+        <section className="bg-white py-14 md:py-16">
+          <div className="mx-auto max-w-7xl px-5 md:px-8 lg:px-12">
             <div className="mx-auto max-w-3xl text-center">
               <p className="text-sm font-semibold uppercase tracking-[0.2em] text-rose-500">
                 Trayectoria profesional
@@ -652,7 +714,7 @@ export default function DiplomadoMaternidad360() {
             </div>
 
             <div className="mt-12 grid gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:items-start">
-              <div className="apple-card rounded-[2rem] border border-black/5 bg-[#faf7f2] p-8 shadow-sm">
+              <div className="apple-card rounded-[2rem] border border-black/5 bg-[#faf7f2] p-7 shadow-sm md:p-8">
                 <div className="mb-6 flex items-center gap-3">
                   <div className="h-10 w-1 rounded-full bg-rose-500" />
                   <h3 className="text-2xl font-semibold text-slate-950">
@@ -676,7 +738,7 @@ export default function DiplomadoMaternidad360() {
               </div>
 
               <div className="space-y-6">
-                <div className="apple-card rounded-[2rem] border border-black/5 bg-white p-8 shadow-sm">
+                <div className="apple-card rounded-[2rem] border border-black/5 bg-white p-7 shadow-sm md:p-8">
                   <p className="text-sm font-semibold uppercase tracking-[0.2em] text-rose-500">
                     Respaldo profesional
                   </p>
@@ -691,7 +753,7 @@ export default function DiplomadoMaternidad360() {
                   </p>
                 </div>
 
-                <div className="apple-card rounded-[2rem] bg-slate-950 p-8 text-white shadow-xl">
+                <div className="apple-card rounded-[2rem] bg-slate-950 p-7 text-white shadow-xl md:p-8">
                   <p className="text-sm font-semibold uppercase tracking-[0.2em] text-rose-200">
                     Confianza
                   </p>
@@ -708,8 +770,8 @@ export default function DiplomadoMaternidad360() {
           </div>
         </section>
 
-        <section className="mx-auto max-w-7xl px-6 py-16 md:px-10 lg:px-12">
-          <div className="rounded-[2rem] border border-black/5 bg-white p-8 shadow-sm md:p-12">
+        <section className="mx-auto max-w-7xl px-5 py-14 md:px-8 md:py-16 lg:px-12">
+          <div className="rounded-[2rem] border border-black/5 bg-white p-7 shadow-sm md:p-12">
             <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
               <div>
                 <p className="text-sm font-semibold uppercase tracking-[0.2em] text-rose-500">
@@ -740,10 +802,10 @@ export default function DiplomadoMaternidad360() {
           </div>
         </section>
 
-        <section className="bg-slate-950 py-16 text-white">
-          <div className="mx-auto max-w-5xl px-6 text-center md:px-10 lg:px-12">
+        <section className="bg-slate-950 py-14 text-white md:py-16">
+          <div className="mx-auto max-w-5xl px-5 text-center md:px-8 lg:px-12">
             <h2 className="text-3xl font-semibold tracking-tight md:text-5xl">
-              Inicia el 18 de abril
+              Vive tu embarazo con más seguridad, claridad y tranquilidad
             </h2>
             <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-slate-300">
               Tu embarazo no debería vivirse con miedo ni incertidumbre. Este
@@ -751,7 +813,7 @@ export default function DiplomadoMaternidad360() {
               que necesitas en uno de los momentos más importantes de tu vida.
             </p>
             <p className="mt-4 text-xl font-semibold text-white">
-              Cupo limitado
+              Inicia el 18 de abril · Cupo limitado
             </p>
 
             <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
