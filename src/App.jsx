@@ -575,11 +575,11 @@ function App() {
               </div>
 
               <div className="mt-6 flex flex-wrap items-center gap-5">
-                <img src="/medics-logo.png" alt="MEDICS" className="h-20 object-contain" />
+                <img src="/medics-logo.png" alt="MEDICS" className="h-16 object-contain" />
                 <img
                   src="/muguerza-logo.png"
                   alt="Hospital Muguerza"
-                  className="h-24 object-contain"
+                  className="h-18 object-contain"
                 />
               </div>
             </div>
@@ -630,34 +630,28 @@ function App() {
             © {new Date().getFullYear()} Dr. Alex Mercado. Todos los derechos reservados.
           </div>
 
-          <div className="flex flex-wrap items-center justify-between gap-4 rounded-[1.75rem] border border-slate-200/80 bg-gradient-to-r from-white via-slate-50 to-white px-5 py-5 shadow-[0_12px_40px_rgba(15,23,42,0.05)]">
-            <div className="flex items-center gap-3">
-              <span className="text-[10px] uppercase tracking-[0.22em] text-slate-500">
-                Atención en
-              </span>
-              <img src="/medics-logo.png" alt="MEDICS" className="h-20 object-contain" />
+          <div className="flex flex-wrap items-center justify-between gap-1">
+            <div className="flex items-center gap-0">
+              
+              <img src="/medics-logo.png" alt="MEDICS" className="h-16 object-contain" />
               <img
                 src="/muguerza-logo.png"
                 alt="Hospital Muguerza"
-                className="h-28 object-contain"
+                className="h-20 object-contain"
               />
             </div>
 
-            <div className="flex items-center gap-3">
-              <span className="text-[10px] uppercase tracking-[0.22em] text-slate-500">
-                Agenda digital
-              </span>
+            <div className="flex items-center gap-0">
+              
               <img
                 src="/lookadoc-clean.png"
                 alt="Look a Doc"
-                className="h-24 object-contain"
+                className="h-18 object-contain"
               />
             </div>
 
-            <div className="flex items-center gap-3">
-              <span className="text-[10px] uppercase tracking-[0.22em] text-slate-500">
-                Powered by
-              </span>
+            <div className="flex items-center gap-0">
+              
               <img
                 src="/axm-logo.png"
                 alt="AXM Technologies"
