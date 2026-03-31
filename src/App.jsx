@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 function App() {
   const services = [
     {
@@ -96,6 +98,25 @@ function App() {
   const calculadoraUrl = "https://calculadora-gestacional.vercel.app/";
   const maternidadUrl = "#";
 
+  const fadeUp = {
+    hidden: { opacity: 0, y: 24 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] },
+    },
+  };
+
+  const stagger = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.05,
+      },
+    },
+  };
+
   return (
     <div className="min-h-screen bg-[#faf7f2] text-slate-900">
       <a
@@ -107,13 +128,13 @@ function App() {
         WhatsApp
       </a>
 
-      <header className="sticky top-0 z-50 border-b border-black/5 bg-[#faf7f2]/95 backdrop-blur">
-        <div className="flex items-center justify-between pl-0 pr-2 pt-4 pb-2 lg:mx-auto lg:max-w-6xl lg:gap-3 lg:px-8 lg:py-3">
+      <header className="sticky top-0 z-50 border-b border-black/5 bg-white/80 backdrop-blur-xl">
+        <div className="flex items-center justify-between pl-0 pr-2 pt-3 pb-2 lg:mx-auto lg:max-w-6xl lg:gap-3 lg:px-8 lg:py-3">
           <div className="flex h-14 items-center overflow-hidden lg:h-auto">
             <img
               src="/doctor-logo.png"
               alt="Dr Alex Mercado"
-              className="-ml-7 h-44 w-auto max-w-none object-contain md:ml-0 md:h-16"
+              className="-ml-6 h-40 w-auto max-w-none object-contain md:ml-0 md:h-14"
             />
           </div>
 
@@ -130,7 +151,7 @@ function App() {
             href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="shrink-0 inline-flex h-14 items-center justify-center rounded-full bg-[#25D366] px-4 text-xs font-semibold text-white shadow-lg shadow-green-500/20 transition hover:-translate-y-0.5 hover:bg-[#1fb85a] md:h-14 md:px-6 md:text-base"
+            className="shrink-0 inline-flex h-12 items-center justify-center rounded-full bg-[#25D366] px-5 text-sm font-semibold text-white shadow-md transition hover:-translate-y-0.5 hover:bg-[#1fb85a]"
           >
             Agendar consulta
           </a>
@@ -139,78 +160,93 @@ function App() {
 
       <main>
         <section id="inicio" className="relative overflow-hidden">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(196,167,117,0.18),transparent_28%),radial-gradient(circle_at_left,rgba(20,184,166,0.08),transparent_24%)]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-white via-white to-[#faf7f2]" />
 
           <div className="relative mx-auto max-w-7xl px-5 py-4 lg:px-10 lg:py-6">
-            <div className="mt-2 grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
-              <div>
-                <div className="inline-flex rounded-full border border-[#e8d8bc] bg-white px-4 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-[#9d7a43] shadow-sm">
+            <motion.div
+              className="mt-2 grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-start"
+              variants={stagger}
+              initial="hidden"
+              animate="visible"
+            >
+              <motion.div variants={stagger}>
+                <motion.div
+                  variants={fadeUp}
+                  className="inline-flex rounded-full border border-[#e8d8bc] bg-white px-4 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-[#9d7a43] shadow-sm"
+                >
                   Atención premium para embarazo y salud femenina
-                </div>
+                </motion.div>
 
-                <h1 className="mt-5 max-w-3xl text-[2.35rem] font-semibold leading-[1.08] tracking-tight text-slate-950 md:text-[3.05rem]">
-                  Tu <span className="text-[#ff7a70]">embarazo</span> guiado con seguridad,
-                  cercanía y seguimiento real.
+                <motion.h1 variants={fadeUp} className="mt-6 max-w-3xl text-[2.25rem] font-semibold leading-[1.1] tracking-tight text-slate-950 md:text-[3rem]">
+                  ¿Dolor, dudas o cambios en tu cuerpo? <span className="text-[#ff7a70]">Aquí encuentras respuestas claras y solución real.</span>
                   <br />
-                  Salud <span className="text-[#ff7a70]">ginecológica integral</span> y cirugía{" "}
-                  <span className="text-[#ff7a70]">laparoscópica</span> avanzada.
-                </h1>
+                  Desde tu <span className="text-[#ff7a70]">embarazo</span> hasta tu
+                  <span className="text-[#ff7a70]"> salud ginecológica</span> y tratamientos
+                  <span className="text-[#ff7a70]"> avanzados</span>, con acompañamiento cercano en cada paso.
+                </motion.h1>
 
-                <p className="mt-5 max-w-2xl text-base leading-8 text-slate-600 md:text-lg">
-                  Desde tu primera consulta hasta el seguimiento de etapas clave, aquí encuentras
-                  una atención clara, humana y profesional para vivir tu embarazo con más
-                  tranquilidad y resolver tu salud ginecológica con seriedad.
-                </p>
+                <motion.p variants={fadeUp} className="mt-6 max-w-2xl text-base leading-7 text-slate-600 md:text-lg">
+                  No ignores lo que estás sintiendo. Entre más pronto lo entiendas, más fácil es resolverlo. Aquí recibes explicación clara, diagnóstico preciso y un plan real para recuperar tu tranquilidad.
+                </motion.p>
 
-                <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+                <motion.div variants={fadeUp} className="mt-10 flex flex-col gap-3 sm:flex-row">
                   <a
                     href={whatsappUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="rounded-full bg-[#25D366] px-7 py-4 text-center text-sm font-semibold text-white shadow-lg shadow-green-500/20 transition hover:-translate-y-0.5 hover:bg-[#1fb85a]"
+                    className="rounded-full bg-[#25D366] px-6 py-3 text-center text-sm font-semibold text-white shadow-md transition hover:-translate-y-0.5 hover:bg-[#1fb85a]"
                   >
-                    Agendar consulta por WhatsApp
+                    Quiero resolver mi problema ahora
                   </a>
 
                   <a
                     href={agendaUrl}
-                    className="rounded-full border border-slate-300 bg-white px-7 py-4 text-center text-sm font-medium text-slate-700 transition hover:border-slate-400 hover:bg-slate-50"
+                    className="rounded-full border border-slate-300 bg-white px-6 py-3 text-center text-sm font-medium text-slate-700 transition hover:bg-slate-50"
                   >
-                    Agenda en línea
+                    Ver disponibilidad inmediata
                   </a>
-                </div>
+                </motion.div>
 
-                <div className="mt-8 grid gap-4 sm:grid-cols-3">
-                  <div className="rounded-[1.4rem] border border-black/5 bg-white/80 p-4 shadow-sm">
+                <motion.div variants={stagger} className="mt-10 grid gap-4 sm:grid-cols-3">
+                  <motion.div
+                    variants={fadeUp}
+                    className="rounded-[1.25rem] border border-black/5 bg-white p-4 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-md"
+                  >
                     <div className="text-2xl font-semibold text-slate-950">+14 años</div>
                     <div className="mt-1 text-sm leading-6 text-slate-600">
                       de experiencia acompañando a mujeres
                     </div>
                   </div>
-                  <div className="rounded-[1.4rem] border border-black/5 bg-white/80 p-4 shadow-sm">
+                  <motion.div
+                    variants={fadeUp}
+                    className="rounded-[1.25rem] border border-black/5 bg-white p-4 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-md"
+                  >
                     <div className="text-2xl font-semibold text-slate-950">Ultrasonido 5D</div>
                     <div className="mt-1 text-sm leading-6 text-slate-600">
                       para una experiencia más cercana en el embarazo
                     </div>
                   </div>
-                  <div className="rounded-[1.4rem] border border-black/5 bg-white/80 p-4 shadow-sm">
+                  <motion.div
+                    variants={fadeUp}
+                    className="rounded-[1.25rem] border border-black/5 bg-white p-4 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-md"
+                  >
                     <div className="text-2xl font-semibold text-slate-950">MEDICS + Muguerza</div>
                     <div className="mt-1 text-sm leading-6 text-slate-600">
                       atención presencial en Saltillo, Coahuila
                     </div>
-                  </div>
-                </div>
-              </div>
+                  </motion.div>
+                </motion.div>
+              </motion.div>
 
-              <div className="relative flex items-start justify-center">
-                <div className="absolute -inset-6 rounded-[2.5rem] bg-gradient-to-br from-amber-100/70 via-white to-teal-100/50 blur-2xl" />
+              <motion.div variants={fadeUp} className="relative flex items-start justify-center pt-4">
+                <div className="absolute -inset-4 rounded-[2.5rem] bg-gradient-to-br from-slate-100 via-white to-slate-100 blur-2xl" />
                 <img
                   src="/dr-alex-hero.jpeg"
                   alt="Dr Alex Mercado"
-                  className="relative h-[540px] w-full rounded-[2.2rem] object-cover object-top shadow-2xl shadow-slate-900/15 lg:h-[560px]"
+                  className="relative h-[520px] w-full rounded-[2rem] object-cover object-top shadow-xl transition duration-500 hover:scale-[1.01] lg:h-[540px]"
                 />
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
           </div>
         </section>
 
@@ -222,7 +258,7 @@ function App() {
                   Ruta de maternidad
                 </div>
                 <h2 className="mt-4 max-w-3xl text-3xl font-semibold tracking-tight text-slate-950 md:text-5xl">
-                  Empieza tu embarazo con más claridad, menos miedo y mejor acompañamiento.
+                  Evita dudas, errores y angustia durante tu embarazo. Aquí tienes una guía clara paso a paso.
                 </h2>
                 <p className="mt-5 max-w-2xl text-lg leading-8 text-slate-600">
                   Aquí no solo agendas una consulta. Aquí puedes entrar a un ecosistema pensado
@@ -245,7 +281,7 @@ function App() {
                   ))}
                 </div>
 
-                <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+                <div className="mt-10 flex flex-col gap-3 sm:flex-row">
                   <a
                     href={whatsappUrl}
                     target="_blank"
@@ -270,7 +306,7 @@ function App() {
                 </div>
 
                 <div className="mt-8 space-y-5">
-                  <div className="rounded-[2rem] bg-white/6 p-6 backdrop-blur-sm">
+                  <div className="rounded-[1.75rem] bg-white/5 p-6 backdrop-blur">
                     <div className="flex flex-col gap-4">
                       <div className="flex h-28 w-full items-center justify-center overflow-hidden rounded-[1.5rem] bg-white/4 px-4">
                         <img
@@ -293,13 +329,13 @@ function App() {
                       href={calculadoraUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="mt-5 inline-flex rounded-full bg-white px-5 py-3 text-sm font-semibold text-slate-900 transition hover:-translate-y-0.5 hover:bg-slate-100"
+                      className="mt-5 inline-flex rounded-full bg-white px-5 py-3 text-sm font-semibold text-slate-900 shadow-sm transition hover:-translate-y-0.5 hover:bg-slate-100"
                     >
                       Abrir calculadora
                     </a>
                   </div>
 
-                  <div className="rounded-[2rem] bg-white/6 p-6 backdrop-blur-sm">
+                  <div className="rounded-[1.75rem] bg-white/5 p-6 backdrop-blur">
                     <div className="flex flex-col gap-4">
                       <div className="flex h-28 w-full items-center justify-center overflow-hidden rounded-[1.5rem] bg-white/4 px-4">
                         <img
@@ -320,18 +356,14 @@ function App() {
 
                     <a
                       href={maternidadUrl}
-                      className="mt-5 inline-flex rounded-full bg-white px-5 py-3 text-sm font-semibold text-slate-900 transition hover:-translate-y-0.5 hover:bg-slate-100"
+                      className="mt-5 inline-flex rounded-full bg-white px-5 py-3 text-sm font-semibold text-slate-900 shadow-sm transition hover:-translate-y-0.5 hover:bg-slate-100"
                     >
                       Conocer diplomado
                     </a>
                   </div>
                 </div>
 
-                <div className="mt-8 rounded-[1.75rem] border border-white/10 bg-white/5 p-5 text-sm leading-7 text-slate-300">
-                  Este bloque es tu verdadero diferenciador: consulta médica + herramienta digital
-                  + formación para la paciente. Eso ya no se ve como una consulta aislada. Se ve
-                  como una experiencia completa.
-                </div>
+                
               </div>
             </div>
           </div>
@@ -360,7 +392,7 @@ function App() {
               {differentiators.map((item) => (
                 <div
                   key={item}
-                  className="rounded-[2rem] border border-black/5 bg-white p-7 shadow-sm"
+                  className="rounded-[1.75rem] border border-black/5 bg-white p-7 shadow-sm"
                 >
                   <div className="flex items-start gap-3">
                     <div className="mt-2 h-2.5 w-2.5 rounded-full bg-slate-900" />
@@ -389,7 +421,7 @@ function App() {
               {services.map((service) => (
                 <div
                   key={service.title}
-                  className="rounded-[2rem] border border-black/5 bg-[#fcfaf7] p-8 shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
+                  className="rounded-[1.75rem] border border-black/5 bg-white p-8 shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
                 >
                   <h3 className="text-2xl font-semibold text-slate-950">{service.title}</h3>
 
@@ -408,7 +440,7 @@ function App() {
                     rel="noopener noreferrer"
                     className="mt-8 inline-flex rounded-full bg-[#25D366] px-6 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-[#1fb85a]"
                   >
-                    Agendar valoración
+                    Quiero una valoración
                   </a>
                 </div>
               ))}
@@ -438,7 +470,7 @@ function App() {
                     key={src}
                     src={src}
                     alt={`Ultrasonido 5D ${index + 1}`}
-                    className="h-72 w-full rounded-[1.5rem] object-cover shadow-sm"
+                    className="h-72 w-full rounded-[1.25rem] object-cover shadow-sm"
                   />
                 ))}
               </div>
@@ -471,7 +503,7 @@ function App() {
 
         <section className="mx-auto max-w-7xl px-5 py-20 lg:px-10">
           <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
-            <div className="rounded-[2.5rem] border border-black/5 bg-gradient-to-br from-slate-900 to-slate-800 p-10 text-white shadow-2xl shadow-slate-900/10 md:p-14">
+            <div className="rounded-[2rem] border border-black/5 bg-slate-900 p-10 text-white shadow-xl md:p-14">
               <div className="max-w-4xl">
                 <div className="text-sm uppercase tracking-[0.24em] text-amber-300">
                   Cirugía laparoscópica avanzada
@@ -488,7 +520,7 @@ function App() {
 
               <div className="mt-10 grid gap-5 md:grid-cols-3">
                 {surgerySteps.map((step) => (
-                  <div key={step.n} className="rounded-[2rem] bg-white/8 p-6 backdrop-blur-sm">
+                  <div key={step.n} className="rounded-[1.75rem] bg-white/10 p-6 backdrop-blur">
                     <div className="text-sm font-medium tracking-[0.22em] text-amber-300">
                       {step.n}
                     </div>
@@ -511,7 +543,7 @@ function App() {
                   href={agendaUrl}
                   className="rounded-full border border-white/20 px-7 py-4 text-center text-sm font-medium text-white transition hover:bg-white/5"
                 >
-                  Agenda en línea
+                  Ver disponibilidad inmediata
                 </a>
               </div>
             </div>
@@ -529,7 +561,7 @@ function App() {
             <div className="max-w-3xl">
               <div className="text-sm uppercase tracking-[0.24em] text-amber-700">Testimonios</div>
               <h2 className="mt-4 text-3xl font-semibold tracking-tight text-slate-950 md:text-5xl">
-                Confianza que se siente desde la primera consulta.
+                Resultados reales que generan tranquilidad desde la primera consulta.
               </h2>
             </div>
 
@@ -537,7 +569,7 @@ function App() {
               {testimonials.map((t) => (
                 <div
                   key={t.name}
-                  className="rounded-[2rem] border border-black/5 bg-[#fcfaf7] p-8 shadow-sm"
+                  className="rounded-[1.75rem] border border-black/5 bg-white p-8 shadow-sm"
                 >
                   <p className="text-lg leading-8 text-slate-700">“{t.text}”</p>
                   <div className="mt-6 text-sm font-medium uppercase tracking-[0.2em] text-slate-500">
@@ -563,12 +595,12 @@ function App() {
               </p>
 
               <div className="mt-8 space-y-4">
-                <div className="rounded-[1.5rem] bg-slate-50 p-6 text-slate-700">
+                <div className="rounded-[1.25rem] bg-slate-50 p-6 text-slate-700">
                   <div className="font-medium">MEDICS | Salud & Belleza</div>
                   <div className="mt-2 leading-7">Saltillo, Coahuila</div>
                 </div>
 
-                <div className="rounded-[1.5rem] bg-slate-50 p-6 text-slate-700">
+                <div className="rounded-[1.25rem] bg-slate-50 p-6 text-slate-700">
                   <div className="font-medium">Hospital Muguerza</div>
                   <div className="mt-2 leading-7">Atención hospitalaria en Saltillo, Coahuila</div>
                 </div>
@@ -584,10 +616,10 @@ function App() {
               </div>
             </div>
 
-            <div id="contacto" className="rounded-[2rem] bg-[#f7efe3] p-8 shadow-sm">
+            <div id="contacto" className="rounded-[1.75rem] bg-[#f7efe3] p-8 shadow-sm">
               <div className="text-sm uppercase tracking-[0.24em] text-amber-800">Contacto</div>
               <h2 className="mt-4 text-3xl font-semibold tracking-tight text-slate-950">
-                Tu tranquilidad no debería esperar.
+                No lo dejes para después. Tu salud merece atención ahora.
               </h2>
               <p className="mt-5 text-lg leading-8 text-slate-700">
                 Agenda tu consulta, resuelve tus dudas y recibe atención con claridad, seguimiento
@@ -601,18 +633,18 @@ function App() {
                   rel="noopener noreferrer"
                   className="block rounded-full bg-[#25D366] px-7 py-4 text-center text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-[#1fb85a]"
                 >
-                  Escríbeme por WhatsApp
+                  Hablar directamente por WhatsApp
                 </a>
 
                 <a
                   href={agendaUrl}
                   className="block rounded-full border border-slate-300 bg-white px-7 py-4 text-center text-sm font-medium text-slate-700 transition hover:bg-slate-50"
                 >
-                  Agenda en línea
+                  Ver disponibilidad inmediata
                 </a>
               </div>
 
-              <div className="mt-8 rounded-[1.5rem] bg-white/70 p-5 text-sm leading-7 text-slate-700">
+              <div className="mt-8 rounded-[1.25rem] bg-white p-5 text-sm leading-7 text-slate-700 border border-black/5">
                 Especialista en Ginecología y Obstetricia
                 <br />
                 Céd. Prof. 7840295
@@ -634,13 +666,13 @@ function App() {
             <img
               src="/lookadoc-clean.png"
               alt="Look a Doc"
-              className="h-32 w-auto object-contain"
+              className="h-24 w-auto object-contain"
             />
 
             <img
               src="/axm-logo.png"
               alt="AXM Technologies"
-              className="h-36 w-auto object-contain opacity-95"
+              className="h-24 w-auto object-contain opacity-90"
             />
           </div>
         </div>
