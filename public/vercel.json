@@ -1,0 +1,5 @@
+{
+  "routes": [
+    { "src": "/preview.png", "headers": { "Content-Type": "image/png" } }
+  ]
+}
