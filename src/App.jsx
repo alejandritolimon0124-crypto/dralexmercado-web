@@ -108,12 +108,12 @@ function App() {
       </a>
 
       <header className="sticky top-0 z-50 border-b border-black/5 bg-[#faf7f2]/95 backdrop-blur">
-        <div className="flex items-center justify-between px-2 py-1 lg:mx-auto lg:max-w-6xl lg:gap-3 lg:px-8 lg:py-3">
-          <div className="flex items-center overflow-hidden">
+        <div className="flex items-center justify-between pl-0 pr-2 py-0 lg:mx-auto lg:max-w-6xl lg:gap-3 lg:px-8 lg:py-3">
+          <div className="flex h-14 items-center overflow-hidden lg:h-auto">
             <img
               src="/doctor-logo.png"
               alt="Dr Alex Mercado"
-              className="h-56 w-auto max-w-none object-contain md:h-16"
+              className="-ml-7 h-56 w-auto max-w-none object-contain md:ml-0 md:h-16"
             />
           </div>
 
