@@ -630,32 +630,32 @@ function App() {
             © {new Date().getFullYear()} Dr. Alex Mercado. Todos los derechos reservados.
           </div>
 
-          <div className="flex flex-wrap items-center justify-between gap-1">
-            <div className="flex items-center gap-0">
-              
-              <img src="/medics-logo.png" alt="MEDICS" className="h-16 object-contain" />
+          <div className="flex flex-wrap items-end justify-center gap-x-6 gap-y-3">
+            <div className="flex h-16 items-end">
+              <img src="/medics-logo.png" alt="MEDICS" className="h-14 w-auto object-contain" />
+            </div>
+
+            <div className="flex h-16 items-end">
               <img
                 src="/muguerza-logo.png"
                 alt="Hospital Muguerza"
-                className="h-20 object-contain"
+                className="h-16 w-auto object-contain"
               />
             </div>
 
-            <div className="flex items-center gap-0">
-              
+            <div className="flex h-16 items-end">
               <img
                 src="/lookadoc-clean.png"
                 alt="Look a Doc"
-                className="h-18 object-contain"
+                className="h-12 w-auto object-contain"
               />
             </div>
 
-            <div className="flex items-center gap-0">
-              
+            <div className="flex h-16 items-end">
               <img
                 src="/axm-logo.png"
                 alt="AXM Technologies"
-                className="h-20 object-contain opacity-95"
+                className="h-14 w-auto object-contain opacity-95"
               />
             </div>
           </div>
