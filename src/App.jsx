@@ -108,12 +108,12 @@ function App() {
       </a>
 
       <header className="sticky top-0 z-50 border-b border-black/5 bg-[#faf7f2]/95 backdrop-blur">
-        <div className="flex items-center justify-between pl-0 pr-2 py-0 lg:mx-auto lg:max-w-6xl lg:gap-3 lg:px-8 lg:py-3">
+        <div className="flex items-center justify-between pl-0 pr-2 pt-4 pb-2 lg:mx-auto lg:max-w-6xl lg:gap-3 lg:px-8 lg:py-3">
           <div className="flex h-14 items-center overflow-hidden lg:h-auto">
             <img
               src="/doctor-logo.png"
               alt="Dr Alex Mercado"
-              className="-ml-7 h-56 w-auto max-w-none object-contain md:ml-0 md:h-16"
+              className="-ml-7 h-40 w-auto max-w-none object-contain md:ml-0 md:h-16"
             />
           </div>
 
@@ -271,12 +271,15 @@ function App() {
 
                 <div className="mt-8 space-y-5">
                   <div className="rounded-[2rem] bg-white/6 p-6 backdrop-blur-sm">
-                    <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center">
-                      <img
-                        src="/logo-calculadora.png"
-                        alt="Calculadora gestacional"
-                        className="h-16 w-auto object-contain"
-                      />
+                    <div className="flex flex-col gap-4">
+                      <div className="flex h-28 w-full items-center justify-center overflow-hidden rounded-[1.5rem] bg-white/4 px-4">
+                        <img
+                          src="/logo-calculadora.png"
+                          alt="Calculadora gestacional"
+                          className="max-h-24 w-auto max-w-full object-contain"
+                        />
+                      </div>
+
                       <div>
                         <h3 className="text-xl font-semibold">Calculadora gestacional</h3>
                         <p className="mt-2 leading-7 text-slate-300">
@@ -290,21 +293,24 @@ function App() {
                       href={calculadoraUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="mt-5 inline-flex rounded-full border border-white/15 px-5 py-3 text-sm font-medium text-white transition hover:bg-white/8"
+                      className="mt-5 inline-flex rounded-full bg-white px-5 py-3 text-sm font-semibold text-slate-900 transition hover:-translate-y-0.5 hover:bg-slate-100"
                     >
                       Abrir calculadora
                     </a>
                   </div>
 
                   <div className="rounded-[2rem] bg-white/6 p-6 backdrop-blur-sm">
-                    <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center">
-                      <img
-                        src="/logo-maternidad.png"
-                        alt="Maternidad 360"
-                        className="h-16 w-auto object-contain"
-                      />
+                    <div className="flex flex-col gap-4">
+                      <div className="flex h-28 w-full items-center justify-center overflow-hidden rounded-[1.5rem] bg-white/4 px-4">
+                        <img
+                          src="/logo-maternidad.png"
+                          alt="Diplomado de Maternidad 360"
+                          className="max-h-24 w-auto max-w-full object-contain"
+                        />
+                      </div>
+
                       <div>
-                        <h3 className="text-xl font-semibold">Maternidad 360</h3>
+                        <h3 className="text-xl font-semibold">Diplomado de Maternidad 360</h3>
                         <p className="mt-2 leading-7 text-slate-300">
                           Un diplomado creado para futuras mamás que quieren sentirse seguras,
                           informadas y mejor preparadas para vivir su maternidad.
@@ -314,9 +320,9 @@ function App() {
 
                     <a
                       href={maternidadUrl}
-                      className="mt-5 inline-flex rounded-full bg-white px-5 py-3 text-sm font-semibold text-slate-900 transition hover:-translate-y-0.5"
+                      className="mt-5 inline-flex rounded-full bg-white px-5 py-3 text-sm font-semibold text-slate-900 transition hover:-translate-y-0.5 hover:bg-slate-100"
                     >
-                      Conocer Maternidad 360
+                      Conocer diplomado
                     </a>
                   </div>
                 </div>
