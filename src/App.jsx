@@ -1,5 +1,3 @@
-import { motion } from "framer-motion";
-
 function App() {
   const services = [
     {
@@ -163,33 +161,33 @@ function App() {
           <div className="absolute inset-0 bg-gradient-to-b from-white via-white to-[#faf7f2]" />
 
           <div className="relative mx-auto max-w-7xl px-5 py-4 lg:px-10 lg:py-6">
-            <motion.div
+            <div
               className="mt-2 grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-start"
-              variants={stagger}
-              initial="hidden"
-              animate="visible"
+              
+              
+              
             >
-              <motion.div variants={stagger}>
-                <motion.div
-                  variants={fadeUp}
+              <div >
+                <div
+                  
                   className="inline-flex rounded-full border border-[#e8d8bc] bg-white px-4 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-[#9d7a43] shadow-sm"
                 >
                   Atención premium para embarazo y salud femenina
-                </motion.div>
+                </div>
 
-                <motion.h1 variants={fadeUp} className="mt-6 max-w-3xl text-[2.25rem] font-semibold leading-[1.1] tracking-tight text-slate-950 md:text-[3rem]">
+                <h1  className="mt-6 max-w-3xl text-[2.25rem] font-semibold leading-[1.1] tracking-tight text-slate-950 md:text-[3rem]">
                   ¿Dolor, dudas o cambios en tu cuerpo? <span className="text-[#ff7a70]">Aquí encuentras respuestas claras y solución real.</span>
                   <br />
                   Desde tu <span className="text-[#ff7a70]">embarazo</span> hasta tu
                   <span className="text-[#ff7a70]"> salud ginecológica</span> y tratamientos
                   <span className="text-[#ff7a70]"> avanzados</span>, con acompañamiento cercano en cada paso.
-                </motion.h1>
+                </h1>
 
-                <motion.p variants={fadeUp} className="mt-6 max-w-2xl text-base leading-7 text-slate-600 md:text-lg">
+                <p  className="mt-6 max-w-2xl text-base leading-7 text-slate-600 md:text-lg">
                   No ignores lo que estás sintiendo. Entre más pronto lo entiendas, más fácil es resolverlo. Aquí recibes explicación clara, diagnóstico preciso y un plan real para recuperar tu tranquilidad.
-                </motion.p>
+                </p>
 
-                <motion.div variants={fadeUp} className="mt-10 flex flex-col gap-3 sm:flex-row">
+                <div  className="mt-10 flex flex-col gap-3 sm:flex-row">
                   <a
                     href={whatsappUrl}
                     target="_blank"
@@ -205,11 +203,11 @@ function App() {
                   >
                     Ver disponibilidad inmediata
                   </a>
-                </motion.div>
+                </div>
 
-                <motion.div variants={stagger} className="mt-10 grid gap-4 sm:grid-cols-3">
-                  <motion.div
-                    variants={fadeUp}
+                <div  className="mt-10 grid gap-4 sm:grid-cols-3">
+                  <div
+                    
                     className="rounded-[1.25rem] border border-black/5 bg-white p-4 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-md"
                   >
                     <div className="text-2xl font-semibold text-slate-950">+14 años</div>
@@ -217,8 +215,8 @@ function App() {
                       de experiencia acompañando a mujeres
                     </div>
                   </div>
-                  <motion.div
-                    variants={fadeUp}
+                  <div
+                    
                     className="rounded-[1.25rem] border border-black/5 bg-white p-4 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-md"
                   >
                     <div className="text-2xl font-semibold text-slate-950">Ultrasonido 5D</div>
@@ -226,27 +224,27 @@ function App() {
                       para una experiencia más cercana en el embarazo
                     </div>
                   </div>
-                  <motion.div
-                    variants={fadeUp}
+                  <div
+                    
                     className="rounded-[1.25rem] border border-black/5 bg-white p-4 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-md"
                   >
                     <div className="text-2xl font-semibold text-slate-950">MEDICS + Muguerza</div>
                     <div className="mt-1 text-sm leading-6 text-slate-600">
                       atención presencial en Saltillo, Coahuila
                     </div>
-                  </motion.div>
-                </motion.div>
-              </motion.div>
+                  </div>
+                </div>
+              </div>
 
-              <motion.div variants={fadeUp} className="relative flex items-start justify-center pt-4">
+              <div  className="relative flex items-start justify-center pt-4">
                 <div className="absolute -inset-4 rounded-[2.5rem] bg-gradient-to-br from-slate-100 via-white to-slate-100 blur-2xl" />
                 <img
                   src="/dr-alex-hero.jpeg"
                   alt="Dr Alex Mercado"
                   className="relative h-[520px] w-full rounded-[2rem] object-cover object-top shadow-xl transition duration-500 hover:scale-[1.01] lg:h-[540px]"
                 />
-              </motion.div>
-            </motion.div>
+              </div>
+            </div>
           </div>
         </section>
 
