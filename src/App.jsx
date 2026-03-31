@@ -643,31 +643,6 @@ function App() {
               className="h-36 w-auto object-contain opacity-95"
             />
           </div>
-
-            <div className="flex h-16 items-end">
-              <img
-                src="/muguerza-logo.png"
-                alt="Hospital Muguerza"
-                className="h-16 w-auto object-contain"
-              />
-            </div>
-
-            <div className="flex h-16 items-end">
-              <img
-                src="/lookadoc-clean.png"
-                alt="Look a Doc"
-                className="h-12 w-auto object-contain"
-              />
-            </div>
-
-            <div className="flex h-16 items-end">
-              <img
-                src="/axm-logo.png"
-                alt="AXM Technologies"
-                className="h-14 w-auto object-contain opacity-95"
-              />
-            </div>
-          </div>
         </div>
       </footer>
     </div>
