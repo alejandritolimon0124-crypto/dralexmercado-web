@@ -113,7 +113,7 @@ function App() {
             <img
               src="/doctor-logo.png"
               alt="Dr Alex Mercado"
-              className="h-20 w-auto max-w-none object-contain md:h-16"
+              className="h-56 w-auto max-w-none object-contain md:h-16"
             />
           </div>
 
