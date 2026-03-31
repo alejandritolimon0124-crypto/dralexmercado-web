@@ -100,49 +100,47 @@ function App() {
     @keyframes appleFadeUp {
       from {
         opacity: 0;
-        transform: translate3d(0, 18px, 0);
+        transform: translate3d(0, 42px, 0) scale(0.985);
+        filter: blur(8px);
       }
       to {
         opacity: 1;
-        transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0) scale(1);
+        filter: blur(0);
       }
     }
 
     @keyframes appleFadeIn {
       from {
         opacity: 0;
+        transform: scale(0.985);
+        filter: blur(10px);
       }
       to {
         opacity: 1;
+        transform: scale(1);
+        filter: blur(0);
       }
     }
 
     .apple-fade-up {
       opacity: 0;
-      animation: appleFadeUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-      will-change: transform, opacity;
+      animation: appleFadeUp 1.1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+      will-change: transform, opacity, filter;
+      backface-visibility: hidden;
     }
 
     .apple-fade-in {
       opacity: 0;
-      animation: appleFadeIn 1s ease forwards;
+      animation: appleFadeIn 1.15s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+      will-change: transform, opacity, filter;
+      backface-visibility: hidden;
     }
 
-    .delay-1 {
-      animation-delay: 0.08s;
-    }
-
-    .delay-2 {
-      animation-delay: 0.16s;
-    }
-
-    .delay-3 {
-      animation-delay: 0.24s;
-    }
-
-    .delay-4 {
-      animation-delay: 0.32s;
-    }
+    .delay-1 { animation-delay: 0.12s; }
+    .delay-2 { animation-delay: 0.24s; }
+    .delay-3 { animation-delay: 0.36s; }
+    .delay-4 { animation-delay: 0.48s; }
 
     .apple-card {
       transition:
@@ -152,7 +150,7 @@ function App() {
     }
 
     .apple-card:hover {
-      transform: translateY(-4px);
+      transform: translateY(-6px);
     }
 
     .apple-button {
@@ -164,7 +162,7 @@ function App() {
     }
 
     .apple-button:hover {
-      transform: translateY(-2px);
+      transform: translateY(-3px);
     }
   `;
 
@@ -235,7 +233,7 @@ function App() {
                     Atención premium para embarazo y salud femenina
                   </div>
 
-                  <h1 className="apple-fade-up delay-1 mt-6 max-w-3xl text-[2.25rem] font-semibold leading-[1.1] tracking-tight text-slate-950 md:text-[3rem]">
+                  <h1 className="apple-fade-up delay-1 mt-6 max-w-3xl text-[1.7rem] font-semibold leading-[1.15] tracking-tight text-slate-950 md:text-[2.25rem]">
                     ¿Dolor, dudas o cambios en tu cuerpo?{" "}
                     <span className="text-[#ff7a70]">Aquí encuentras respuestas claras y solución real.</span>
                     <br />
