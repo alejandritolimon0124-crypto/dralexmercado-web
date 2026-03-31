@@ -107,13 +107,15 @@ function App() {
         WhatsApp
       </a>
 
-      <header className="sticky top-0 z-40 bg-white/90 backdrop-blur border-b border-black/5">
-        <div className="mx-auto flex max-w-6xl items-center justify-between gap-1 px-2 py-0 lg:px-6 lg:py-1">
-          <img
-            src="/doctor-logo.png"
-            alt="Dr Alex Mercado"
-            className="block h-[150px] w-auto object-contain md:h-[104px] shrink-0 -my-6"
-          />
+      <header className="sticky top-0 z-50 border-b border-black/5 bg-[#faf7f2]/95 backdrop-blur">
+        <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-2 lg:px-8 lg:py-3">
+          <div className="flex h-14 items-center shrink-0 md:h-16">
+            <img
+              src="/doctor-logo.png"
+              alt="Dr Alex Mercado"
+              className="h-14 w-auto object-contain -translate-y-1 md:h-16 md:-translate-y-1"
+            />
+          </div>
 
           <nav className="hidden items-center gap-6 text-sm text-slate-700 lg:flex xl:gap-8">
             <a href="#inicio" className="transition hover:text-slate-900">
@@ -140,7 +142,7 @@ function App() {
             href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="shrink-0 rounded-full bg-[#25D366] px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-green-500/20 transition hover:-translate-y-0.5 hover:bg-[#1fb85a] md:px-6"
+            className="shrink-0 inline-flex h-14 items-center justify-center rounded-full bg-[#25D366] px-7 text-base font-semibold text-white shadow-lg shadow-green-500/20 transition hover:-translate-y-0.5 hover:bg-[#1fb85a] md:h-16 md:px-8"
           >
             Agendar consulta
           </a>
@@ -297,10 +299,10 @@ function App() {
                     </div>
 
                     <a
-                      href="https://calculadora-gestacional.vercel.app/"
+                      href={calculadoraUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="mt-5 inline-flex rounded-full bg-white px-5 py-3 text-sm font-semibold text-slate-900 transition hover:-translate-y-0.5"
+                      className="mt-5 inline-flex rounded-full border border-white/15 px-5 py-3 text-sm font-medium text-white transition hover:bg-white/8"
                     >
                       Abrir calculadora
                     </a>
@@ -329,6 +331,12 @@ function App() {
                       Conocer Maternidad 360
                     </a>
                   </div>
+                </div>
+
+                <div className="mt-8 rounded-[1.75rem] border border-white/10 bg-white/5 p-5 text-sm leading-7 text-slate-300">
+                  Este bloque es tu verdadero diferenciador: consulta médica + herramienta digital
+                  + formación para la paciente. Eso ya no se ve como una consulta aislada. Se ve
+                  como una experiencia completa.
                 </div>
               </div>
             </div>
@@ -623,32 +631,44 @@ function App() {
       </main>
 
       <footer className="border-t border-black/5 bg-white">
-        <div className="mx-auto max-w-7xl px-4 py-6 lg:px-8">
-          <div className="mb-3 text-sm text-slate-500">
+        <div className="mx-auto max-w-7xl px-5 py-10 lg:px-10">
+          <div className="mb-6 text-sm text-slate-500">
             © {new Date().getFullYear()} Dr. Alex Mercado. Todos los derechos reservados.
           </div>
 
-          <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-2">
-            <div className="flex items-center gap-2 leading-none">
-              <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-500">
+          <div className="flex flex-wrap items-center justify-between gap-4 rounded-[1.75rem] border border-slate-200/80 bg-gradient-to-r from-white via-slate-50 to-white px-5 py-5 shadow-[0_12px_40px_rgba(15,23,42,0.05)]">
+            <div className="flex items-center gap-3">
+              <span className="text-[10px] uppercase tracking-[0.22em] text-slate-500">
                 Atención en
               </span>
-              <img src="/medics-logo.png" alt="MEDICS" className="h-12 w-auto object-contain" />
-              <img src="/muguerza-logo.png" alt="Hospital Muguerza" className="h-16 w-auto object-contain" />
+              <img src="/medics-logo.png" alt="MEDICS" className="h-20 object-contain" />
+              <img
+                src="/muguerza-logo.png"
+                alt="Hospital Muguerza"
+                className="h-28 object-contain"
+              />
             </div>
 
-            <div className="flex items-center gap-2 leading-none">
-              <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-500">
+            <div className="flex items-center gap-3">
+              <span className="text-[10px] uppercase tracking-[0.22em] text-slate-500">
                 Agenda digital
               </span>
-              <img src="/lookadoc-clean.png" alt="Look a Doc" className="h-14 w-auto object-contain" />
+              <img
+                src="/lookadoc-clean.png"
+                alt="Look a Doc"
+                className="h-24 object-contain"
+              />
             </div>
 
-            <div className="flex items-center gap-2 leading-none">
-              <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-500">
+            <div className="flex items-center gap-3">
+              <span className="text-[10px] uppercase tracking-[0.22em] text-slate-500">
                 Powered by
               </span>
-              <img src="/axm-logo.png" alt="AXM Technologies" className="h-12 w-auto object-contain opacity-95" />
+              <img
+                src="/axm-logo.png"
+                alt="AXM Technologies"
+                className="h-20 object-contain opacity-95"
+              />
             </div>
           </div>
         </div>
