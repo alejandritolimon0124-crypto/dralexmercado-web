@@ -108,12 +108,12 @@ function App() {
       </a>
 
       <header className="sticky top-0 z-50 border-b border-black/5 bg-[#faf7f2]/95 backdrop-blur">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-2 lg:px-8 lg:py-3">
-          <div className="flex items-center shrink-0">
+        <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-2 lg:px-8 lg:py-3">
+          <div className="flex h-14 w-[170px] items-center overflow-hidden shrink-0 md:h-auto md:w-auto">
             <img
               src="/doctor-logo.png"
               alt="Dr Alex Mercado"
-              className="h-16 w-auto object-contain md:h-16"
+              className="h-14 w-auto origin-left scale-[1.35] object-contain md:h-16 md:scale-100"
             />
           </div>
 
@@ -130,7 +130,7 @@ function App() {
             href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="shrink-0 rounded-full bg-[#25D366] px-7 py-3.5 text-base font-semibold text-white shadow-lg shadow-green-500/20 transition hover:-translate-y-0.5 hover:bg-[#1fb85a] md:px-8"
+            className="shrink-0 inline-flex h-14 items-center justify-center rounded-full bg-[#25D366] px-5 text-sm font-semibold text-white shadow-lg shadow-green-500/20 transition hover:-translate-y-0.5 hover:bg-[#1fb85a] md:px-8 md:text-base"
           >
             Agendar consulta
           </a>
