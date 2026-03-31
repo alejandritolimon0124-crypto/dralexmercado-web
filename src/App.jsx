@@ -630,10 +630,19 @@ function App() {
             © {new Date().getFullYear()} Dr. Alex Mercado. Todos los derechos reservados.
           </div>
 
-          <div className="flex flex-wrap items-end justify-center gap-x-6 gap-y-3">
-            <div className="flex h-16 items-end">
-              <img src="/medics-logo.png" alt="MEDICS" className="h-14 w-auto object-contain" />
-            </div>
+          <div className="flex items-center justify-center gap-4">
+            <img
+              src="/lookadoc-clean.png"
+              alt="Look a Doc"
+              className="h-32 w-auto object-contain"
+            />
+
+            <img
+              src="/axm-logo.png"
+              alt="AXM Technologies"
+              className="h-36 w-auto object-contain opacity-95"
+            />
+          </div>
 
             <div className="flex h-16 items-end">
               <img
