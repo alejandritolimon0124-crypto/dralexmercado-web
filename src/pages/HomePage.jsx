@@ -94,7 +94,7 @@ function App() {
     "https://api.whatsapp.com/send?phone=528441892008&text=Hola%20Dr.%20Alex%20Mercado,%20vi%20su%20p%C3%A1gina%20y%20quiero%20resolver%20mi%20situaci%C3%B3n";
   const agendaUrl = "https://agenda.dralexmercado.com.mx";
   const calculadoraUrl = "https://calculadora-gestacional.vercel.app/";
-  const maternidadUrl = "#";
+  const maternidadUrl = "https://dralexmercado.com.mx/diplomadomaternidad360";
 
   const appleAnimationStyles = `
     @keyframes appleFadeUp {
@@ -183,7 +183,7 @@ function App() {
         {/* Sticky promo bar */}
         <div className="fixed top-0 left-0 z-[60] w-full bg-[#111] py-2 text-center text-sm tracking-wide text-white">
           <span className="opacity-90">¿Estás embarazada?</span>{" "}
-          <a href="#ruta-maternidad" className="ml-1 font-semibold underline hover:opacity-80">
+          <a href={maternidadUrl} className="ml-1 font-semibold underline hover:opacity-80">
             Conoce Maternidad 360 →
           </a>
         </div>
