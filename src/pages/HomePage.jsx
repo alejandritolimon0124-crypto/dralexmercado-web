@@ -188,7 +188,7 @@ function App() {
           </a>
         </div>
 
-        <header className="sticky top-0 z-50 border-b border-black/5 bg-white/80 backdrop-blur-xl">
+        <header className="sticky top-[36px] z-50 mt-[36px] border-b border-black/5 bg-white/80 backdrop-blur-xl">
           <div className="flex items-center justify-between pl-0 pr-2 pt-3 pb-2 lg:mx-auto lg:max-w-6xl lg:gap-3 lg:px-8 lg:py-3">
             <div className="flex h-14 items-center overflow-hidden lg:h-auto">
               <img
