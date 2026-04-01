@@ -1,6 +1,4 @@
-import { Link } from "react-router-dom";
-
-function HomePage() {
+function App() {
   const services = [
     {
       title: "Embarazo y maternidad",
@@ -93,9 +91,10 @@ function HomePage() {
   const officeGallery = ["/consultorio-1.jpeg", "/consultorio-2.jpeg"];
 
   const whatsappUrl =
-    "https://api.whatsapp.com/send?phone=528443934366&text=Hola%20Dr.%20Alex%20Mercado,%20me%20gustar%C3%ADa%20agendar%20una%20consulta";
+    "https://api.whatsapp.com/send?phone=528441892008&text=Hola%20Dr.%20Alex%20Mercado,%20vi%20su%20p%C3%A1gina%20y%20quiero%20resolver%20mi%20situaci%C3%B3n";
   const agendaUrl = "https://agenda.dralexmercado.com.mx";
   const calculadoraUrl = "https://calculadora-gestacional.vercel.app/";
+  const maternidadUrl = "#";
 
   const appleAnimationStyles = `
     @keyframes appleFadeUp {
@@ -181,7 +180,15 @@ function HomePage() {
           WhatsApp
         </a>
 
-        <header className="sticky top-0 z-50 border-b border-black/5 bg-white/80 backdrop-blur-xl">
+        {/* Sticky promo bar */}
+        <div className="sticky top-0 z-[60] w-full bg-[#111] text-white text-center text-sm py-2 tracking-wide">
+          <span className="opacity-90">¿Estás embarazada?</span>{" "}
+          <a href="#ruta-maternidad" className="underline font-semibold ml-1 hover:opacity-80">
+            Conoce Maternidad 360 →
+          </a>
+        </div>
+
+        <header className="sticky top-[36px] z-50 border-b border-black/5 bg-white/80 backdrop-blur-xl">
           <div className="flex items-center justify-between pl-0 pr-2 pt-3 pb-2 lg:mx-auto lg:max-w-6xl lg:gap-3 lg:px-8 lg:py-3">
             <div className="flex h-14 items-center overflow-hidden lg:h-auto">
               <img
@@ -406,12 +413,12 @@ function HomePage() {
                         </div>
                       </div>
 
-                      <Link
-                        to="/diplomadomaternidad360"
+                      <a
+                        href={maternidadUrl}
                         className="apple-button mt-5 inline-flex rounded-full bg-white px-5 py-3 text-sm font-semibold text-slate-900 shadow-sm hover:bg-slate-100"
                       >
                         Conocer diplomado
-                      </Link>
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -732,4 +739,4 @@ function HomePage() {
   );
 }
 
-export default HomePage;
+export default App;
