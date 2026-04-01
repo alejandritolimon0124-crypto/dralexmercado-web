@@ -181,14 +181,14 @@ function App() {
         </a>
 
         {/* Sticky promo bar */}
-        <div className="sticky top-0 z-[60] w-full bg-[#111] text-white text-center text-sm py-2 tracking-wide">
+        <div className="fixed top-0 left-0 z-[60] w-full bg-[#111] py-2 text-center text-sm tracking-wide text-white">
           <span className="opacity-90">¿Estás embarazada?</span>{" "}
-          <a href="#ruta-maternidad" className="underline font-semibold ml-1 hover:opacity-80">
+          <a href="#ruta-maternidad" className="ml-1 font-semibold underline hover:opacity-80">
             Conoce Maternidad 360 →
           </a>
         </div>
 
-        <header className="sticky top-[36px] z-50 border-b border-black/5 bg-white/80 backdrop-blur-xl">
+        <header className="sticky top-0 z-50 border-b border-black/5 bg-white/80 backdrop-blur-xl">
           <div className="flex items-center justify-between pl-0 pr-2 pt-3 pb-2 lg:mx-auto lg:max-w-6xl lg:gap-3 lg:px-8 lg:py-3">
             <div className="flex h-14 items-center overflow-hidden lg:h-auto">
               <img
@@ -230,7 +230,7 @@ function App() {
           </div>
         </header>
 
-        <main>
+        <main className="pt-[40px]">
           <section id="inicio" className="relative overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-b from-white via-white to-[#faf7f2]" />
 
