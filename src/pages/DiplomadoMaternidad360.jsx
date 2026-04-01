@@ -182,11 +182,11 @@ export default function DiplomadoMaternidad360() {
   ];
 
   const whatsappInfo =
-    "https://wa.me/528443934366?text=Hola%20Dr.%20Alex%20Mercado,%20quiero%20informes%20del%20Diplomado%20Maternidad%20360";
+    "https://wa.me/528441892008?text=Hola%20Dr.%20Alex%20Mercado,%20quiero%20informes%20del%20Diplomado%20Maternidad%20360";
   const whatsappInscripcion =
-    "https://wa.me/528443934366?text=Hola%20Dr.%20Alex%20Mercado,%20quiero%20inscribirme%20al%20Diplomado%20Maternidad%20360";
+    "https://wa.me/528441892008?text=Hola%20Dr.%20Alex%20Mercado,%20quiero%20inscribirme%20al%20Diplomado%20Maternidad%20360";
   const whatsappApartar =
-    "https://wa.me/528443934366?text=Hola%20Dr.%20Alex%20Mercado,%20quiero%20apartar%20mi%20lugar%20en%20el%20Diplomado%20Maternidad%20360";
+    "https://wa.me/528441892008?text=Hola%20Dr.%20Alex%20Mercado,%20quiero%20apartar%20mi%20lugar%20en%20el%20Diplomado%20Maternidad%20360";
 
   const appleStyles = `
     @keyframes appleFadeUp {
@@ -827,7 +827,7 @@ export default function DiplomadoMaternidad360() {
               </a>
 
               <a
-                href="tel:8443934366"
+                href="tel:8441892008"
                 className="apple-button inline-flex items-center justify-center rounded-full border border-white/20 px-8 py-4 text-base font-semibold text-white hover:bg-white/5"
               >
                 Llamar ahora
