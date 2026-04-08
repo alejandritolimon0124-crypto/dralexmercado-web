@@ -951,6 +951,6 @@ export default function DiplomadoMaternidad360() {
         </section>
 
         <section className="bg-white px-4 py-20 sm:px-6 lg:px-8">
-  <div className="mx-auto max-w-6xl">
-    <div className="mx-auto mb-12 max-w-3xl text-center">
-      <span className="inline-flex rounded-full bg-pink-100 px-4 py-2 text-sm font-bold
+          <div className="mx-auto max-w-6xl">
+            <div className="mx-auto mb-12 max-w-3xl text-center">
+              <span className="inline-flex rounded-full bg-pink-100 px-
