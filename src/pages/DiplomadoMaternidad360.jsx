@@ -1,841 +1,956 @@
+import React, { useEffect, useMemo, useState } from 'react';
+import {
+  ChevronDown,
+  Star,
+  Award,
+  Heart,
+  ShieldCheck,
+  MessageCircle,
+  Phone,
+  MapPin,
+  Check,
+  CalendarDays,
+  Users,
+  Stethoscope,
+  Baby,
+} from 'lucide-react';
+
+const appleStyles = `
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+  * {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background: #fcfaf7;
+  }
+
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateY(22px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes floatSoft {
+    0%,100% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
+  }
+
+  @keyframes pulseSoft {
+    0%,100% { box-shadow: 0 0 0 0 rgba(236,72,153,0.18); }
+    70% { box-shadow: 0 0 0 14px rgba(236,72,153,0); }
+  }
+
+  .animate-slideIn {
+    animation: slideIn .65s ease-out forwards;
+  }
+
+  .animate-floatSoft {
+    animation: floatSoft 4s ease-in-out infinite;
+  }
+
+  .animate-pulseSoft {
+    animation: pulseSoft 2.4s infinite;
+  }
+
+  .glass-card {
+    background: rgba(255,255,255,0.72);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+  }
+`;
+
 export default function DiplomadoMaternidad360() {
-  const modulos = [
+  const [expandedModule, setExpandedModule] = useState(null);
+  const [expandedFAQ, setExpandedFAQ] = useState(null);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  const WHATSAPP_NUMBER = '528441892008';
+
+  const whatsappBase = `https://wa.me/${WHATSAPP_NUMBER}`;
+  const buildWhatsAppLink = (message) =>
+    `${whatsappBase}?text=${encodeURIComponent(message)}`;
+
+  const ctaMain = useMemo(
+    () =>
+      buildWhatsAppLink(
+        'Hola, quiero información para asegurar mi lugar en el Diplomado Maternidad 360.'
+      ),
+    []
+  );
+
+  const ctaInfo = useMemo(
+    () =>
+      buildWhatsAppLink(
+        'Hola, quiero saber si el Diplomado Maternidad 360 es para mí.'
+      ),
+    []
+  );
+
+  const ctaPrice = useMemo(
+    () =>
+      buildWhatsAppLink(
+        'Hola, quiero inscribirme al Diplomado Maternidad 360 con precio de lanzamiento.'
+      ),
+    []
+  );
+
+  const ctaConsult = useMemo(
+    () =>
+      buildWhatsAppLink(
+        'Hola, quiero agendar una consulta con el Dr. Alex Mercado.'
+      ),
+    []
+  );
+
+  useEffect(() => {
+    const handleScroll = () => setIsScrolled(window.scrollY > 40);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const programHighlights = [
     {
-      numero: "01",
-      titulo: "Antes del embarazo",
-      subtitulo: "Preparando mi cuerpo y mi mente",
-      descripcion:
-        "Aprenderás cómo prepararte de forma adecuada antes de embarazarte para lograr un embarazo más seguro y saludable.",
-      temas: [
-        "Evaluación médica previa",
-        "Vitaminas y suplementación",
-        "Estudios recomendados",
-        "Hábitos que impactan la fertilidad",
-        "Preparación emocional",
-      ],
-      impartido: ["Dr. Alex Mercado"],
+      icon: <Stethoscope className="w-6 h-6" />,
+      title: 'Acompañamiento médico real',
+      description:
+        'No es información suelta de internet. Es una guía clara, útil y respaldada por experiencia médica.',
     },
     {
-      numero: "02",
-      titulo: "Primer trimestre",
-      subtitulo: "Entendiendo los cambios iniciales",
-      descripcion:
-        "Conoce lo que ocurre en tu cuerpo durante las primeras semanas y cómo identificar qué es normal y qué no.",
-      temas: [
-        "Cambios hormonales y físicos",
-        "Náuseas, fatiga y síntomas comunes",
-        "Signos de alarma",
-        "Cuidados esenciales",
-      ],
-      impartido: ["Dr. Alex Mercado"],
+      icon: <Heart className="w-6 h-6" />,
+      title: 'Embarazo con más tranquilidad',
+      description:
+        'Entiende qué está pasando en tu cuerpo, qué esperar y cuándo actuar con calma y seguridad.',
     },
     {
-      numero: "03",
-      titulo: "Segundo trimestre",
-      subtitulo: "La etapa más estable del embarazo",
-      descripcion:
-        "Aprende a disfrutar esta etapa con mayor energía y conexión con tu bebé.",
-      temas: [
-        "Desarrollo del bebé",
-        "Cambios corporales",
-        "Estudios importantes",
-        "Actividad física segura",
-      ],
-      impartido: ["Dr. Alex Mercado"],
+      icon: <Baby className="w-6 h-6" />,
+      title: 'Preparación integral para mamá y bebé',
+      description:
+        'Desde el embarazo hasta el postparto: decisiones, cuidados, prevención y bienestar.',
     },
     {
-      numero: "04",
-      titulo: "Tercer trimestre",
-      subtitulo: "Preparación para el nacimiento",
-      descripcion:
-        "Todo lo que necesitas saber para llegar tranquila y preparada al momento del parto.",
-      temas: [
-        "Crecimiento fetal",
-        "Molestias frecuentes",
-        "Preparación física y mental",
-        "Señales de inicio de trabajo de parto",
-      ],
-      impartido: ["Dr. Alex Mercado"],
+      icon: <Users className="w-6 h-6" />,
+      title: 'Grupo reducido',
+      description:
+        'La experiencia se vuelve más cercana, más personalizada y con mejor atención para cada mamá.',
     },
     {
-      numero: "05",
-      titulo: "Nutrición y ejercicio",
-      subtitulo: "Tu estilo de vida impacta directamente en la salud de tu bebé",
-      descripcion:
-        "Descubre cómo alimentarte mejor y mantenerte activa de forma segura durante el embarazo.",
-      temas: [
-        "Alimentación adecuada por etapas",
-        "Suplementación",
-        "Ejercicio seguro",
-        "Mitos y realidades",
-      ],
-      impartido: ["Dr. Alex Mercado"],
+      icon: <Award className="w-6 h-6" />,
+      title: 'Material de alto valor',
+      description:
+        'Checklists, explicaciones prácticas y contenido diseñado para que realmente lo apliques.',
     },
     {
-      numero: "06",
-      titulo: "Pareja y sexualidad",
-      subtitulo: "Conexión, cambios emocionales y vida íntima en el embarazo",
-      descripcion:
-        "El embarazo también transforma la relación de pareja y la conexión emocional.",
-      temas: [
-        "Cambios emocionales en la pareja",
-        "Sexualidad durante el embarazo",
-        "Mitos y realidades",
-        "Comunicación y vínculo afectivo",
-      ],
-      impartido: [
-        "Padre Vicente Eliamar",
-        "Sacerdote Diocesano de Saltillo, Coahuila y Médico General",
-        "Dr. Alex Mercado",
-      ],
-    },
-    {
-      numero: "07",
-      titulo: "Complicaciones",
-      subtitulo: "Reconoce las señales de alarma a tiempo",
-      descripcion:
-        "Aprende a identificar y actuar ante situaciones que requieren atención médica.",
-      temas: [
-        "Diabetes gestacional",
-        "Preeclampsia",
-        "Sangrados y urgencias",
-        "Cuándo acudir al hospital",
-      ],
-      impartido: ["Dr. Alex Mercado"],
-    },
-    {
-      numero: "08",
-      titulo: "Parto vs cesárea",
-      subtitulo: "Tomando decisiones informadas",
-      descripcion:
-        "Conoce las diferencias reales para tomar decisiones con seguridad y tranquilidad.",
-      temas: [
-        "Tipos de parto",
-        "Indicaciones médicas reales",
-        "Riesgos y beneficios",
-        "Plan de nacimiento",
-      ],
-      impartido: ["Dr. Alex Mercado"],
-    },
-    {
-      numero: "09",
-      titulo: "Anestesia",
-      subtitulo: "Pierde el miedo entendiendo cómo funciona",
-      descripcion:
-        "Conoce las opciones de analgesia y anestesia para vivir este momento con mayor seguridad.",
-      temas: [
-        "Epidural",
-        "Opciones de analgesia",
-        "Seguridad y riesgos",
-        "Mitos comunes",
-      ],
-      impartido: ["Dra. Angela López, Anestesióloga", "Dr. Alex Mercado"],
-    },
-    {
-      numero: "10",
-      titulo: "Postparto y nacimiento del bebé",
-      subtitulo: "Lo que realmente sucede después del nacimiento",
-      descripcion:
-        "Prepárate para el nacimiento de tu bebé y para los cambios físicos y emocionales del postparto.",
-      temas: [
-        "Lactancia",
-        "Cuidados del recién nacido",
-        "Cambios emocionales",
-        "Recuperación física",
-      ],
-      impartido: ["Dra. Rocío Ramírez, Pediatra", "Dr. Alex Mercado"],
+      icon: <ShieldCheck className="w-6 h-6" />,
+      title: 'Confianza en cada etapa',
+      description:
+        'Sabrás identificar cambios normales, señales de alerta y los puntos clave del embarazo.',
     },
   ];
 
-  const beneficios = [
-    "Acceso presencial al diplomado",
-    "Material didáctico digital (tablas, algoritmos y checklist de utilidad)",
-    "Certificado de participación",
-    "Acceso a la comunidad de mamás informadas y capacitadas en maternidad",
-    "Evento de fin de cursos",
+  const modules = [
+    {
+      id: 1,
+      title: 'Módulo 1: Antes del embarazo',
+      description:
+        'Qué debes saber si estás planeando embarazarte o quieres prepararte mejor.',
+      content:
+        'Revisión de salud previa, suplementación, estudios básicos, hábitos que vale la pena corregir y decisiones importantes antes de iniciar esta etapa.',
+    },
+    {
+      id: 2,
+      title: 'Módulo 2: Primer trimestre',
+      description:
+        'Los primeros cambios, síntomas más comunes, miedos frecuentes y cómo vivirlo con más seguridad.',
+      content:
+        'Qué es normal, cuándo preocuparte, cómo cuidar tu alimentación, qué estudios suelen solicitarse y cómo interpretar esta etapa con más tranquilidad.',
+    },
+    {
+      id: 3,
+      title: 'Módulo 3: Segundo trimestre',
+      description:
+        'La etapa en la que muchas mamás se sienten mejor, pero aún hay mucho por entender.',
+      content:
+        'Crecimiento del bebé, cambios físicos, seguimiento prenatal, molestias comunes y cómo mantener bienestar físico y emocional.',
+    },
+    {
+      id: 4,
+      title: 'Módulo 4: Tercer trimestre',
+      description:
+        'La recta final del embarazo y cómo prepararte mental y físicamente para el nacimiento.',
+      content:
+        'Cambios finales, señales a vigilar, preparación para parto o cesárea, maleta, expectativas realistas y organización familiar.',
+    },
+    {
+      id: 5,
+      title: 'Módulo 5: Nutrición y ejercicio',
+      description:
+        'Qué sí te ayuda, qué no vale la pena y cómo cuidar tu cuerpo durante el embarazo.',
+      content:
+        'Alimentación práctica, control de peso, hidratación, actividad física segura y recomendaciones útiles según cada etapa.',
+    },
+    {
+      id: 6,
+      title: 'Módulo 6: Pareja y sexualidad',
+      description:
+        'Cómo vivir esta etapa sin desinformación, con mejor comunicación y mayor confianza.',
+      content:
+        'Cambios en la relación, dudas frecuentes sobre sexualidad, emociones, apoyo de pareja y adaptación a la nueva dinámica.',
+    },
+    {
+      id: 7,
+      title: 'Módulo 7: Complicaciones',
+      description:
+        'Identifica señales importantes y entiende cuándo necesitas valoración médica.',
+      content:
+        'Sangrado, dolor, presión, movimientos fetales, urgencias más comunes y cómo actuar con claridad sin caer en pánico.',
+    },
+    {
+      id: 8,
+      title: 'Módulo 8: Parto vs. cesárea',
+      description:
+        'Información clara para entender ambas vías de nacimiento y tomar decisiones mejor informadas.',
+      content:
+        'Indicaciones, diferencias, mitos, recuperación y puntos clave para sentirte más preparada según tu caso.',
+    },
+    {
+      id: 9,
+      title: 'Módulo 9: Anestesia',
+      description:
+        'Qué debes saber sobre analgesia y anestesia durante el nacimiento.',
+      content:
+        'Módulo impartido por la Dra. Ángela López, Anestesióloga, y el Dr. Alex Mercado. Se revisan opciones, dudas frecuentes, seguridad, indicaciones y expectativas realistas.',
+    },
+    {
+      id: 10,
+      title: 'Módulo 10: Postparto y nacimiento del bebé',
+      description:
+        'Lo que realmente pasa después del nacimiento y cómo vivirlo mejor.',
+      content:
+        'Módulo impartido por la Dra. Rocío Ramírez, Pediatra, y el Dr. Alex Mercado. Incluye cuidados de mamá, adaptación, primeros días del bebé y puntos esenciales del postparto.',
+    },
   ];
 
-  const paraQuienEs = [
-    "Mujeres que planean embarazarse",
-    "Mujeres en cualquier trimestre del embarazo",
-    "Mamás que desean entender mejor su proceso y tomar decisiones informadas",
-    "Parejas que quieren vivir esta etapa con mayor claridad y conexión",
-    "Pacientes que desean prepararse mejor para parto, cesárea, lactancia y postparto",
+  const experts = [
+    {
+      name: 'Dr. Alex Mercado',
+      specialty: 'Ginecología y Obstetricia',
+      description:
+        'Dirección médica del programa y guía principal durante el diplomado.',
+    },
+    {
+      name: 'Dra. Ángela López',
+      specialty: 'Anestesiología',
+      description:
+        'Participación especial en el módulo de anestesia para parto o cesárea.',
+    },
+    {
+      name: 'Dra. Rocío Ramírez',
+      specialty: 'Pediatría',
+      description:
+        'Participación especial en el módulo de postparto y nacimiento del bebé.',
+    },
   ];
 
-  const noEsPara = [
-    "Quien busca información superficial o incompleta",
-    "Quien no desea involucrarse activamente en su proceso de maternidad",
-    "Quien prefiere vivir el embarazo desde el miedo o la desinformación",
+  const testimonials = [
+    {
+      name: 'Paciente embarazada',
+      role: 'Mamá primeriza',
+      content:
+        'Me ayudó a entender cosas que nadie me había explicado con claridad. Me sentí más tranquila, más preparada y mucho menos sola.',
+      rating: 5,
+    },
+    {
+      name: 'Asistente del diplomado',
+      role: 'Planeando embarazo',
+      content:
+        'No solo te informa, también te da paz. Sales con una idea mucho más clara de lo que viene y de cómo cuidarte mejor.',
+      rating: 5,
+    },
+    {
+      name: 'Paciente de control prenatal',
+      role: 'Segunda gestación',
+      content:
+        'La forma de explicar del doctor hace que todo se entienda fácil. Es información útil, aterrizada y muy valiosa para cualquier mamá.',
+      rating: 5,
+    },
   ];
 
-  const credenciales = [
-    "Egresado con Mención Honorífica como Médico General de la Facultad de Medicina Saltillo (UAdeC).",
-    "Especialista en Ginecología y Obstetricia egresado de la UMAE No. 23 del IMSS, Monterrey, N.L., avalado por la UDEM como Primer Lugar de generación y Tercer Lugar Nacional.",
-    "Diplomado en Colposcopia y Cáncer en la Mujer avalado por la Universidad Autónoma de Puebla.",
-    "Diplomado en Investigación Clínica y Maestría en Ciencias de la Salud por la Universidad Autónoma de Durango.",
-    "Rotación en Docencia avalado por la Universidad de Querétaro.",
-    "Rotación en Reproducción Asistida, Medicina Fetal y Obstetricia en Hospital Vall d’Hebron, Barcelona, España.",
-    "Diplomado en Administración de Recursos Hospitalarios avalado por la UANE.",
-    "Certificado por el Consejo Mexicano de Ginecología y Obstetricia Num. 5928.",
-    "Miembro activo del Colegio de Ginecología y Obstetricia de Saltillo.",
+  const faqs = [
+    {
+      question: '¿Para quién es este diplomado?',
+      answer:
+        'Está pensado para mujeres embarazadas, mujeres que planean embarazarse y mamás que desean vivir esta etapa con mayor claridad, seguridad y acompañamiento médico.',
+    },
+    {
+      question: '¿Es solo para pacientes del Dr. Alex Mercado?',
+      answer:
+        'No. Puede integrarse cualquier mujer interesada en entender mejor su embarazo y prepararse de forma integral.',
+    },
+    {
+      question: '¿Cómo se aparta el lugar?',
+      answer:
+        'El proceso más rápido es por WhatsApp. Ahí se te da la información de inscripción, disponibilidad y pasos para confirmar tu lugar.',
+    },
+    {
+      question: '¿Hay cupo limitado?',
+      answer:
+        'Sí. El grupo es reducido para mantener una experiencia más cercana, mejor atención y una dinámica mucho más personalizada.',
+    },
+    {
+      question: '¿Qué incluye?',
+      answer:
+        'Acceso al diplomado, módulos formativos, material digital de apoyo, certificado de participación, comunidad y acompañamiento durante la experiencia.',
+    },
+    {
+      question: '¿Dónde se lleva a cabo?',
+      answer:
+        'En Saltillo, Coahuila, en sede física del programa. La ubicación exacta se comparte al confirmar tu inscripción.',
+    },
   ];
 
-  const whatsappInfo =
-    "https://wa.me/528441892008?text=Hola%20Dr.%20Alex%20Mercado,%20quiero%20informes%20del%20Diplomado%20Maternidad%20360";
-  const whatsappInscripcion =
-    "https://wa.me/528441892008?text=Hola%20Dr.%20Alex%20Mercado,%20quiero%20inscribirme%20al%20Diplomado%20Maternidad%20360";
-  const whatsappApartar =
-    "https://wa.me/528441892008?text=Hola%20Dr.%20Alex%20Mercado,%20quiero%20apartar%20mi%20lugar%20en%20el%20Diplomado%20Maternidad%20360";
-
-  const appleStyles = `
-    @keyframes appleFadeUp {
-      from {
-        opacity: 0;
-        transform: translate3d(0, 36px, 0) scale(0.985);
-        filter: blur(8px);
-      }
-      to {
-        opacity: 1;
-        transform: translate3d(0, 0, 0) scale(1);
-        filter: blur(0);
-      }
-    }
-
-    @keyframes appleFadeIn {
-      from {
-        opacity: 0;
-        transform: scale(0.985);
-        filter: blur(10px);
-      }
-      to {
-        opacity: 1;
-        transform: scale(1);
-        filter: blur(0);
-      }
-    }
-
-    .apple-fade-up {
-      opacity: 0;
-      animation: appleFadeUp 1.05s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-      will-change: transform, opacity, filter;
-      backface-visibility: hidden;
-    }
-
-    .apple-fade-in {
-      opacity: 0;
-      animation: appleFadeIn 1.1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-      will-change: transform, opacity, filter;
-      backface-visibility: hidden;
-    }
-
-    .delay-1 { animation-delay: 0.12s; }
-    .delay-2 { animation-delay: 0.24s; }
-    .delay-3 { animation-delay: 0.36s; }
-    .delay-4 { animation-delay: 0.48s; }
-
-    .apple-card {
-      transition:
-        transform 320ms cubic-bezier(0.22, 1, 0.36, 1),
-        box-shadow 320ms cubic-bezier(0.22, 1, 0.36, 1),
-        border-color 320ms ease,
-        background-color 320ms ease;
-    }
-
-    .apple-card:hover {
-      transform: translateY(-6px);
-    }
-
-    .apple-button {
-      transition:
-        transform 260ms cubic-bezier(0.22, 1, 0.36, 1),
-        box-shadow 260ms cubic-bezier(0.22, 1, 0.36, 1),
-        background-color 260ms ease,
-        border-color 260ms ease,
-        color 260ms ease;
-    }
-
-    .apple-button:hover {
-      transform: translateY(-3px);
-    }
-  `;
+  const includedItems = [
+    '10 módulos integrales',
+    'Material digital de apoyo',
+    'Certificado de participación',
+    'Experiencia presencial enfocada en claridad y acompañamiento',
+    'Comunidad de mamás informadas',
+    'Sesiones diseñadas para dudas reales del embarazo',
+  ];
 
   return (
     <>
       <style>{appleStyles}</style>
 
-      <main className="min-h-screen bg-[#f7f3ee] text-slate-900">
-        <a
-          href={whatsappInfo}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="fixed bottom-4 right-4 z-50 inline-flex items-center gap-3 rounded-full bg-[#25D366] px-5 py-3 text-sm font-semibold text-white shadow-2xl shadow-green-500/30 transition hover:-translate-y-0.5 hover:bg-[#1fb85a] md:bottom-5 md:right-5"
+      <a
+        href="https://dralexmercado.com.mx"
+        className="fixed top-24 left-4 z-[9999] inline-flex items-center gap-2 rounded-full bg-slate-900 px-5 py-3 text-sm font-semibold text-white shadow-2xl transition-all duration-300 hover:-translate-y-0.5 hover:bg-slate-800 md:top-28 md:left-6"
+      >
+        ← Regresar
+      </a>
+
+      <main className="min-h-screen bg-[#fcfaf7] text-slate-900">
+        <nav
+          className={`fixed top-0 z-[100] w-full transition-all duration-300 ${
+            isScrolled
+              ? 'bg-white/80 backdrop-blur-xl shadow-[0_10px_40px_rgba(15,23,42,0.08)]'
+              : 'bg-transparent'
+          }`}
         >
-          <span className="text-base">💬</span>
-          WhatsApp
-        </a>
+          <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
+            <a href="#top" className="text-lg font-extrabold tracking-tight text-slate-900">
+              Maternidad <span className="text-pink-600">360°</span>
+            </a>
 
-        <section className="relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-b from-white via-[#fcfaf7] to-[#f7f3ee]" />
-          <div className="absolute left-1/2 top-0 h-[420px] w-[420px] -translate-x-1/2 rounded-full bg-rose-100/60 blur-3xl md:h-[520px] md:w-[520px]" />
+            <div className="hidden items-center gap-8 text-sm font-medium text-slate-700 md:flex">
+              <a href="#programa" className="transition hover:text-pink-600">
+                Programa
+              </a>
+              <a href="#contenido" className="transition hover:text-pink-600">
+                Contenido
+              </a>
+              <a href="#inversion" className="transition hover:text-pink-600">
+                Inversión
+              </a>
+              <a href="#faq" className="transition hover:text-pink-600">
+                FAQ
+              </a>
+            </div>
 
-          <div className="relative mx-auto max-w-7xl px-5 py-12 md:px-8 md:py-16 lg:px-12 lg:py-24">
-            <div className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
-              <div className="lg:pr-4">
-                <div className="apple-fade-up inline-flex rounded-full border border-rose-200 bg-white px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-rose-700 shadow-sm md:text-xs">
-                  Diplomado presencial en Saltillo, Coahuila
-                </div>
+            <a
+              href={ctaMain}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center justify-center rounded-full bg-green-500 px-5 py-2.5 text-sm font-bold text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-green-600"
+            >
+              WhatsApp
+            </a>
+          </div>
+        </nav>
 
-                <h1 className="apple-fade-up delay-1 mt-5 max-w-4xl text-4xl font-semibold leading-[1.02] tracking-tight text-slate-950 md:mt-6 md:text-6xl">
-                  Diplomado <span className="text-rose-500">Maternidad 360</span>
-                </h1>
+        <section
+          id="top"
+          className="relative overflow-hidden px-4 pb-20 pt-32 sm:px-6 lg:px-8 lg:pt-36"
+        >
+          <div className="absolute inset-0 -z-10">
+            <div className="absolute left-1/2 top-10 h-72 w-72 -translate-x-1/2 rounded-full bg-pink-200/35 blur-3xl" />
+            <div className="absolute right-0 top-44 h-80 w-80 rounded-full bg-rose-100/50 blur-3xl" />
+            <div className="absolute bottom-0 left-0 h-72 w-72 rounded-full bg-fuchsia-100/40 blur-3xl" />
+          </div>
 
-                <p className="apple-fade-up delay-2 mt-5 max-w-3xl text-lg leading-8 text-slate-600 md:mt-6 md:text-xl">
-                  Un acompañamiento integral para vivir tu embarazo con mayor
-                  seguridad, conocimiento y tranquilidad, desde antes del embarazo
-                  hasta el nacimiento de tu bebé.
-                </p>
-
-                <div className="apple-fade-up delay-3 mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center md:mt-8">
-                  <div className="rounded-[1.75rem] border border-rose-200 bg-white px-6 py-4 shadow-sm">
-                    <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-rose-500 md:text-xs">
-                      Próximo inicio
-                    </p>
-                    <p className="mt-1 text-2xl font-semibold text-slate-950">
-                      18 de abril
-                    </p>
-                  </div>
-
-                  <div className="rounded-[1.75rem] border border-amber-200 bg-[#fff9f1] px-6 py-4 shadow-sm">
-                    <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-amber-700 md:text-xs">
-                      Disponibilidad
-                    </p>
-                    <p className="mt-1 text-2xl font-semibold text-slate-950">
-                      Cupo limitado
-                    </p>
-                  </div>
-                </div>
-
-                <div className="apple-fade-up delay-4 mt-7 grid gap-3 sm:grid-cols-2 md:mt-8 md:flex md:flex-row">
-                  <a
-                    href={whatsappInscripcion}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="apple-button inline-flex items-center justify-center rounded-full bg-[#25D366] px-8 py-4 text-base font-semibold text-white shadow-md hover:bg-[#1fb85a]"
-                  >
-                    Inscribirme por WhatsApp
-                  </a>
-
-                  <a
-                    href="#programa"
-                    className="apple-button inline-flex items-center justify-center rounded-full border border-slate-300 bg-white px-8 py-4 text-base font-medium text-slate-700 hover:bg-slate-50"
-                  >
-                    Ver programa completo
-                  </a>
-                </div>
-
-                <div className="apple-fade-up delay-4 mt-8 grid gap-4 sm:grid-cols-2 xl:grid-cols-4 md:mt-10">
-                  <div className="apple-card rounded-[1.5rem] border border-black/5 bg-white p-5 shadow-sm">
-                    <p className="text-sm text-slate-500">Duración</p>
-                    <p className="mt-1 text-lg font-semibold text-slate-950">
-                      10 módulos
-                    </p>
-                  </div>
-                  <div className="apple-card rounded-[1.5rem] border border-black/5 bg-white p-5 shadow-sm">
-                    <p className="text-sm text-slate-500">Formato</p>
-                    <p className="mt-1 text-lg font-semibold text-slate-950">
-                      10 sesiones semanales
-                    </p>
-                  </div>
-                  <div className="apple-card rounded-[1.5rem] border border-black/5 bg-white p-5 shadow-sm">
-                    <p className="text-sm text-slate-500">Duración por sesión</p>
-                    <p className="mt-1 text-lg font-semibold text-slate-950">
-                      2 horas
-                    </p>
-                  </div>
-                  <div className="apple-card rounded-[1.5rem] border border-black/5 bg-white p-5 shadow-sm">
-                    <p className="text-sm text-slate-500">Sede</p>
-                    <p className="mt-1 text-lg font-semibold text-slate-950">
-                      Edificio MEDICS
-                    </p>
-                  </div>
-                </div>
+          <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-2">
+            <div className="text-center lg:text-left">
+              <div className="animate-slideIn mb-5">
+                <span className="inline-flex items-center gap-2 rounded-full border border-pink-200 bg-white/80 px-4 py-2 text-sm font-semibold text-pink-700 shadow-sm">
+                  <CalendarDays className="h-4 w-4" />
+                  Programa presencial premium para futuras mamás
+                </span>
               </div>
 
-              <div className="apple-fade-in delay-2 relative">
-                <div className="absolute inset-0 rounded-[2.5rem] bg-gradient-to-br from-rose-100 via-white to-rose-50 blur-2xl" />
-                <div className="relative overflow-hidden rounded-[2.5rem] border border-black/5 bg-white shadow-[0_30px_100px_rgba(15,23,42,0.08)]">
-                  <img
-                    src="/mama.png"
-                    alt="Mamá embarazada señalando"
-                    className="h-[320px] w-full object-cover object-[72%_20%] sm:h-[420px] sm:object-[70%_20%] lg:h-[620px] lg:object-center"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+              <h1
+                className="animate-slideIn text-5xl font-black leading-[1.02] tracking-tight text-slate-900 sm:text-6xl md:text-7xl"
+                style={{ animationDelay: '0.08s' }}
+              >
+                Vive tu embarazo con{' '}
+                <span className="text-pink-600">seguridad, claridad y confianza</span>
+              </h1>
 
-        <section className="mx-auto max-w-7xl px-5 py-14 md:px-8 md:py-16 lg:px-12">
-          <div className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
-            <div className="apple-fade-up rounded-[2rem] border border-black/5 bg-white p-7 shadow-sm md:p-10">
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-rose-500">
-                ¿Qué es Maternidad 360?
+              <p
+                className="animate-slideIn mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-slate-600 sm:text-xl lg:mx-0"
+                style={{ animationDelay: '0.16s' }}
+              >
+                Un diplomado creado para ayudarte a entender esta etapa, resolver dudas
+                reales y prepararte mejor para el nacimiento de tu bebé con
+                acompañamiento médico.
               </p>
-              <h2 className="mt-4 text-3xl font-semibold tracking-tight text-slate-950 md:text-4xl">
-                Mucho más que información: una guía real para esta etapa de tu vida
-              </h2>
-              <p className="mt-6 text-lg leading-8 text-slate-600">
-                El embarazo es una de las etapas más importantes de tu vida, pero
-                también una de las más inciertas. Este diplomado fue diseñado para
-                ayudarte a entender cada cambio, resolver tus dudas, detectar
-                señales de alarma y tomar decisiones con mayor seguridad.
-              </p>
-              <p className="mt-4 text-lg leading-8 text-slate-600">
-                Aquí no solo aprenderás teoría: recibirás orientación práctica,
-                acompañamiento médico y herramientas útiles para vivir tu embarazo
-                con más tranquilidad.
-              </p>
-            </div>
 
-            <div className="apple-fade-up delay-1 rounded-[2rem] bg-slate-950 p-7 text-white shadow-xl md:p-10">
-              <h3 className="text-2xl font-semibold">¿Qué lograrás con este diplomado?</h3>
-              <ul className="mt-6 space-y-4 text-slate-300">
-                <li>• Sentirte más segura en cada etapa del embarazo</li>
-                <li>• Saber identificar qué es normal y qué no</li>
-                <li>• Tomar decisiones mejor informadas</li>
-                <li>• Reducir miedo e incertidumbre</li>
-                <li>• Prepararte mejor para el nacimiento y el postparto</li>
-                <li>• Vivir esta etapa con mayor confianza y tranquilidad</li>
-              </ul>
-            </div>
-          </div>
-        </section>
-
-        <section id="incluye" className="bg-white py-14 md:py-16">
-          <div className="mx-auto max-w-7xl px-5 md:px-8 lg:px-12">
-            <div className="mx-auto max-w-3xl text-center">
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-rose-500">
-                Valor incluido
+              <p
+                className="animate-slideIn mt-5 text-base font-semibold text-slate-800 sm:text-lg"
+                style={{ animationDelay: '0.22s' }}
+              >
+                Diplomado Maternidad 360 por el <span className="text-pink-600">Dr. Alex Mercado</span>
               </p>
-              <h2 className="mt-4 text-3xl font-semibold tracking-tight text-slate-950 md:text-5xl">
-                ¿Qué incluye el diplomado?
-              </h2>
-              <p className="mt-4 text-lg text-slate-600">
-                No es solo una serie de clases. Es una experiencia completa de
-                formación y acompañamiento.
-              </p>
-            </div>
 
-            <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-              {beneficios.map((item, i) => (
-                <div
-                  key={i}
-                  className="apple-card rounded-[1.75rem] border border-black/5 bg-[#faf7f2] p-6 shadow-sm"
+              <div
+                className="animate-slideIn mt-8 flex flex-col gap-4 sm:flex-row lg:justify-start"
+                style={{ animationDelay: '0.28s' }}
+              >
+                <a
+                  href={ctaMain}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="animate-pulseSoft inline-flex w-full items-center justify-center rounded-full bg-green-500 px-8 py-4 text-center text-lg font-extrabold text-white shadow-xl transition hover:-translate-y-0.5 hover:bg-green-600 sm:w-auto"
                 >
-                  <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-rose-100 text-xl text-rose-600">
-                    ✓
+                  Quiero asegurar mi lugar
+                </a>
+
+                <a
+                  href={ctaInfo}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex w-full items-center justify-center rounded-full border-2 border-pink-200 bg-white/80 px-8 py-4 text-center text-lg font-bold text-pink-700 shadow-sm transition hover:-translate-y-0.5 hover:border-pink-300 hover:bg-pink-50 sm:w-auto"
+                >
+                  Quiero saber si es para mí
+                </a>
+              </div>
+
+              <div
+                className="animate-slideIn mt-7 rounded-2xl border border-red-200 bg-red-50 p-5 text-left shadow-sm"
+                style={{ animationDelay: '0.34s' }}
+              >
+                <p className="text-base font-extrabold text-red-600 sm:text-lg">
+                  ⚠️ Cupo limitado a 15 mamás por generación
+                </p>
+                <p className="mt-1 text-sm leading-relaxed text-slate-700 sm:text-base">
+                  Cuando se llena, el grupo se cierra. La experiencia está pensada para
+                  ser cercana, clara y personalizada.
+                </p>
+              </div>
+
+              <div
+                className="animate-slideIn mt-8 grid grid-cols-1 gap-4 sm:grid-cols-3"
+                style={{ animationDelay: '0.40s' }}
+              >
+                <div className="rounded-2xl border border-white/70 bg-white/80 p-5 shadow-md backdrop-blur">
+                  <p className="text-3xl font-black text-pink-600">10</p>
+                  <p className="mt-1 text-sm font-medium text-slate-600">Módulos clave</p>
+                </div>
+                <div className="rounded-2xl border border-white/70 bg-white/80 p-5 shadow-md backdrop-blur">
+                  <p className="text-3xl font-black text-pink-600">15</p>
+                  <p className="mt-1 text-sm font-medium text-slate-600">Lugares máximos</p>
+                </div>
+                <div className="rounded-2xl border border-white/70 bg-white/80 p-5 shadow-md backdrop-blur">
+                  <p className="text-3xl font-black text-pink-600">100%</p>
+                  <p className="mt-1 text-sm font-medium text-slate-600">Enfoque práctico</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="animate-slideIn relative" style={{ animationDelay: '0.24s' }}>
+              <div className="glass-card animate-floatSoft rounded-[2rem] border border-white/70 p-6 shadow-[0_20px_80px_rgba(236,72,153,0.12)] sm:p-8">
+                <div className="rounded-[1.75rem] bg-gradient-to-br from-white via-pink-50 to-rose-100 p-8">
+                  <div className="mb-6 inline-flex rounded-full bg-pink-100 px-4 py-2 text-sm font-bold text-pink-700">
+                    Formación médica premium
                   </div>
-                  <p className="text-lg font-medium leading-7 text-slate-800">
-                    {item}
+
+                  <h3 className="text-2xl font-black leading-tight text-slate-900 sm:text-3xl">
+                    Menos miedo. Más claridad. Mejor preparación.
+                  </h3>
+
+                  <p className="mt-4 text-base leading-relaxed text-slate-600">
+                    Diseñado para mujeres que quieren vivir su embarazo con información
+                    útil, confianza y una guía mucho más clara en cada etapa.
                   </p>
+
+                  <div className="mt-7 space-y-4">
+                    {[
+                      'Aprende lo que sí importa durante tu embarazo',
+                      'Entiende cambios, señales de alerta y decisiones importantes',
+                      'Prepárate para parto, cesárea y postparto',
+                    ].map((item, idx) => (
+                      <div key={idx} className="flex items-start gap-3 rounded-2xl bg-white/80 p-4 shadow-sm">
+                        <div className="mt-0.5 rounded-full bg-green-100 p-1.5 text-green-600">
+                          <Check className="h-4 w-4" />
+                        </div>
+                        <p className="text-sm font-medium leading-relaxed text-slate-700">
+                          {item}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+
+                  <a
+                    href={ctaConsult}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="mt-7 inline-flex w-full items-center justify-center rounded-full bg-slate-900 px-6 py-4 text-center text-base font-bold text-white shadow-lg transition hover:bg-slate-800"
+                  >
+                    También quiero agendar consulta
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="programa" className="bg-white px-4 py-20 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-6xl">
+            <div className="mx-auto mb-14 max-w-3xl text-center">
+              <span className="inline-flex rounded-full bg-pink-100 px-4 py-2 text-sm font-bold text-pink-700">
+                ¿Por qué elegir este programa?
+              </span>
+              <h2 className="mt-5 text-4xl font-black tracking-tight text-slate-900 sm:text-5xl">
+                No es solo un curso.
+                <span className="block text-pink-600">Es preparación real para una etapa decisiva.</span>
+              </h2>
+              <p className="mt-5 text-lg leading-relaxed text-slate-600">
+                Está diseñado para ayudarte a sentirte más segura, mejor informada y
+                emocionalmente más preparada para vivir tu embarazo y el nacimiento de tu bebé.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
+              {programHighlights.map((item, idx) => (
+                <div
+                  key={idx}
+                  className="rounded-[1.6rem] border border-pink-100 bg-gradient-to-br from-white to-pink-50 p-7 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl"
+                >
+                  <div className="mb-5 inline-flex rounded-2xl bg-pink-100 p-3 text-pink-600">
+                    {item.icon}
+                  </div>
+                  <h3 className="text-xl font-extrabold text-slate-900">{item.title}</h3>
+                  <p className="mt-3 leading-relaxed text-slate-600">{item.description}</p>
                 </div>
               ))}
             </div>
-          </div>
-        </section>
 
-        <section className="mx-auto max-w-7xl px-5 py-14 md:px-8 md:py-16 lg:px-12">
-          <div className="grid gap-8 lg:grid-cols-2">
-            <div className="apple-card rounded-[2rem] border border-black/5 bg-white p-7 shadow-sm md:p-8">
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-rose-500">
-                Este diplomado es para ti si
-              </p>
-              <h2 className="mt-4 text-3xl font-semibold tracking-tight text-slate-950">
-                Sí es para ti
-              </h2>
-              <div className="mt-8 space-y-4">
-                {paraQuienEs.map((item, i) => (
-                  <div
-                    key={i}
-                    className="rounded-[1.25rem] border border-rose-100 bg-rose-50 px-5 py-4 text-slate-800"
-                  >
-                    {item}
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="apple-card rounded-[2rem] border border-black/5 bg-[#f8f8f8] p-7 shadow-sm md:p-8">
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">
-                Perfil esperado
-              </p>
-              <h2 className="mt-4 text-3xl font-semibold tracking-tight text-slate-950">
-                No es para ti si
-              </h2>
-              <div className="mt-8 space-y-4">
-                {noEsPara.map((item, i) => (
-                  <div
-                    key={i}
-                    className="rounded-[1.25rem] border border-slate-200 bg-white px-5 py-4 text-slate-700"
-                  >
-                    {item}
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section id="programa" className="bg-[#f4efe8] py-14 md:py-16">
-          <div className="mx-auto max-w-7xl px-5 md:px-8 lg:px-12">
-            <div className="mx-auto max-w-3xl text-center">
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-rose-500">
-                Programa académico
-              </p>
-              <h2 className="mt-4 text-3xl font-semibold tracking-tight text-slate-950 md:text-5xl">
-                Estructura del Diplomado Maternidad 360
-              </h2>
-              <p className="mt-4 text-lg text-slate-600">
-                10 módulos diseñados para acompañarte de forma integral durante
-                todo el proceso.
-              </p>
-            </div>
-
-            <div className="mt-14 grid gap-8">
-              {modulos.map((modulo) => (
-                <article
-                  key={modulo.numero}
-                  className="apple-card rounded-[2rem] border border-black/5 bg-white p-7 shadow-sm md:p-8"
-                >
-                  <div className="grid gap-8 lg:grid-cols-[120px_1fr]">
-                    <div>
-                      <div className="inline-flex h-20 w-20 items-center justify-center rounded-[1.5rem] bg-rose-100 text-2xl font-semibold text-rose-600">
-                        {modulo.numero}
-                      </div>
-                    </div>
-
-                    <div>
-                      <h3 className="text-2xl font-semibold text-slate-950">
-                        {modulo.titulo}
-                      </h3>
-                      <p className="mt-2 text-lg font-medium text-rose-500">
-                        {modulo.subtitulo}
-                      </p>
-                      <p className="mt-4 leading-8 text-slate-600">
-                        {modulo.descripcion}
-                      </p>
-
-                      <div className="mt-6">
-                        <p className="mb-3 text-sm font-semibold uppercase tracking-wide text-slate-500">
-                          Incluye
-                        </p>
-                        <ul className="grid gap-3 md:grid-cols-2">
-                          {modulo.temas.map((tema, i) => (
-                            <li
-                              key={i}
-                              className="rounded-[1.25rem] border border-black/5 bg-[#faf7f2] px-4 py-3 text-slate-700"
-                            >
-                              {tema}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-
-                      <div className="mt-6 rounded-[1.5rem] bg-rose-50 px-5 py-4">
-                        <p className="text-sm font-semibold uppercase tracking-wide text-rose-700">
-                          Impartido por
-                        </p>
-                        <div className="mt-2 space-y-1">
-                          {modulo.impartido.map((persona, i) => (
-                            <p key={i} className="text-slate-800">
-                              {persona}
-                            </p>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="bg-white py-14 md:py-16">
-          <div className="mx-auto max-w-5xl px-5 text-center md:px-8 lg:px-12">
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-rose-500">
-              Inversión del diplomado
-            </p>
-
-            <h2 className="mt-4 text-3xl font-semibold tracking-tight text-slate-950 md:text-5xl">
-              Una inversión en tranquilidad, seguridad y conocimiento
-            </h2>
-
-            <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-slate-600">
-              Este diplomado está diseñado para acompañarte en una de las etapas más importantes de tu vida.
-              No solo es información, es guía, acompañamiento y herramientas reales para tomar decisiones con seguridad.
-            </p>
-
-            <div className="mt-12 grid gap-6 md:grid-cols-2">
-              <div className="apple-card rounded-[2rem] border border-slate-200 bg-[#fafafa] p-8 shadow-sm">
-                <p className="text-sm uppercase tracking-wide text-slate-500">
-                  Valor real del programa
-                </p>
-                <p className="mt-3 text-4xl font-semibold text-slate-400 line-through">
-                  $6,800 MXN
-                </p>
-                <p className="mt-4 leading-7 text-slate-500">
-                  Basado en la formación médica, experiencia clínica y acompañamiento integral incluido.
-                </p>
-              </div>
-
-              <div className="apple-card rounded-[2rem] border border-rose-200 bg-rose-50 p-8 shadow-md">
-                <p className="text-sm font-semibold uppercase tracking-wide text-rose-600">
-                  Precio especial de lanzamiento
-                </p>
-                <p className="mt-3 text-5xl font-semibold text-slate-950">
-                  $3,900 MXN
-                </p>
-                <p className="mt-4 font-medium text-slate-700">
-                  Cupo limitado para esta generación
-                </p>
-              </div>
-            </div>
-
-            <div className="mt-12 rounded-[2rem] bg-[#f7f3ee] p-8 text-left shadow-sm">
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-rose-500">
-                Tu inscripción incluye
-              </p>
-
-              <ul className="mt-6 grid gap-4 md:grid-cols-2 text-slate-700">
-                <li>✔️ 10 módulos completos del diplomado</li>
-                <li>✔️ 10 sesiones presenciales de 2 horas</li>
-                <li>✔️ Material digital práctico y descargable</li>
-                <li>✔️ Certificado de participación</li>
-                <li>✔️ Acceso a comunidad privada de mamás</li>
-                <li>✔️ Evento de fin de cursos</li>
-              </ul>
-            </div>
-
-            <div className="mt-10">
-              <p className="text-lg font-medium text-slate-800">
-                Esta generación inicia el <span className="font-semibold text-rose-500">18 de abril</span>
-              </p>
-              <p className="mt-2 text-slate-600">
-                El cupo es limitado para garantizar atención personalizada
-              </p>
-            </div>
-
-            <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+            <div className="mt-12 text-center">
               <a
-                href={whatsappInscripcion}
+                href={ctaMain}
                 target="_blank"
-                rel="noopener noreferrer"
-                className="apple-button inline-flex items-center justify-center rounded-full bg-[#25D366] px-10 py-4 text-base font-semibold text-white shadow-md hover:bg-[#1fb85a]"
+                rel="noreferrer"
+                className="inline-flex w-full items-center justify-center rounded-full bg-green-500 px-8 py-4 text-lg font-extrabold text-white shadow-xl transition hover:-translate-y-0.5 hover:bg-green-600 sm:w-auto"
               >
-                Inscribirme ahora
-              </a>
-
-              <a
-                href={whatsappApartar}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="apple-button inline-flex items-center justify-center rounded-full border border-slate-300 px-10 py-4 text-base font-semibold text-slate-700 hover:bg-slate-50"
-              >
-                Apartar mi lugar
+                Quiero informes por WhatsApp
               </a>
             </div>
           </div>
         </section>
 
-        <section className="mx-auto max-w-7xl px-5 py-14 md:px-8 md:py-16 lg:px-12">
-          <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
-            <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-rose-500">
-                Tu mentor en este proceso
-              </p>
-              <h2 className="mt-4 text-3xl font-semibold tracking-tight text-slate-950 md:text-4xl">
-                Dr. Jorge Alejandro Mercado
+        <section className="bg-[#fcfaf7] px-4 py-20 sm:px-6 lg:px-8">
+          <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[1.1fr_0.9fr]">
+            <div className="rounded-[2rem] bg-white p-8 shadow-[0_20px_60px_rgba(15,23,42,0.06)] sm:p-10">
+              <span className="inline-flex rounded-full bg-slate-100 px-4 py-2 text-sm font-bold text-slate-700">
+                Tu guía durante este proceso
+              </span>
+
+              <h2 className="mt-5 text-3xl font-black tracking-tight text-slate-900 sm:text-4xl">
+                Dr. Alex Mercado
               </h2>
-              <p className="mt-3 text-lg font-medium text-rose-500">
+
+              <p className="mt-4 text-lg font-semibold text-pink-600">
                 Especialista en Ginecología y Obstetricia
               </p>
 
-              <p className="mt-6 text-lg leading-8 text-slate-600">
-                Este diplomado está coordinado para darte información clara,
-                confiable y útil en una de las etapas más importantes de tu vida.
-                Más que un curso, es un acompañamiento médico con enfoque humano,
-                experiencia clínica y formación académica sólida.
+              <p className="mt-6 text-base leading-relaxed text-slate-600 sm:text-lg">
+                Este diplomado nace de una necesidad muy real: muchas mujeres viven su
+                embarazo con dudas, miedo, información confusa o sin una guía clara.
               </p>
 
-              <div className="mt-8 grid gap-4 sm:grid-cols-2">
-                <div className="apple-card rounded-[1.5rem] border border-black/5 bg-white p-5 shadow-sm">
-                  <p className="text-sm text-slate-500">Experiencia</p>
-                  <p className="mt-1 text-lg font-semibold text-slate-950">
-                    14 años de experiencia
-                  </p>
-                </div>
-                <div className="apple-card rounded-[1.5rem] border border-black/5 bg-white p-5 shadow-sm">
-                  <p className="text-sm text-slate-500">Enfoque</p>
-                  <p className="mt-1 text-lg font-semibold text-slate-950">
-                    Atención y formación médica
-                  </p>
-                </div>
+              <p className="mt-4 text-base leading-relaxed text-slate-600 sm:text-lg">
+                La idea es reunir, en un solo espacio, explicaciones médicas útiles,
+                acompañamiento cercano y preparación práctica para que llegues a esta etapa
+                con mayor tranquilidad y confianza.
+              </p>
+
+              <p className="mt-4 text-base leading-relaxed font-semibold text-slate-800 sm:text-lg">
+                Es una extensión del acompañamiento que muchas pacientes quisieran tener
+                desde antes, durante y después del nacimiento.
+              </p>
+
+              <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+                <a
+                  href={ctaConsult}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex w-full items-center justify-center rounded-full bg-slate-900 px-7 py-4 text-base font-bold text-white transition hover:bg-slate-800 sm:w-auto"
+                >
+                  Agendar consulta
+                </a>
+                <a
+                  href={ctaInfo}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex w-full items-center justify-center rounded-full border border-slate-200 bg-white px-7 py-4 text-base font-bold text-slate-800 transition hover:bg-slate-50 sm:w-auto"
+                >
+                  Pedir información del diplomado
+                </a>
               </div>
             </div>
 
-            <div className="flex justify-center lg:justify-end">
-              <div className="relative w-full max-w-md overflow-hidden rounded-[2.5rem] border border-black/5 bg-white p-6 shadow-[0_30px_100px_rgba(15,23,42,0.08)]">
-                <div className="absolute -right-10 -top-10 h-36 w-36 rounded-full bg-rose-100 blur-3xl" />
-                <img
-                  src="/FB_IMG_1751002176775-removebg-preview.png"
-                  alt="Dr. Jorge Alejandro Mercado"
-                  className="relative z-10 mx-auto max-h-[540px] w-auto object-contain"
-                />
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="bg-white py-14 md:py-16">
-          <div className="mx-auto max-w-7xl px-5 md:px-8 lg:px-12">
-            <div className="mx-auto max-w-3xl text-center">
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-rose-500">
-                Trayectoria profesional
+            <div className="rounded-[2rem] bg-gradient-to-br from-pink-600 to-rose-500 p-8 text-white shadow-[0_20px_60px_rgba(236,72,153,0.22)] sm:p-10">
+              <h3 className="text-2xl font-black">Lo que incluye</h3>
+              <p className="mt-3 text-pink-50">
+                Una experiencia pensada para aportar valor real, no solo teoría.
               </p>
-              <h2 className="mt-4 text-3xl font-semibold tracking-tight text-slate-950 md:text-5xl">
-                Formación y experiencia que respaldan este diplomado
-              </h2>
-              <p className="mt-4 text-lg text-slate-600">
-                Un acompañamiento con preparación académica, experiencia clínica y
-                compromiso real con la salud de la mujer.
-              </p>
-            </div>
 
-            <div className="mt-12 grid gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:items-start">
-              <div className="apple-card rounded-[2rem] border border-black/5 bg-[#faf7f2] p-7 shadow-sm md:p-8">
-                <div className="mb-6 flex items-center gap-3">
-                  <div className="h-10 w-1 rounded-full bg-rose-500" />
-                  <h3 className="text-2xl font-semibold text-slate-950">
-                    Currículum médico
-                  </h3>
-                </div>
-
-                <div className="grid gap-4">
-                  {credenciales.map((item, i) => (
-                    <div
-                      key={i}
-                      className="rounded-[1.25rem] border border-black/5 bg-white px-5 py-4 text-slate-700"
-                    >
-                      <span className="font-semibold text-rose-500">
-                        {String(i + 1).padStart(2, "0")}.
-                      </span>{" "}
+              <div className="mt-8 space-y-4">
+                {includedItems.map((item, idx) => (
+                  <div
+                    key={idx}
+                    className="flex items-start gap-3 rounded-2xl border border-white/15 bg-white/10 p-4"
+                  >
+                    <Check className="mt-0.5 h-5 w-5 flex-shrink-0 text-white" />
+                    <p className="text-sm leading-relaxed text-white/95 sm:text-base">
                       {item}
+                    </p>
+                  </div>
+                ))}
+              </div>
+
+              <div className="mt-8 rounded-2xl bg-white/12 p-5">
+                <p className="text-sm font-semibold uppercase tracking-[0.18em] text-white/80">
+                  Ideal para ti si:
+                </p>
+                <p className="mt-3 text-base leading-relaxed text-white">
+                  Quieres entender mejor tu embarazo, sentirte acompañada y llegar al
+                  nacimiento con más preparación y menos incertidumbre.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="contenido" className="bg-white px-4 py-20 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-4xl">
+            <div className="mb-12 text-center">
+              <span className="inline-flex rounded-full bg-pink-100 px-4 py-2 text-sm font-bold text-pink-700">
+                Contenido del diplomado
+              </span>
+              <h2 className="mt-5 text-4xl font-black tracking-tight text-slate-900 sm:text-5xl">
+                10 módulos pensados para responder
+                <span className="block text-pink-600">las dudas reales de una futura mamá</span>
+              </h2>
+            </div>
+
+            <div className="space-y-4">
+              {modules.map((module) => (
+                <div
+                  key={module.id}
+                  className="overflow-hidden rounded-[1.25rem] border border-pink-100 bg-white shadow-sm transition hover:shadow-md"
+                >
+                  <button
+                    onClick={() =>
+                      setExpandedModule(expandedModule === module.id ? null : module.id)
+                    }
+                    className="flex w-full items-center justify-between gap-4 p-6 text-left transition hover:bg-pink-50"
+                  >
+                    <div>
+                      <h3 className="text-lg font-extrabold text-slate-900 sm:text-xl">
+                        {module.title}
+                      </h3>
+                      <p className="mt-2 text-sm leading-relaxed text-slate-600 sm:text-base">
+                        {module.description}
+                      </p>
                     </div>
-                  ))}
-                </div>
-              </div>
 
-              <div className="space-y-6">
-                <div className="apple-card rounded-[2rem] border border-black/5 bg-white p-7 shadow-sm md:p-8">
-                  <p className="text-sm font-semibold uppercase tracking-[0.2em] text-rose-500">
-                    Respaldo profesional
-                  </p>
-                  <h3 className="mt-3 text-2xl font-semibold text-slate-950">
-                    ¿Por qué confiar en este diplomado?
-                  </h3>
-                  <p className="mt-4 leading-8 text-slate-600">
-                    Porque la maternidad merece acompañamiento serio, actualizado y
-                    humano. Esta formación está diseñada desde la práctica médica
-                    real y desde la experiencia de atención a mujeres en cada etapa
-                    de su embarazo.
-                  </p>
-                </div>
+                    <ChevronDown
+                      className={`h-6 w-6 flex-shrink-0 text-pink-600 transition-transform ${
+                        expandedModule === module.id ? 'rotate-180' : ''
+                      }`}
+                    />
+                  </button>
 
-                <div className="apple-card rounded-[2rem] bg-slate-950 p-7 text-white shadow-xl md:p-8">
-                  <p className="text-sm font-semibold uppercase tracking-[0.2em] text-rose-200">
-                    Confianza
-                  </p>
-                  <p className="mt-4 text-3xl font-semibold">
-                    14 años de experiencia, atención y formación médica
-                  </p>
-                  <p className="mt-4 text-lg leading-8 text-slate-300">
-                    Un diplomado creado para orientar, acompañar y darte mayor
-                    seguridad durante todo tu proceso de maternidad.
-                  </p>
+                  {expandedModule === module.id && (
+                    <div className="border-t border-pink-100 bg-pink-50 px-6 pb-6 pt-4">
+                      <p className="leading-relaxed text-slate-700">{module.content}</p>
+                    </div>
+                  )}
                 </div>
-              </div>
+              ))}
             </div>
-          </div>
-        </section>
 
-        <section className="mx-auto max-w-7xl px-5 py-14 md:px-8 md:py-16 lg:px-12">
-          <div className="rounded-[2rem] border border-black/5 bg-white p-7 shadow-sm md:p-12">
-            <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
-              <div>
-                <p className="text-sm font-semibold uppercase tracking-[0.2em] text-rose-500">
-                  Modalidad
-                </p>
-                <h2 className="mt-4 text-3xl font-semibold tracking-tight text-slate-950 md:text-4xl">
-                  Así vivirás el Diplomado Maternidad 360
-                </h2>
-                <p className="mt-6 text-lg leading-8 text-slate-600">
-                  Un formato diseñado para que aprendas con calma, entiendas cada
-                  etapa y puedas resolver dudas reales en un ambiente cercano,
-                  profesional y confiable.
-                </p>
-              </div>
-
-              <div className="rounded-[2rem] bg-[#faf7f2] p-8 ring-1 ring-black/5">
-                <ul className="space-y-4 text-slate-700">
-                  <li>• Inicio próximo: 18 de abril</li>
-                  <li>• Cupo limitado</li>
-                  <li>• 10 módulos</li>
-                  <li>• 10 sesiones semanales</li>
-                  <li>• Duración de 2 horas por sesión</li>
-                  <li>• Formato presencial</li>
-                  <li>• Sede: Edificio MEDICS, Saltillo, Coahuila</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="bg-slate-950 py-14 text-white md:py-16">
-          <div className="mx-auto max-w-5xl px-5 text-center md:px-8 lg:px-12">
-            <h2 className="text-3xl font-semibold tracking-tight md:text-5xl">
-              Vive tu embarazo con más seguridad, claridad y tranquilidad
-            </h2>
-            <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-slate-300">
-              Tu embarazo no debería vivirse con miedo ni incertidumbre. Este
-              diplomado está diseñado para darte el acompañamiento y la información
-              que necesitas en uno de los momentos más importantes de tu vida.
-            </p>
-            <p className="mt-4 text-xl font-semibold text-white">
-              Inicia el 18 de abril · Cupo limitado
-            </p>
-
-            <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
+            <div className="mt-12 text-center">
               <a
-                href={whatsappInscripcion}
+                href={ctaInfo}
                 target="_blank"
-                rel="noopener noreferrer"
-                className="apple-button inline-flex items-center justify-center rounded-full bg-[#25D366] px-8 py-4 text-base font-semibold text-white shadow-md hover:bg-[#1fb85a]"
+                rel="noreferrer"
+                className="inline-flex w-full items-center justify-center rounded-full bg-green-500 px-8 py-4 text-lg font-extrabold text-white shadow-xl transition hover:-translate-y-0.5 hover:bg-green-600 sm:w-auto"
               >
-                Inscribirme ahora
-              </a>
-
-              <a
-                href="tel:8441892008"
-                className="apple-button inline-flex items-center justify-center rounded-full border border-white/20 px-8 py-4 text-base font-semibold text-white hover:bg-white/5"
-              >
-                Llamar ahora
+                Quiero recibir información completa
               </a>
             </div>
           </div>
         </section>
-      </main>
-    </>
-  );
-}
+
+        <section className="bg-[#fcfaf7] px-4 py-20 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-6xl">
+            <div className="mb-12 text-center">
+              <span className="inline-flex rounded-full bg-pink-100 px-4 py-2 text-sm font-bold text-pink-700">
+                Expertos participantes
+              </span>
+              <h2 className="mt-5 text-4xl font-black tracking-tight text-slate-900 sm:text-5xl">
+                Un programa respaldado por
+                <span className="block text-pink-600">profesionales de la salud</span>
+              </h2>
+            </div>
+
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+              {experts.map((expert, idx) => (
+                <div
+                  key={idx}
+                  className="rounded-[1.6rem] bg-white p-8 text-center shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
+                >
+                  <div className="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-2xl bg-pink-100 text-pink-600">
+                    <Stethoscope className="h-8 w-8" />
+                  </div>
+                  <h3 className="text-xl font-extrabold text-slate-900">{expert.name}</h3>
+                  <p className="mt-2 font-semibold text-pink-600">{expert.specialty}</p>
+                  <p className="mt-4 text-sm leading-relaxed text-slate-600">
+                    {expert.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="inversion" className="bg-white px-4 py-20 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-5xl">
+            <div className="mb-12 text-center">
+              <span className="inline-flex rounded-full bg-pink-100 px-4 py-2 text-sm font-bold text-pink-700">
+                Inversión
+              </span>
+              <h2 className="mt-5 text-4xl font-black tracking-tight text-slate-900 sm:text-5xl">
+                Una inversión pequeña para una etapa enorme de tu vida
+              </h2>
+            </div>
+
+            <div className="rounded-[2rem] bg-gradient-to-br from-white via-pink-50 to-rose-100 p-8 shadow-[0_20px_70px_rgba(236,72,153,0.14)] sm:p-12">
+              <div className="grid items-center gap-10 lg:grid-cols-[1.1fr_0.9fr]">
+                <div>
+                  <p className="text-sm font-bold uppercase tracking-[0.24em] text-slate-500">
+                    Precio de lanzamiento
+                  </p>
+
+                  <p className="mt-5 text-xl font-medium text-slate-500 line-through">
+                    Valor real $6,800 MXN
+                  </p>
+
+                  <p className="mt-2 text-5xl font-black tracking-tight text-pink-600 sm:text-6xl">
+                    $3,900 MXN
+                  </p>
+
+                  <p className="mt-4 max-w-xl text-base leading-relaxed text-slate-600 sm:text-lg">
+                    Un precio pensado para facilitar el acceso a una experiencia de alto
+                    valor, con contenido médico claro y acompañamiento durante una etapa
+                    que merece vivirse con más tranquilidad.
+                  </p>
+
+                  <div className="mt-7 rounded-2xl border border-red-200 bg-red-50 p-5">
+                    <p className="font-extrabold text-red-600">
+                      Precio especial sujeto a disponibilidad de lugares
+                    </p>
+                    <p className="mt-1 text-sm text-slate-700">
+                      Al cerrarse el grupo o terminar la etapa de lanzamiento, esta condición puede cambiar.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="rounded-[1.8rem] bg-slate-900 p-8 text-white shadow-xl">
+                  <h3 className="text-2xl font-black">Tu lugar incluye</h3>
+
+                  <ul className="mt-6 space-y-4">
+                    {includedItems.map((feature, idx) => (
+                      <li key={idx} className="flex items-start gap-3">
+                        <Check className="mt-0.5 h-5 w-5 flex-shrink-0 text-green-400" />
+                        <span className="text-sm leading-relaxed text-white/90 sm:text-base">
+                          {feature}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  <a
+                    href={ctaPrice}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="mt-8 inline-flex w-full items-center justify-center rounded-full bg-green-500 px-8 py-4 text-center text-lg font-extrabold text-white shadow-xl transition hover:-translate-y-0.5 hover:bg-green-600"
+                  >
+                    Quiero inscribirme por WhatsApp
+                  </a>
+
+                  <p className="mt-4 text-center text-xs text-white/70">
+                    Atención rápida y proceso directo de inscripción.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="bg-[#fcfaf7] px-4 py-20 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-6xl">
+            <div className="mb-12 text-center">
+              <span className="inline-flex rounded-full bg-pink-100 px-4 py-2 text-sm font-bold text-pink-700">
+                Testimonios
+              </span>
+              <h2 className="mt-5 text-4xl font-black tracking-tight text-slate-900 sm:text-5xl">
+                Lo que una mamá quiere sentir en esta etapa:
+                <span className="block text-pink-600">tranquilidad, claridad y confianza</span>
+              </h2>
+            </div>
+
+            <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
+              {testimonials.map((testimonial, idx) => (
+                <div
+                  key={idx}
+                  className="rounded-[1.6rem] bg-white p-8 shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
+                >
+                  <div className="mb-5 flex gap-1">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <Star key={i} className="h-5 w-5 fill-yellow-400 text-yellow-400" />
+                    ))}
+                  </div>
+
+                  <p className="text-base leading-relaxed text-slate-700">
+                    “{testimonial.content}”
+                  </p>
+
+                  <div className="mt-6">
+                    <p className="font-extrabold text-slate-900">{testimonial.name}</p>
+                    <p className="text-sm text-slate-500">{testimonial.role}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-12 text-center">
+              <a
+                href={ctaMain}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex w-full items-center justify-center rounded-full bg-green-500 px-8 py-4 text-lg font-extrabold text-white shadow-xl transition hover:-translate-y-0.5 hover:bg-green-600 sm:w-auto"
+              >
+                Quiero apartar mi lugar
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <section id="faq" className="bg-white px-4 py-20 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-4xl">
+            <div className="mb-12 text-center">
+              <span className="inline-flex rounded-full bg-pink-100 px-4 py-2 text-sm font-bold text-pink-700">
+                Preguntas frecuentes
+              </span>
+              <h2 className="mt-5 text-4xl font-black tracking-tight text-slate-900 sm:text-5xl">
+                Resolvamos tus dudas
+              </h2>
+            </div>
+
+            <div className="space-y-4">
+              {faqs.map((faq, idx) => (
+                <div
+                  key={idx}
+                  className="overflow-hidden rounded-[1.25rem] border border-pink-100 bg-white shadow-sm"
+                >
+                  <button
+                    onClick={() => setExpandedFAQ(expandedFAQ === idx ? null : idx)}
+                    className="flex w-full items-center justify-between gap-4 p-6 text-left transition hover:bg-pink-50"
+                  >
+                    <h3 className="text-base font-extrabold text-slate-900 sm:text-lg">
+                      {faq.question}
+                    </h3>
+
+                    <ChevronDown
+                      className={`h-6 w-6 flex-shrink-0 text-pink-600 transition-transform ${
+                        expandedFAQ === idx ? 'rotate-180' : ''
+                      }`}
+                    />
+                  </button>
+
+                  {expandedFAQ === idx && (
+                    <div className="border-t border-pink-100 bg-pink-50 px-6 pb-6 pt-4">
+                      <p className="leading-relaxed text-slate-700">{faq.answer}</p>
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="bg-gradient-to-br from-pink-600 to-rose-500 px-4 py-20 text-white sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-5xl text-center">
+            <span className="inline-flex rounded-full bg-white/15 px-4 py-2 text-sm font-bold text-white">
+              Último llamado
+            </span>
+
+            <h2 className="mt-5 text-4xl font-black tracking-tight sm:text-5xl">
+              Tu embarazo merece vivirse con más paz y menos incertidumbre
+            </h2>
+
+            <p className="mx-auto mt-5 max-w-3xl text-lg leading-relaxed text-white/90">
+              Si quieres sentirte más preparada, entender mejor cada etapa y resolver
+              tus dudas con una guía médica clara, este es el momento de pedir informes.
+            </p>
+
+            <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
+              <a
+                href={ctaMain}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex w-full items-center justify-center rounded-full bg-white px-8 py-4 text-lg font-extrabold text-pink-600 shadow-xl transition hover:-translate-y-0.5 hover:bg-pink-50 sm:w-auto"
+              >
+                <MessageCircle className="mr-2 h-5 w-5" />
+                Pedir informes por WhatsApp
+              </a>
+
+              <a
+                href={ctaConsult}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex w-full items-center justify-center rounded-full border border-white/40 bg-white/10 px-8 py-4 text-lg font-bold text-white transition hover:bg-white/15 sm:w-auto"
+              >
+                <Phone className="mr-2 h-5 w-5" />
+                Agendar consulta
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <section className="bg-white px-4 py-20 sm:px-6 lg:px-8">
+  <div className="mx-auto max-w-6xl">
+    <div className="mx-auto mb-12 max-w-3xl text-center">
+      <span className="inline-flex rounded-full bg-pink-100 px-4 py-2 text-sm font-bold
