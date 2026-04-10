@@ -48,8 +48,8 @@ const appleStyles = `
   }
 
   @keyframes pulseSoft {
-    0%,100% { box-shadow: 0 0 0 0 rgba(236,72,153,0.18); }
-    70% { box-shadow: 0 0 0 14px rgba(236,72,153,0); }
+    0%,100% { box-shadow: 0 0 0 0 rgba(242,106,94,0.18); }
+    70% { box-shadow: 0 0 0 14px rgba(242,106,94,0); }
   }
 
   .animate-slideIn {
@@ -404,15 +404,15 @@ export default function DiplomadoMaternidad360() {
           className="relative overflow-hidden px-4 pb-16 pt-28 sm:px-6 lg:px-8 lg:pt-36"
         >
           <div className="absolute inset-0 -z-10">
-            <div className="absolute left-1/2 top-10 h-72 w-72 -translate-x-1/2 rounded-full bg-pink-200/35 blur-3xl" />
-            <div className="absolute right-0 top-44 h-80 w-80 rounded-full bg-rose-100/50 blur-3xl" />
-            <div className="absolute bottom-0 left-0 h-72 w-72 rounded-full bg-fuchsia-100/40 blur-3xl" />
+            <div className="absolute left-1/2 top-10 h-72 w-72 -translate-x-1/2 rounded-full bg-[#F26A5E]/20 blur-3xl" />
+            <div className="absolute right-0 top-44 h-80 w-80 rounded-full bg-[#F26A5E]/10 blur-3xl" />
+            <div className="absolute bottom-0 left-0 h-72 w-72 rounded-full bg-[#F26A5E]/10 blur-3xl" />
           </div>
 
           <div className="mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-2">
             <div className="text-center lg:text-left">
               <div className="animate-slideIn mb-5">
-                <span className="inline-flex items-center gap-2 rounded-full border border-pink-200 bg-white/80 px-4 py-2 text-sm font-semibold text-pink-700 shadow-sm">
+                <span className="inline-flex items-center gap-2 rounded-full border border-[#F26A5E]/20 bg-white/80 px-4 py-2 text-sm font-semibold text-[#F26A5E] shadow-sm">
                   <CalendarDays className="h-4 w-4" />
                   Diplomado presencial para futuras mamás en Saltillo
                 </span>
@@ -423,7 +423,7 @@ export default function DiplomadoMaternidad360() {
                 style={{ animationDelay: '0.08s' }}
               >
                 El acompañamiento que toda mamá necesita para vivir su embarazo con{' '}
-                <span className="text-pink-600">más seguridad y tranquilidad</span>
+                <span className="text-[#F26A5E]">más seguridad y tranquilidad</span>
               </h1>
 
               <p
@@ -458,7 +458,7 @@ export default function DiplomadoMaternidad360() {
                 style={{ animationDelay: '0.24s' }}
               >
                 Diplomado Maternidad 360 por el{' '}
-                <span className="text-pink-600">Dr. Alex Mercado</span>
+                <span className="text-[#F26A5E]">Dr. Alex Mercado</span>
               </p>
 
               <div
@@ -478,7 +478,7 @@ export default function DiplomadoMaternidad360() {
                   href={ctaInfo}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex w-full items-center justify-center rounded-full border-2 border-pink-200 bg-white/80 px-6 py-4 text-center text-base font-bold text-pink-700 shadow-sm transition hover:-translate-y-0.5 hover:border-pink-300 hover:bg-pink-50 sm:w-auto sm:px-8 sm:text-lg"
+                  className="inline-flex w-full items-center justify-center rounded-full border-2 border-[#F26A5E]/20 bg-white/80 px-6 py-4 text-center text-base font-bold text-[#F26A5E] shadow-sm transition hover:-translate-y-0.5 hover:border-[#F26A5E]/30 hover:bg-[#F26A5E]/5 sm:w-auto sm:px-8 sm:text-lg"
                 >
                   Quiero más información
                 </a>
@@ -502,24 +502,24 @@ export default function DiplomadoMaternidad360() {
                 style={{ animationDelay: '0.40s' }}
               >
                 <div className="rounded-2xl border border-white/70 bg-white/80 p-5 shadow-md backdrop-blur">
-                  <p className="text-2xl font-black text-pink-600 sm:text-3xl">10</p>
+                  <p className="text-2xl font-black text-[#F26A5E] sm:text-3xl">10</p>
                   <p className="mt-1 text-xs font-medium text-slate-600 sm:text-sm">Sesiones</p>
                 </div>
                 <div className="rounded-2xl border border-white/70 bg-white/80 p-5 shadow-md backdrop-blur">
-                  <p className="text-2xl font-black text-pink-600 sm:text-3xl">1</p>
+                  <p className="text-2xl font-black text-[#F26A5E] sm:text-3xl">1</p>
                   <p className="mt-1 text-xs font-medium text-slate-600 sm:text-sm">Sesión semanal</p>
                 </div>
                 <div className="rounded-2xl border border-white/70 bg-white/80 p-5 shadow-md backdrop-blur">
-                  <p className="text-2xl font-black text-pink-600 sm:text-3xl">$390</p>
+                  <p className="text-2xl font-black text-[#F26A5E] sm:text-3xl">$390</p>
                   <p className="mt-1 text-xs font-medium text-slate-600 sm:text-sm">por sesión</p>
                 </div>
               </div>
             </div>
 
             <div className="animate-slideIn relative" style={{ animationDelay: '0.24s' }}>
-              <div className="glass-card animate-floatSoft rounded-[1.5rem] border border-white/70 p-4 shadow-[0_20px_80px_rgba(236,72,153,0.12)] sm:rounded-[2rem] sm:p-8">
-                <div className="rounded-[1.25rem] bg-gradient-to-br from-white via-pink-50 to-rose-100 p-5 sm:rounded-[1.75rem] sm:p-8">
-                  <div className="mb-6 inline-flex rounded-full bg-pink-100 px-4 py-2 text-sm font-bold text-pink-700">
+              <div className="glass-card animate-floatSoft rounded-[1.5rem] border border-white/70 p-4 shadow-[0_20px_80px_rgba(242,106,94,0.12)] sm:rounded-[2rem] sm:p-8">
+                <div className="rounded-[1.25rem] bg-gradient-to-br from-white via-[#F26A5E]/5 to-[#F26A5E]/10 p-5 sm:rounded-[1.75rem] sm:p-8">
+                  <div className="mb-6 inline-flex rounded-full bg-[#F26A5E]/10 px-4 py-2 text-sm font-bold text-[#F26A5E]">
                     Formación médica premium
                   </div>
 
@@ -557,7 +557,7 @@ export default function DiplomadoMaternidad360() {
                     <div className="mt-3 space-y-3">
                       {idealFor.map((item, idx) => (
                         <div key={idx} className="flex items-start gap-3">
-                          <Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-pink-600" />
+                          <Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-[#F26A5E]" />
                           <p className="text-sm leading-relaxed text-slate-700">{item}</p>
                         </div>
                       ))}
@@ -581,12 +581,12 @@ export default function DiplomadoMaternidad360() {
         <section id="programa" className="bg-white px-4 py-20 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-6xl">
             <div className="mx-auto mb-10 max-w-3xl text-center">
-              <span className="inline-flex rounded-full bg-pink-100 px-4 py-2 text-sm font-bold text-pink-700">
+              <span className="inline-flex rounded-full bg-[#F26A5E]/10 px-4 py-2 text-sm font-bold text-[#F26A5E]">
                 ¿Por qué elegir este programa?
               </span>
               <h2 className="mt-5 text-3xl font-black tracking-tight text-slate-900 sm:text-5xl">
                 No es solo un curso.
-                <span className="block text-pink-600">
+                <span className="block text-[#F26A5E]">
                   Es preparación real para una etapa decisiva.
                 </span>
               </h2>
@@ -600,9 +600,9 @@ export default function DiplomadoMaternidad360() {
               {programHighlights.map((item, idx) => (
                 <div
                   key={idx}
-                  className="rounded-[1.6rem] border border-pink-100 bg-gradient-to-br from-white to-pink-50 p-7 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl"
+                  className="rounded-[1.6rem] border border-[#F26A5E]/20 bg-gradient-to-br from-white to-pink-50 p-7 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl"
                 >
-                  <div className="mb-5 inline-flex rounded-2xl bg-pink-100 p-3 text-pink-600">
+                  <div className="mb-5 inline-flex rounded-2xl bg-[#F26A5E]/10 p-3 text-[#F26A5E]">
                     {item.icon}
                   </div>
                   <h3 className="text-xl font-extrabold text-slate-900">{item.title}</h3>
@@ -635,7 +635,7 @@ export default function DiplomadoMaternidad360() {
                 Dr. Alex Mercado
               </h2>
 
-              <p className="mt-4 text-lg font-semibold text-pink-600">
+              <p className="mt-4 text-lg font-semibold text-[#F26A5E]">
                 Especialista en Ginecología y Obstetricia
               </p>
 
@@ -675,7 +675,7 @@ export default function DiplomadoMaternidad360() {
               </div>
             </div>
 
-            <div className="rounded-[2rem] bg-gradient-to-br from-pink-600 to-rose-500 p-8 text-white shadow-[0_20px_60px_rgba(236,72,153,0.22)] sm:p-10">
+            <div className="rounded-[2rem] bg-gradient-to-br from-[#F26A5E] to-[#F26A5E] p-8 text-white shadow-[0_20px_60px_rgba(242,106,94,0.22)] sm:p-10">
               <h3 className="text-2xl font-black">Lo que incluye</h3>
               <p className="mt-3 text-pink-50">
                 Una experiencia pensada para aportar valor real, no solo teoría.
@@ -711,12 +711,12 @@ export default function DiplomadoMaternidad360() {
         <section id="contenido" className="bg-white px-4 py-20 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-4xl">
             <div className="mb-10 text-center">
-              <span className="inline-flex rounded-full bg-pink-100 px-4 py-2 text-sm font-bold text-pink-700">
+              <span className="inline-flex rounded-full bg-[#F26A5E]/10 px-4 py-2 text-sm font-bold text-[#F26A5E]">
                 Contenido del diplomado
               </span>
               <h2 className="mt-5 text-3xl font-black tracking-tight text-slate-900 sm:text-5xl">
                 10 módulos pensados para responder
-                <span className="block text-pink-600">
+                <span className="block text-[#F26A5E]">
                   las dudas reales de una futura mamá
                 </span>
               </h2>
@@ -726,13 +726,13 @@ export default function DiplomadoMaternidad360() {
               {modules.map((module) => (
                 <div
                   key={module.id}
-                  className="overflow-hidden rounded-[1.25rem] border border-pink-100 bg-white shadow-sm transition hover:shadow-md"
+                  className="overflow-hidden rounded-[1.25rem] border border-[#F26A5E]/20 bg-white shadow-sm transition hover:shadow-md"
                 >
                   <button
                     onClick={() =>
                       setExpandedModule(expandedModule === module.id ? null : module.id)
                     }
-                    className="flex w-full items-center justify-between gap-4 p-6 text-left transition hover:bg-pink-50"
+                    className="flex w-full items-center justify-between gap-4 p-6 text-left transition hover:bg-[#F26A5E]/5"
                   >
                     <div>
                       <h3 className="text-lg font-extrabold text-slate-900 sm:text-xl">
@@ -744,14 +744,14 @@ export default function DiplomadoMaternidad360() {
                     </div>
 
                     <ChevronDown
-                      className={`h-6 w-6 flex-shrink-0 text-pink-600 transition-transform ${
+                      className={`h-6 w-6 flex-shrink-0 text-[#F26A5E] transition-transform ${
                         expandedModule === module.id ? 'rotate-180' : ''
                       }`}
                     />
                   </button>
 
                   {expandedModule === module.id && (
-                    <div className="border-t border-pink-100 bg-pink-50 px-6 pb-6 pt-4">
+                    <div className="border-t border-[#F26A5E]/20 bg-[#F26A5E]/5 px-6 pb-6 pt-4">
                       <p className="leading-relaxed text-slate-700">{module.content}</p>
                     </div>
                   )}
@@ -775,12 +775,12 @@ export default function DiplomadoMaternidad360() {
         <section className="bg-[#fcfaf7] px-4 py-20 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-6xl">
             <div className="mb-10 text-center">
-              <span className="inline-flex rounded-full bg-pink-100 px-4 py-2 text-sm font-bold text-pink-700">
+              <span className="inline-flex rounded-full bg-[#F26A5E]/10 px-4 py-2 text-sm font-bold text-[#F26A5E]">
                 Expertos participantes
               </span>
               <h2 className="mt-5 text-3xl font-black tracking-tight text-slate-900 sm:text-5xl">
                 Un programa respaldado por
-                <span className="block text-pink-600">profesionales de la salud</span>
+                <span className="block text-[#F26A5E]">profesionales de la salud</span>
               </h2>
             </div>
 
@@ -790,11 +790,11 @@ export default function DiplomadoMaternidad360() {
                   key={idx}
                   className="rounded-[1.6rem] bg-white p-8 text-center shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
                 >
-                  <div className="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-2xl bg-pink-100 text-pink-600">
+                  <div className="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-2xl bg-[#F26A5E]/10 text-[#F26A5E]">
                     <Stethoscope className="h-8 w-8" />
                   </div>
                   <h3 className="text-xl font-extrabold text-slate-900">{expert.name}</h3>
-                  <p className="mt-2 font-semibold text-pink-600">{expert.specialty}</p>
+                  <p className="mt-2 font-semibold text-[#F26A5E]">{expert.specialty}</p>
                   <p className="mt-4 text-sm leading-relaxed text-slate-600">
                     {expert.description}
                   </p>
@@ -807,7 +807,7 @@ export default function DiplomadoMaternidad360() {
         <section id="inversion" className="bg-white px-4 py-20 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-5xl">
             <div className="mb-10 text-center">
-              <span className="inline-flex rounded-full bg-pink-100 px-4 py-2 text-sm font-bold text-pink-700">
+              <span className="inline-flex rounded-full bg-[#F26A5E]/10 px-4 py-2 text-sm font-bold text-[#F26A5E]">
                 Inversión
               </span>
               <h2 className="mt-5 text-3xl font-black tracking-tight text-slate-900 sm:text-5xl">
@@ -815,7 +815,7 @@ export default function DiplomadoMaternidad360() {
               </h2>
             </div>
 
-            <div className="rounded-[2rem] bg-gradient-to-br from-white via-pink-50 to-rose-100 p-8 shadow-[0_20px_70px_rgba(236,72,153,0.14)] sm:p-12">
+            <div className="rounded-[2rem] bg-gradient-to-br from-white via-[#F26A5E]/5 to-[#F26A5E]/10 p-8 shadow-[0_20px_70px_rgba(242,106,94,0.14)] sm:p-12">
               <div className="grid items-center gap-10 lg:grid-cols-[1.1fr_0.9fr]">
                 <div>
                   <p className="text-sm font-bold uppercase tracking-[0.24em] text-slate-500">
@@ -826,7 +826,7 @@ export default function DiplomadoMaternidad360() {
                     Valor real $6,800 MXN
                   </p>
 
-                  <p className="mt-2 text-5xl font-black tracking-tight text-pink-600 sm:text-6xl">
+                  <p className="mt-2 text-5xl font-black tracking-tight text-[#F26A5E] sm:text-6xl">
                     $390 MXN
                   </p>
 
@@ -893,12 +893,12 @@ export default function DiplomadoMaternidad360() {
         <section className="bg-[#fcfaf7] px-4 py-20 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-6xl">
             <div className="mb-10 text-center">
-              <span className="inline-flex rounded-full bg-pink-100 px-4 py-2 text-sm font-bold text-pink-700">
+              <span className="inline-flex rounded-full bg-[#F26A5E]/10 px-4 py-2 text-sm font-bold text-[#F26A5E]">
                 Testimonios
               </span>
               <h2 className="mt-5 text-3xl font-black tracking-tight text-slate-900 sm:text-5xl">
                 Lo que una mamá quiere sentir en esta etapa:
-                <span className="block text-pink-600">
+                <span className="block text-[#F26A5E]">
                   tranquilidad, claridad y confianza
                 </span>
               </h2>
@@ -944,7 +944,7 @@ export default function DiplomadoMaternidad360() {
         <section id="faq" className="bg-white px-4 py-20 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-4xl">
             <div className="mb-10 text-center">
-              <span className="inline-flex rounded-full bg-pink-100 px-4 py-2 text-sm font-bold text-pink-700">
+              <span className="inline-flex rounded-full bg-[#F26A5E]/10 px-4 py-2 text-sm font-bold text-[#F26A5E]">
                 Preguntas frecuentes
               </span>
               <h2 className="mt-5 text-3xl font-black tracking-tight text-slate-900 sm:text-5xl">
@@ -956,25 +956,25 @@ export default function DiplomadoMaternidad360() {
               {faqs.map((faq, idx) => (
                 <div
                   key={idx}
-                  className="overflow-hidden rounded-[1.25rem] border border-pink-100 bg-white shadow-sm"
+                  className="overflow-hidden rounded-[1.25rem] border border-[#F26A5E]/20 bg-white shadow-sm"
                 >
                   <button
                     onClick={() => setExpandedFAQ(expandedFAQ === idx ? null : idx)}
-                    className="flex w-full items-center justify-between gap-4 p-6 text-left transition hover:bg-pink-50"
+                    className="flex w-full items-center justify-between gap-4 p-6 text-left transition hover:bg-[#F26A5E]/5"
                   >
                     <h3 className="text-base font-extrabold text-slate-900 sm:text-lg">
                       {faq.question}
                     </h3>
 
                     <ChevronDown
-                      className={`h-6 w-6 flex-shrink-0 text-pink-600 transition-transform ${
+                      className={`h-6 w-6 flex-shrink-0 text-[#F26A5E] transition-transform ${
                         expandedFAQ === idx ? 'rotate-180' : ''
                       }`}
                     />
                   </button>
 
                   {expandedFAQ === idx && (
-                    <div className="border-t border-pink-100 bg-pink-50 px-6 pb-6 pt-4">
+                    <div className="border-t border-[#F26A5E]/20 bg-[#F26A5E]/5 px-6 pb-6 pt-4">
                       <p className="leading-relaxed text-slate-700">{faq.answer}</p>
                     </div>
                   )}
@@ -1014,7 +1014,7 @@ export default function DiplomadoMaternidad360() {
                   </p>
                   <p className="mt-1 text-sm text-slate-500">Saltillo, Coahuila</p>
                   <p className="mt-4 flex items-center gap-2 text-sm text-slate-600">
-                    <Clock3 className="h-4 w-4 text-pink-600" />
+                    <Clock3 className="h-4 w-4 text-[#F26A5E]" />
                     Llega fácilmente con tu app favorita
                   </p>
                 </div>
@@ -1060,7 +1060,7 @@ export default function DiplomadoMaternidad360() {
           </div>
         </section>
 
-        <section className="bg-gradient-to-br from-pink-600 to-rose-500 px-4 py-20 text-white sm:px-6 lg:px-8">
+        <section className="bg-gradient-to-br from-[#F26A5E] to-[#F26A5E] px-4 py-20 text-white sm:px-6 lg:px-8">
           <div className="mx-auto max-w-5xl text-center">
             <span className="inline-flex rounded-full bg-white/15 px-4 py-2 text-sm font-bold text-white">
               Último llamado
@@ -1080,7 +1080,7 @@ export default function DiplomadoMaternidad360() {
                 href={ctaMain}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex w-full items-center justify-center rounded-full bg-white px-8 py-4 text-lg font-extrabold text-pink-600 shadow-xl transition hover:-translate-y-0.5 hover:bg-pink-50 sm:w-auto"
+                className="inline-flex w-full items-center justify-center rounded-full bg-white px-8 py-4 text-lg font-extrabold text-[#F26A5E] shadow-xl transition hover:-translate-y-0.5 hover:bg-[#F26A5E]/5 sm:w-auto"
               >
                 <MessageCircle className="mr-2 h-5 w-5" />
                 Pedir informes por WhatsApp
