@@ -364,14 +364,7 @@ export default function DiplomadoMaternidad360() {
     <div>
       <style>{appleStyles}</style>
 
-      <a
-        href="https://dralexmercado.com.mx"
-        className="fixed left-4 top-24 z-[9999] inline-flex items-center gap-2 rounded-full bg-slate-900 px-5 py-3 text-sm font-semibold text-white shadow-2xl transition-all duration-300 hover:-translate-y-0.5 hover:bg-slate-800 md:left-6 md:top-28"
-      >
-        ← Regresar
-      </a>
-
-      <main className="min-h-screen bg-[#fcfaf7] text-slate-900">
+            <main className="min-h-screen bg-[#fcfaf7] text-slate-900">
         <nav
           className={`fixed top-0 z-[100] w-full transition-all duration-300 ${
             isScrolled
@@ -379,38 +372,27 @@ export default function DiplomadoMaternidad360() {
               : 'bg-transparent'
           }`}
         >
-          <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
-            <a href="#top" className="inline-flex items-center">
+          <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-4 sm:px-6 lg:px-8">
+            <div className="flex shrink-0 items-center">
               <img
                 src="/logo-maternidad.png"
-                alt="Logo Maternidad 360"
-                className="h-12 w-auto object-contain sm:h-14"
+                alt="Maternidad 360"
+                className="h-[4.8rem] w-auto object-contain sm:h-[5.5rem]"
               />
-            </a>
-
-            <div className="hidden items-center gap-8 text-sm font-medium text-slate-700 md:flex">
-              <a href="#programa" className="transition hover:text-pink-600">
-                Beneficios
-              </a>
-              <a href="#contenido" className="transition hover:text-pink-600">
-                Módulos
-              </a>
-              <a href="#inversion" className="transition hover:text-pink-600">
-                Inversión
-              </a>
-              <a href="#llegar" className="transition hover:text-pink-600">
-                Cómo llegar
-              </a>
-              <a href="#faq" className="transition hover:text-pink-600">
-                FAQ
-              </a>
             </div>
+
+            <a
+              href="https://dralexmercado.com.mx"
+              className="inline-flex shrink-0 items-center justify-center rounded-full bg-slate-900 px-4 py-2.5 text-sm font-semibold text-white shadow-md transition hover:-translate-y-0.5 hover:bg-slate-800 sm:px-5"
+            >
+              ← Regresar
+            </a>
 
             <a
               href={ctaMain}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center justify-center rounded-full bg-green-500 px-4 py-2.5 text-sm font-bold text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-green-600 sm:px-5"
+              className="inline-flex shrink-0 items-center justify-center rounded-full bg-green-500 px-4 py-2.5 text-sm font-bold text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-green-600 sm:px-5"
             >
               WhatsApp
             </a>
