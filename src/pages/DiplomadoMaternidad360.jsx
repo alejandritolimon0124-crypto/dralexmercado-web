@@ -13,6 +13,7 @@ import {
   Users,
   Stethoscope,
   Baby,
+  Clock3,
 } from 'lucide-react';
 
 const appleStyles = `
@@ -84,7 +85,7 @@ export default function DiplomadoMaternidad360() {
   const ctaMain = useMemo(
     () =>
       buildWhatsAppLink(
-        'Hola, quiero información para asegurar mi lugar en el Diplomado Maternidad 360.'
+        'Hola, vi el Diplomado Maternidad 360 y quiero información para apartar mi lugar.'
       ),
     []
   );
@@ -100,7 +101,7 @@ export default function DiplomadoMaternidad360() {
   const ctaPrice = useMemo(
     () =>
       buildWhatsAppLink(
-        'Hola, quiero inscribirme al Diplomado Maternidad 360 con precio de lanzamiento.'
+        'Hola, quiero asegurar mi lugar en el Diplomado Maternidad 360 con $390 por sesión. ¿Qué necesito para inscribirme?'
       ),
     []
   );
@@ -113,6 +114,14 @@ export default function DiplomadoMaternidad360() {
     []
   );
 
+  const ctaSeat = useMemo(
+    () =>
+      buildWhatsAppLink(
+        'Hola, quiero separar mi lugar para el Diplomado Maternidad 360. ¿Aún hay cupo?'
+      ),
+    []
+  );
+
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 40);
     window.addEventListener('scroll', handleScroll);
@@ -121,40 +130,40 @@ export default function DiplomadoMaternidad360() {
 
   const programHighlights = [
     {
-      icon: <Stethoscope className="w-6 h-6" />,
-      title: 'Acompañamiento médico real',
+      icon: <Stethoscope className="h-6 w-6" />,
+      title: 'Explicación médica clara',
       description:
-        'No es información suelta de internet. Es una guía clara, útil y respaldada por experiencia médica.',
+        'Información útil, aterrizada y entendible para que sepas qué está pasando y qué decisiones importan.',
     },
     {
-      icon: <Heart className="w-6 h-6" />,
-      title: 'Embarazo con más tranquilidad',
+      icon: <Heart className="h-6 w-6" />,
+      title: 'Más tranquilidad en tu embarazo',
       description:
-        'Entiende qué está pasando en tu cuerpo, qué esperar y cuándo actuar con calma y seguridad.',
+        'Reduce la incertidumbre al entender síntomas, cambios normales y señales que sí requieren atención.',
     },
     {
-      icon: <Baby className="w-6 h-6" />,
-      title: 'Preparación integral para mamá y bebé',
+      icon: <Baby className="h-6 w-6" />,
+      title: 'Preparación para parto, cesárea y postparto',
       description:
-        'Desde el embarazo hasta el postparto: decisiones, cuidados, prevención y bienestar.',
+        'Llega mejor preparada al nacimiento de tu bebé con una visión integral y realista.',
     },
     {
-      icon: <Users className="w-6 h-6" />,
+      icon: <Users className="h-6 w-6" />,
       title: 'Grupo reducido',
       description:
-        'La experiencia se vuelve más cercana, más personalizada y con mejor atención para cada mamá.',
+        'Cupo limitado para mantener una experiencia más cercana, con mejor atención y espacio para resolver dudas.',
     },
     {
-      icon: <Award className="w-6 h-6" />,
-      title: 'Material de alto valor',
+      icon: <Award className="h-6 w-6" />,
+      title: 'Material práctico de alto valor',
       description:
-        'Checklists, explicaciones prácticas y contenido diseñado para que realmente lo apliques.',
+        'Contenido diseñado para acompañarte antes, durante y después del nacimiento, no solo teoría.',
     },
     {
-      icon: <ShieldCheck className="w-6 h-6" />,
+      icon: <ShieldCheck className="h-6 w-6" />,
       title: 'Confianza en cada etapa',
       description:
-        'Sabrás identificar cambios normales, señales de alerta y los puntos clave del embarazo.',
+        'Entiende cuándo todo va bien, cuándo pedir ayuda y cómo vivir esta etapa con más seguridad.',
     },
   ];
 
@@ -260,6 +269,12 @@ export default function DiplomadoMaternidad360() {
       description:
         'Participación especial en el módulo de postparto y nacimiento del bebé.',
     },
+    {
+      name: 'Dr. Vicente Eliamar',
+      specialty: 'Médico general y Sacerdote Diocesano',
+      description:
+        'Participación especial con acompañamiento integral, orientación humana y visión cercana para esta etapa.',
+    },
   ];
 
   const testimonials = [
@@ -271,7 +286,7 @@ export default function DiplomadoMaternidad360() {
       rating: 5,
     },
     {
-      name: 'Asistente del diplomado',
+      name: 'Paciente en consulta',
       role: 'Planeando embarazo',
       content:
         'No solo te informa, también te da paz. Sales con una idea mucho más clara de lo que viene y de cómo cuidarte mejor.',
@@ -300,22 +315,32 @@ export default function DiplomadoMaternidad360() {
     {
       question: '¿Cómo se aparta el lugar?',
       answer:
-        'El proceso más rápido es por WhatsApp. Ahí se te da la información de inscripción, disponibilidad y pasos para confirmar tu lugar.',
+        'La forma más rápida es por WhatsApp. Ahí se te comparte disponibilidad, forma de inscripción y los pasos para confirmar tu lugar.',
     },
     {
       question: '¿Hay cupo limitado?',
       answer:
-        'Sí. El grupo es reducido para mantener una experiencia más cercana, mejor atención y una dinámica mucho más personalizada.',
+        'Sí. El grupo es reducido a 15 mamás por generación para mantener una experiencia más cercana y personalizada.',
     },
     {
       question: '¿Qué incluye?',
       answer:
-        'Acceso al diplomado, módulos formativos, material digital de apoyo, certificado de participación, comunidad y acompañamiento durante la experiencia.',
+        'Incluye acceso al diplomado, 10 módulos, material digital de apoyo, certificado de participación y una experiencia presencial diseñada para resolver dudas reales.',
     },
     {
       question: '¿Dónde se lleva a cabo?',
       answer:
-        'En Saltillo, Coahuila, en sede física del programa. La ubicación exacta se comparte al confirmar tu inscripción.',
+        'En EDIFICIO MEDICS, en Saltillo, Coahuila. Al final de esta página puedes ver el mapa y abrir la ruta en Google Maps o Waze.',
+    },
+    {
+      question: '¿Puedo entrar si es mi primer embarazo?',
+      answer:
+        'Sí. De hecho, suele ser una de las etapas donde más tranquilidad aporta tener información clara, ordenada y confiable.',
+    },
+    {
+      question: '¿Sirve aunque todavía no esté embarazada?',
+      answer:
+        'Sí. También está pensado para mujeres que desean prepararse mejor desde antes del embarazo.',
     },
   ];
 
@@ -328,13 +353,20 @@ export default function DiplomadoMaternidad360() {
     'Sesiones diseñadas para dudas reales del embarazo',
   ];
 
+  const idealFor = [
+    'Si te sientes confundida por tanta información en internet',
+    'Si quieres entender mejor tu embarazo sin sentirte sola',
+    'Si quieres llegar más preparada al parto, cesárea y postparto',
+    'Si buscas orientación médica clara y práctica',
+  ];
+
   return (
-    <>
+    <div>
       <style>{appleStyles}</style>
 
       <a
         href="https://dralexmercado.com.mx"
-        className="fixed top-24 left-4 z-[9999] inline-flex items-center gap-2 rounded-full bg-slate-900 px-5 py-3 text-sm font-semibold text-white shadow-2xl transition-all duration-300 hover:-translate-y-0.5 hover:bg-slate-800 md:top-28 md:left-6"
+        className="fixed left-4 top-24 z-[9999] inline-flex items-center gap-2 rounded-full bg-slate-900 px-5 py-3 text-sm font-semibold text-white shadow-2xl transition-all duration-300 hover:-translate-y-0.5 hover:bg-slate-800 md:left-6 md:top-28"
       >
         ← Regresar
       </a>
@@ -343,24 +375,31 @@ export default function DiplomadoMaternidad360() {
         <nav
           className={`fixed top-0 z-[100] w-full transition-all duration-300 ${
             isScrolled
-              ? 'bg-white/80 backdrop-blur-xl shadow-[0_10px_40px_rgba(15,23,42,0.08)]'
+              ? 'bg-white/80 shadow-[0_10px_40px_rgba(15,23,42,0.08)] backdrop-blur-xl'
               : 'bg-transparent'
           }`}
         >
           <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
-            <a href="#top" className="text-lg font-extrabold tracking-tight text-slate-900">
-              Maternidad <span className="text-pink-600">360°</span>
+            <a href="#top" className="inline-flex items-center">
+              <img
+                src="/logo-maternidad.png"
+                alt="Logo Maternidad 360"
+                className="h-12 w-auto object-contain sm:h-14"
+              />
             </a>
 
             <div className="hidden items-center gap-8 text-sm font-medium text-slate-700 md:flex">
               <a href="#programa" className="transition hover:text-pink-600">
-                Programa
+                Beneficios
               </a>
               <a href="#contenido" className="transition hover:text-pink-600">
-                Contenido
+                Módulos
               </a>
               <a href="#inversion" className="transition hover:text-pink-600">
                 Inversión
+              </a>
+              <a href="#llegar" className="transition hover:text-pink-600">
+                Cómo llegar
               </a>
               <a href="#faq" className="transition hover:text-pink-600">
                 FAQ
@@ -371,7 +410,7 @@ export default function DiplomadoMaternidad360() {
               href={ctaMain}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center justify-center rounded-full bg-green-500 px-5 py-2.5 text-sm font-bold text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-green-600"
+              className="inline-flex items-center justify-center rounded-full bg-green-500 px-4 py-2.5 text-sm font-bold text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-green-600 sm:px-5"
             >
               WhatsApp
             </a>
@@ -380,7 +419,7 @@ export default function DiplomadoMaternidad360() {
 
         <section
           id="top"
-          className="relative overflow-hidden px-4 pb-20 pt-32 sm:px-6 lg:px-8 lg:pt-36"
+          className="relative overflow-hidden px-4 pb-16 pt-28 sm:px-6 lg:px-8 lg:pt-36"
         >
           <div className="absolute inset-0 -z-10">
             <div className="absolute left-1/2 top-10 h-72 w-72 -translate-x-1/2 rounded-full bg-pink-200/35 blur-3xl" />
@@ -388,59 +427,78 @@ export default function DiplomadoMaternidad360() {
             <div className="absolute bottom-0 left-0 h-72 w-72 rounded-full bg-fuchsia-100/40 blur-3xl" />
           </div>
 
-          <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-2">
+          <div className="mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-2">
             <div className="text-center lg:text-left">
               <div className="animate-slideIn mb-5">
                 <span className="inline-flex items-center gap-2 rounded-full border border-pink-200 bg-white/80 px-4 py-2 text-sm font-semibold text-pink-700 shadow-sm">
                   <CalendarDays className="h-4 w-4" />
-                  Programa presencial premium para futuras mamás
+                  Diplomado presencial para futuras mamás en Saltillo
                 </span>
               </div>
 
               <h1
-                className="animate-slideIn text-5xl font-black leading-[1.02] tracking-tight text-slate-900 sm:text-6xl md:text-7xl"
+                className="animate-slideIn text-4xl font-black leading-[1.02] tracking-tight text-slate-900 sm:text-5xl md:text-7xl"
                 style={{ animationDelay: '0.08s' }}
               >
-                Vive tu embarazo con{' '}
-                <span className="text-pink-600">seguridad, claridad y confianza</span>
+                El acompañamiento que toda mamá necesita para vivir su embarazo con{' '}
+                <span className="text-pink-600">más seguridad y tranquilidad</span>
               </h1>
 
               <p
-                className="animate-slideIn mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-slate-600 sm:text-xl lg:mx-0"
+                className="animate-slideIn mx-auto mt-5 max-w-2xl text-base leading-relaxed text-slate-600 sm:text-lg lg:mx-0"
                 style={{ animationDelay: '0.16s' }}
               >
                 Un diplomado creado para ayudarte a entender esta etapa, resolver dudas
-                reales y prepararte mejor para el nacimiento de tu bebé con
-                acompañamiento médico.
-              </p>
-
-              <p
-                className="animate-slideIn mt-5 text-base font-semibold text-slate-800 sm:text-lg"
-                style={{ animationDelay: '0.22s' }}
-              >
-                Diplomado Maternidad 360 por el <span className="text-pink-600">Dr. Alex Mercado</span>
+                reales y prepararte mejor para el nacimiento de tu bebé con guía médica
+                clara.
               </p>
 
               <div
-                className="animate-slideIn mt-8 flex flex-col gap-4 sm:flex-row lg:justify-start"
+                className="animate-slideIn mt-6 flex flex-wrap items-center justify-center gap-3 lg:justify-start"
+                style={{ animationDelay: '0.22s' }}
+              >
+                <span className="rounded-full bg-white px-4 py-2 text-sm font-semibold text-slate-700 shadow-sm">
+                  10 módulos
+                </span>
+                <span className="rounded-full bg-white px-4 py-2 text-sm font-semibold text-slate-700 shadow-sm">
+                  Inicia 18 de abril
+                </span>
+                <span className="rounded-full bg-white px-4 py-2 text-sm font-semibold text-slate-700 shadow-sm">
+                  Saltillo, Coahuila
+                </span>
+                <span className="rounded-full bg-white px-4 py-2 text-sm font-semibold text-slate-700 shadow-sm">
+                  Cupo limitado
+                </span>
+              </div>
+
+              <p
+                className="animate-slideIn mt-5 text-base font-semibold text-slate-800 sm:text-lg"
+                style={{ animationDelay: '0.24s' }}
+              >
+                Diplomado Maternidad 360 por el{' '}
+                <span className="text-pink-600">Dr. Alex Mercado</span>
+              </p>
+
+              <div
+                className="animate-slideIn mt-8 flex flex-col gap-3 sm:flex-row lg:justify-start"
                 style={{ animationDelay: '0.28s' }}
               >
                 <a
-                  href={ctaMain}
+                  href={ctaSeat}
                   target="_blank"
                   rel="noreferrer"
-                  className="animate-pulseSoft inline-flex w-full items-center justify-center rounded-full bg-green-500 px-8 py-4 text-center text-lg font-extrabold text-white shadow-xl transition hover:-translate-y-0.5 hover:bg-green-600 sm:w-auto"
+                  className="animate-pulseSoft inline-flex w-full items-center justify-center rounded-full bg-green-500 px-6 py-4 text-center text-base font-extrabold text-white shadow-xl transition hover:-translate-y-0.5 hover:bg-green-600 sm:w-auto sm:px-8 sm:text-lg"
                 >
-                  Quiero asegurar mi lugar
+                  Quiero apartar mi lugar
                 </a>
 
                 <a
                   href={ctaInfo}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex w-full items-center justify-center rounded-full border-2 border-pink-200 bg-white/80 px-8 py-4 text-center text-lg font-bold text-pink-700 shadow-sm transition hover:-translate-y-0.5 hover:border-pink-300 hover:bg-pink-50 sm:w-auto"
+                  className="inline-flex w-full items-center justify-center rounded-full border-2 border-pink-200 bg-white/80 px-6 py-4 text-center text-base font-bold text-pink-700 shadow-sm transition hover:-translate-y-0.5 hover:border-pink-300 hover:bg-pink-50 sm:w-auto sm:px-8 sm:text-lg"
                 >
-                  Quiero saber si es para mí
+                  Quiero más información
                 </a>
               </div>
 
@@ -452,42 +510,42 @@ export default function DiplomadoMaternidad360() {
                   ⚠️ Cupo limitado a 15 mamás por generación
                 </p>
                 <p className="mt-1 text-sm leading-relaxed text-slate-700 sm:text-base">
-                  Cuando se llena, el grupo se cierra. La experiencia está pensada para
-                  ser cercana, clara y personalizada.
+                  Cuando el grupo se llena, se cierra. Está pensado para ser cercano,
+                  claro y verdaderamente útil para cada asistente.
                 </p>
               </div>
 
               <div
-                className="animate-slideIn mt-8 grid grid-cols-1 gap-4 sm:grid-cols-3"
+                className="animate-slideIn mt-8 grid grid-cols-1 gap-3 sm:grid-cols-3"
                 style={{ animationDelay: '0.40s' }}
               >
                 <div className="rounded-2xl border border-white/70 bg-white/80 p-5 shadow-md backdrop-blur">
-                  <p className="text-3xl font-black text-pink-600">10</p>
-                  <p className="mt-1 text-sm font-medium text-slate-600">Módulos clave</p>
+                  <p className="text-2xl font-black text-pink-600 sm:text-3xl">10</p>
+                  <p className="mt-1 text-xs font-medium text-slate-600 sm:text-sm">Sesiones</p>
                 </div>
                 <div className="rounded-2xl border border-white/70 bg-white/80 p-5 shadow-md backdrop-blur">
-                  <p className="text-3xl font-black text-pink-600">15</p>
-                  <p className="mt-1 text-sm font-medium text-slate-600">Lugares máximos</p>
+                  <p className="text-2xl font-black text-pink-600 sm:text-3xl">1</p>
+                  <p className="mt-1 text-xs font-medium text-slate-600 sm:text-sm">Sesión semanal</p>
                 </div>
                 <div className="rounded-2xl border border-white/70 bg-white/80 p-5 shadow-md backdrop-blur">
-                  <p className="text-3xl font-black text-pink-600">100%</p>
-                  <p className="mt-1 text-sm font-medium text-slate-600">Enfoque práctico</p>
+                  <p className="text-2xl font-black text-pink-600 sm:text-3xl">$390</p>
+                  <p className="mt-1 text-xs font-medium text-slate-600 sm:text-sm">por sesión</p>
                 </div>
               </div>
             </div>
 
             <div className="animate-slideIn relative" style={{ animationDelay: '0.24s' }}>
-              <div className="glass-card animate-floatSoft rounded-[2rem] border border-white/70 p-6 shadow-[0_20px_80px_rgba(236,72,153,0.12)] sm:p-8">
-                <div className="rounded-[1.75rem] bg-gradient-to-br from-white via-pink-50 to-rose-100 p-8">
+              <div className="glass-card animate-floatSoft rounded-[1.5rem] border border-white/70 p-4 shadow-[0_20px_80px_rgba(236,72,153,0.12)] sm:rounded-[2rem] sm:p-8">
+                <div className="rounded-[1.25rem] bg-gradient-to-br from-white via-pink-50 to-rose-100 p-5 sm:rounded-[1.75rem] sm:p-8">
                   <div className="mb-6 inline-flex rounded-full bg-pink-100 px-4 py-2 text-sm font-bold text-pink-700">
                     Formación médica premium
                   </div>
 
-                  <h3 className="text-2xl font-black leading-tight text-slate-900 sm:text-3xl">
+                  <h3 className="text-xl font-black leading-tight text-slate-900 sm:text-3xl">
                     Menos miedo. Más claridad. Mejor preparación.
                   </h3>
 
-                  <p className="mt-4 text-base leading-relaxed text-slate-600">
+                  <p className="mt-4 text-sm leading-relaxed text-slate-600 sm:text-base">
                     Diseñado para mujeres que quieren vivir su embarazo con información
                     útil, confianza y una guía mucho más clara en cada etapa.
                   </p>
@@ -498,7 +556,10 @@ export default function DiplomadoMaternidad360() {
                       'Entiende cambios, señales de alerta y decisiones importantes',
                       'Prepárate para parto, cesárea y postparto',
                     ].map((item, idx) => (
-                      <div key={idx} className="flex items-start gap-3 rounded-2xl bg-white/80 p-4 shadow-sm">
+                      <div
+                        key={idx}
+                        className="flex items-start gap-3 rounded-2xl bg-white/80 p-4 shadow-sm"
+                      >
                         <div className="mt-0.5 rounded-full bg-green-100 p-1.5 text-green-600">
                           <Check className="h-4 w-4" />
                         </div>
@@ -509,11 +570,23 @@ export default function DiplomadoMaternidad360() {
                     ))}
                   </div>
 
+                  <div className="mt-7 rounded-2xl bg-white/80 p-4 shadow-sm">
+                    <p className="text-sm font-semibold text-slate-500">Ideal para ti si:</p>
+                    <div className="mt-3 space-y-3">
+                      {idealFor.map((item, idx) => (
+                        <div key={idx} className="flex items-start gap-3">
+                          <Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-pink-600" />
+                          <p className="text-sm leading-relaxed text-slate-700">{item}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
                   <a
                     href={ctaConsult}
                     target="_blank"
                     rel="noreferrer"
-                    className="mt-7 inline-flex w-full items-center justify-center rounded-full bg-slate-900 px-6 py-4 text-center text-base font-bold text-white shadow-lg transition hover:bg-slate-800"
+                    className="mt-7 inline-flex w-full items-center justify-center rounded-full bg-slate-900 px-6 py-4 text-center text-sm font-bold text-white shadow-lg transition hover:bg-slate-800 sm:text-base"
                   >
                     También quiero agendar consulta
                   </a>
@@ -525,15 +598,17 @@ export default function DiplomadoMaternidad360() {
 
         <section id="programa" className="bg-white px-4 py-20 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-6xl">
-            <div className="mx-auto mb-14 max-w-3xl text-center">
+            <div className="mx-auto mb-10 max-w-3xl text-center">
               <span className="inline-flex rounded-full bg-pink-100 px-4 py-2 text-sm font-bold text-pink-700">
                 ¿Por qué elegir este programa?
               </span>
-              <h2 className="mt-5 text-4xl font-black tracking-tight text-slate-900 sm:text-5xl">
+              <h2 className="mt-5 text-3xl font-black tracking-tight text-slate-900 sm:text-5xl">
                 No es solo un curso.
-                <span className="block text-pink-600">Es preparación real para una etapa decisiva.</span>
+                <span className="block text-pink-600">
+                  Es preparación real para una etapa decisiva.
+                </span>
               </h2>
-              <p className="mt-5 text-lg leading-relaxed text-slate-600">
+              <p className="mt-4 text-base leading-relaxed text-slate-600 sm:text-lg">
                 Está diseñado para ayudarte a sentirte más segura, mejor informada y
                 emocionalmente más preparada para vivir tu embarazo y el nacimiento de tu bebé.
               </p>
@@ -593,7 +668,7 @@ export default function DiplomadoMaternidad360() {
                 con mayor tranquilidad y confianza.
               </p>
 
-              <p className="mt-4 text-base leading-relaxed font-semibold text-slate-800 sm:text-lg">
+              <p className="mt-4 text-base font-semibold leading-relaxed text-slate-800 sm:text-lg">
                 Es una extensión del acompañamiento que muchas pacientes quisieran tener
                 desde antes, durante y después del nacimiento.
               </p>
@@ -653,13 +728,15 @@ export default function DiplomadoMaternidad360() {
 
         <section id="contenido" className="bg-white px-4 py-20 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-4xl">
-            <div className="mb-12 text-center">
+            <div className="mb-10 text-center">
               <span className="inline-flex rounded-full bg-pink-100 px-4 py-2 text-sm font-bold text-pink-700">
                 Contenido del diplomado
               </span>
-              <h2 className="mt-5 text-4xl font-black tracking-tight text-slate-900 sm:text-5xl">
+              <h2 className="mt-5 text-3xl font-black tracking-tight text-slate-900 sm:text-5xl">
                 10 módulos pensados para responder
-                <span className="block text-pink-600">las dudas reales de una futura mamá</span>
+                <span className="block text-pink-600">
+                  las dudas reales de una futura mamá
+                </span>
               </h2>
             </div>
 
@@ -715,17 +792,17 @@ export default function DiplomadoMaternidad360() {
 
         <section className="bg-[#fcfaf7] px-4 py-20 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-6xl">
-            <div className="mb-12 text-center">
+            <div className="mb-10 text-center">
               <span className="inline-flex rounded-full bg-pink-100 px-4 py-2 text-sm font-bold text-pink-700">
                 Expertos participantes
               </span>
-              <h2 className="mt-5 text-4xl font-black tracking-tight text-slate-900 sm:text-5xl">
+              <h2 className="mt-5 text-3xl font-black tracking-tight text-slate-900 sm:text-5xl">
                 Un programa respaldado por
                 <span className="block text-pink-600">profesionales de la salud</span>
               </h2>
             </div>
 
-            <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+            <div className="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-4">
               {experts.map((expert, idx) => (
                 <div
                   key={idx}
@@ -747,11 +824,11 @@ export default function DiplomadoMaternidad360() {
 
         <section id="inversion" className="bg-white px-4 py-20 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-5xl">
-            <div className="mb-12 text-center">
+            <div className="mb-10 text-center">
               <span className="inline-flex rounded-full bg-pink-100 px-4 py-2 text-sm font-bold text-pink-700">
                 Inversión
               </span>
-              <h2 className="mt-5 text-4xl font-black tracking-tight text-slate-900 sm:text-5xl">
+              <h2 className="mt-5 text-3xl font-black tracking-tight text-slate-900 sm:text-5xl">
                 Una inversión pequeña para una etapa enorme de tu vida
               </h2>
             </div>
@@ -760,29 +837,41 @@ export default function DiplomadoMaternidad360() {
               <div className="grid items-center gap-10 lg:grid-cols-[1.1fr_0.9fr]">
                 <div>
                   <p className="text-sm font-bold uppercase tracking-[0.24em] text-slate-500">
-                    Precio de lanzamiento
+                    Inversión accesible por sesión
                   </p>
 
-                  <p className="mt-5 text-xl font-medium text-slate-500 line-through">
+                  <p className="mt-5 text-xl font-medium text-slate-400 line-through">
                     Valor real $6,800 MXN
                   </p>
 
                   <p className="mt-2 text-5xl font-black tracking-tight text-pink-600 sm:text-6xl">
-                    $3,900 MXN
+                    $390 MXN
+                  </p>
+
+                  <p className="mt-2 text-xl font-semibold text-slate-800 sm:text-2xl">
+                    por sesión
                   </p>
 
                   <p className="mt-4 max-w-xl text-base leading-relaxed text-slate-600 sm:text-lg">
-                    Un precio pensado para facilitar el acceso a una experiencia de alto
-                    valor, con contenido médico claro y acompañamiento durante una etapa
-                    que merece vivirse con más tranquilidad.
+                    10 sesiones presenciales diseñadas para ayudarte a entender tu embarazo,
+                    resolver dudas reales y llegar con más tranquilidad y preparación a esta etapa.
                   </p>
+
+                  <div className="mt-5 rounded-2xl bg-white/70 px-5 py-4 shadow-sm">
+                    <p className="text-sm font-semibold text-slate-500">
+                      Total del diplomado
+                    </p>
+                    <p className="mt-1 text-lg font-bold text-slate-800">
+                      $3,900 MXN al finalizar el curso
+                    </p>
+                  </div>
 
                   <div className="mt-7 rounded-2xl border border-red-200 bg-red-50 p-5">
                     <p className="font-extrabold text-red-600">
-                      Precio especial sujeto a disponibilidad de lugares
+                      Precio de lanzamiento disponible solo para esta generación
                     </p>
                     <p className="mt-1 text-sm text-slate-700">
-                      Al cerrarse el grupo o terminar la etapa de lanzamiento, esta condición puede cambiar.
+                      Al llenarse el grupo o cerrar inscripciones, esta condición puede cambiar.
                     </p>
                   </div>
                 </div>
@@ -807,7 +896,7 @@ export default function DiplomadoMaternidad360() {
                     rel="noreferrer"
                     className="mt-8 inline-flex w-full items-center justify-center rounded-full bg-green-500 px-8 py-4 text-center text-lg font-extrabold text-white shadow-xl transition hover:-translate-y-0.5 hover:bg-green-600"
                   >
-                    Quiero inscribirme por WhatsApp
+                    Quiero asegurar mi lugar con $390 por sesión
                   </a>
 
                   <p className="mt-4 text-center text-xs text-white/70">
@@ -821,13 +910,15 @@ export default function DiplomadoMaternidad360() {
 
         <section className="bg-[#fcfaf7] px-4 py-20 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-6xl">
-            <div className="mb-12 text-center">
+            <div className="mb-10 text-center">
               <span className="inline-flex rounded-full bg-pink-100 px-4 py-2 text-sm font-bold text-pink-700">
                 Testimonios
               </span>
-              <h2 className="mt-5 text-4xl font-black tracking-tight text-slate-900 sm:text-5xl">
+              <h2 className="mt-5 text-3xl font-black tracking-tight text-slate-900 sm:text-5xl">
                 Lo que una mamá quiere sentir en esta etapa:
-                <span className="block text-pink-600">tranquilidad, claridad y confianza</span>
+                <span className="block text-pink-600">
+                  tranquilidad, claridad y confianza
+                </span>
               </h2>
             </div>
 
@@ -870,11 +961,11 @@ export default function DiplomadoMaternidad360() {
 
         <section id="faq" className="bg-white px-4 py-20 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-4xl">
-            <div className="mb-12 text-center">
+            <div className="mb-10 text-center">
               <span className="inline-flex rounded-full bg-pink-100 px-4 py-2 text-sm font-bold text-pink-700">
                 Preguntas frecuentes
               </span>
-              <h2 className="mt-5 text-4xl font-black tracking-tight text-slate-900 sm:text-5xl">
+              <h2 className="mt-5 text-3xl font-black tracking-tight text-slate-900 sm:text-5xl">
                 Resolvamos tus dudas
               </h2>
             </div>
@@ -907,6 +998,82 @@ export default function DiplomadoMaternidad360() {
                   )}
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        <section
+          id="llegar"
+          className="border-t border-emerald-100 bg-white px-4 py-20 sm:px-6 lg:px-8"
+        >
+          <div className="mx-auto max-w-7xl">
+            <div className="grid gap-8 lg:grid-cols-2 lg:items-stretch">
+              <div className="flex flex-col justify-center">
+                <span className="mb-3 inline-flex w-fit rounded-full bg-emerald-50 px-4 py-1 text-sm font-semibold text-emerald-700">
+                  Sede del diplomado
+                </span>
+
+                <h2 className="text-3xl font-black tracking-tight text-slate-900 md:text-4xl">
+                  Cómo llegar a la sede
+                </h2>
+
+                <p className="mt-4 text-lg leading-relaxed text-slate-600">
+                  El Diplomado Maternidad 360 se llevará a cabo en{' '}
+                  <span className="font-semibold text-slate-900">EDIFICIO MEDICS</span>.
+                </p>
+
+                <div className="mt-6 rounded-3xl border border-slate-200 bg-slate-50 p-5 shadow-sm">
+                  <p className="text-sm font-semibold uppercase tracking-wide text-slate-500">
+                    Ubicación
+                  </p>
+                  <p className="mt-2 flex items-center gap-2 text-base font-semibold text-slate-700">
+                    <MapPin className="h-4 w-4 text-emerald-600" />
+                    EDIFICIO MEDICS
+                  </p>
+                  <p className="mt-1 text-sm text-slate-500">Saltillo, Coahuila</p>
+                  <p className="mt-4 flex items-center gap-2 text-sm text-slate-600">
+                    <Clock3 className="h-4 w-4 text-pink-600" />
+                    Llega fácilmente con tu app favorita
+                  </p>
+                </div>
+
+                <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+                  <a
+                    href="https://maps.app.goo.gl/HpfMTUfQTzmJh7Az7"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center justify-center rounded-2xl bg-emerald-600 px-6 py-3 text-sm font-semibold text-white shadow-md transition hover:bg-emerald-700"
+                  >
+                    Abrir en Google Maps
+                  </a>
+
+                  <a
+                    href="https://waze.com/ul?ll=25.4771829,-100.9786991&navigate=yes"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center justify-center rounded-2xl border border-slate-300 bg-white px-6 py-3 text-sm font-semibold text-slate-800 transition hover:bg-slate-50"
+                  >
+                    Abrir en Waze
+                  </a>
+                </div>
+
+                <p className="mt-4 text-sm text-slate-500">
+                  Toca el botón de tu app favorita para iniciar la ruta de llegada.
+                </p>
+              </div>
+
+              <div className="overflow-hidden rounded-[28px] border border-slate-200 shadow-xl">
+                <iframe
+                  title="Mapa EDIFICIO MEDICS"
+                  src="https://www.google.com/maps?q=EDIFICIO%20MEDICS%20Saltillo%20Coahuila&z=16&output=embed"
+                  width="100%"
+                  height="100%"
+                  loading="lazy"
+                  allowFullScreen
+                  referrerPolicy="no-referrer-when-downgrade"
+                  className="min-h-[340px] w-full"
+                />
+              </div>
             </div>
           </div>
         </section>
@@ -950,7 +1117,34 @@ export default function DiplomadoMaternidad360() {
           </div>
         </section>
 
-        <section className="bg-white px-4 py-20 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-6xl">
-            <div className="mx-auto mb-12 max-w-3xl text-center">
-              <span className="inline-flex rounded-full bg-pink-100 px-
+        <footer className="bg-white px-4 py-10 sm:px-6 lg:px-8">
+          <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 border-t border-slate-200 pt-8 text-center md:flex-row md:text-left">
+            <div>
+              <p className="text-base font-bold text-slate-900">Diplomado Maternidad 360</p>
+              <p className="text-sm text-slate-500">
+                Formación presencial para futuras mamás en Saltillo, Coahuila
+              </p>
+            </div>
+
+            <div className="flex flex-wrap items-center justify-center gap-3">
+              <a
+                href={ctaMain}
+                target="_blank"
+                rel="noreferrer"
+                className="rounded-full bg-green-500 px-5 py-2.5 text-sm font-bold text-white transition hover:bg-green-600"
+              >
+                WhatsApp
+              </a>
+              <a
+                href="#llegar"
+                className="rounded-full border border-slate-300 px-5 py-2.5 text-sm font-bold text-slate-700 transition hover:bg-slate-50"
+              >
+                Cómo llegar
+              </a>
+            </div>
+          </div>
+        </footer>
+      </main>
+    </div>
+  );
+}
