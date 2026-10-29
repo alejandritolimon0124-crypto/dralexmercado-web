@@ -2,6 +2,14 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "rewrites": [
     {
+      "source": "/calculadora",
+      "destination": "https://calculadora-gestacional.vercel.app/calculadora/"
+    },
+    {
+      "source": "/calculadora/:path*",
+      "destination": "https://calculadora-gestacional.vercel.app/calculadora/:path*"
+    },
+    {
       "source": "/((?!.*\\.).*)",
       "destination": "/index.html"
     }
