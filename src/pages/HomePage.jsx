@@ -93,7 +93,7 @@ function App() {
   const whatsappUrl =
     "https://api.whatsapp.com/send?phone=528441892008&text=Hola%20Dr.%20Alex%20Mercado,%20vi%20su%20p%C3%A1gina%20y%20quiero%20resolver%20mi%20situaci%C3%B3n";
   const agendaUrl = "https://agenda.dralexmercado.com.mx";
-  const calculadoraUrl = "https://calculadora-gestacional.vercel.app/";
+  const calculadoraUrl = "/calculadora";
   const maternidadUrl = "https://dralexmercado.com.mx/diplomadomaternidad360";
 
   const appleAnimationStyles = `
@@ -386,8 +386,6 @@ function App() {
 
                       <a
                         href={calculadoraUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
                         className="apple-button mt-5 inline-flex rounded-full bg-white px-5 py-3 text-sm font-semibold text-slate-900 shadow-sm hover:bg-slate-100"
                       >
                         Abrir calculadora
